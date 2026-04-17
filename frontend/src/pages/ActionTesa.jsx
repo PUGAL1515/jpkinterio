@@ -841,20 +841,35 @@ const ProductDetailPage = ({ product }) => {
     return (
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-gray-900 to-gray-800 py-20 px-6">
-          <div className="absolute inset-0 bg-black/50"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Action TESA</h1>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              Premium Engineered Wood Products for Modern Living
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mt-8">
-              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">ISO Certified</span>
-              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">Eco Friendly</span>
-              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">Made in India</span>
-            </div>
-          </div>
-        </section>
+       <section className="relative bg-white py-12 md:py-16 px-6 md:px-16 overflow-hidden">
+  <div className="max-w-7xl mx-auto text-center">
+    
+    {/* Action TESA Logo */}
+    <div className="flex justify-center mb-6">
+      <img 
+        src="/images/customers/03.png" 
+        alt="Action TESA Logo" 
+        className="h-16 md:h-20 object-contain"
+      />
+    </div>
+
+    {/* Tag */}
+    <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-sm shadow-md">
+      Action TESA
+    </span>
+
+    {/* Heading */}
+    <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-black leading-tight">
+       Premium Engineered Wood for Modern Interiors
+    </h1>
+    
+    {/* Description */}
+    <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
+      High-quality particle boards, MDF, and wood panel solutions designed for durability, sustainability, and superior performance.
+    </p>
+
+  </div>
+</section>
 
         {/* Products Grid */}
         <section className="max-w-7xl mx-auto px-6 py-16">

@@ -29,7 +29,7 @@ const About = () => {
             />
           </div>
           <div className="md:w-1/2 w-full">
-            <span className="inline-block bg-red-600 text-white px-4 py-1 rounded-full font-medium mb-3 text-xs shadow-lg">About Us</span>
+            {/* <span className="inline-block bg-red-600 text-white px-4 py-1 rounded-full font-medium mb-3 text-xs shadow-lg">About Us</span> */}
             <h1 className="text-3xl md:text-5xl font-extrabold mb-6 text-black leading-tight">
               <span className="block text-red-600">{data.hero.title}</span>
             </h1>
@@ -114,12 +114,12 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/3 w-full flex flex-col items-center text-center lg:text-left space-y-4">
             <div className="relative w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-red-600 shadow-2xl">
-              <img
-                src={data.team.image}
-                alt="Leadership team at JPK Interio"
-                className="w-full h-full object-cover"
-              />
-            </div>
+  <img
+    src={data.team.image}
+    alt="Leadership team at JPK Interio"
+    className="w-full h-full object-cover object-top"
+  />
+</div>
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{data.team.title}</h3>
             <p className="text-gray-700 text-base md:text-lg">{data.team.subtitle}</p>
           </div>
@@ -159,7 +159,7 @@ const About = () => {
       {data.cta.label}
     </span>
 
-    <h2 className="text-3xl md:text-5xl font-extrabold text-black mb-6">
+    <h2 className="text-3xl md:text-4xl font-extrabold text-black mb-6">
       {data.cta.title}
     </h2>
 

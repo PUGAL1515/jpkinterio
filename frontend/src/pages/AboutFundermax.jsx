@@ -5,16 +5,28 @@ const AboutFundermax = () => {
 
   return (
     <div>
-      {/* Header Section */}
-      <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
+      {/* Header Section with Fundermax Logo */}
+      <section className="relative bg-white py-12 md:py-16 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
-            Fundermax
+          
+          {/* Fundermax Logo */}
+          <div className="flex justify-center mb-6">
+            <img 
+              src={`${publicPath}/images/customers/01.png`} 
+              alt="Fundermax Logo" 
+              className="h-16 md:h-20 object-contain"
+            />
+          </div>
+
+          <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-sm shadow-md">
+            PREMIUM HPL CLADDING
           </span>
-          <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
+
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-black leading-tight">
             Fundermax: Sustainable Materials and Innovative Design
           </h1>
-          <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
+          
+          <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
             Premium wood-based materials and compact laminates combining performance with sustainability
           </p>
         </div>

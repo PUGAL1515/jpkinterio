@@ -24,7 +24,7 @@ import Products from './pages/Products.jsx';
 import Projects from './pages/Projects.jsx';
 import Gallery from './pages/Gallery.jsx';
 import Awards from './pages/Awards.jsx';
-
+import VinylFlooringCollection from './pages/VinylFlooringCollection.jsx';
 function App() {
   return (
     <Router>
@@ -46,10 +46,12 @@ function App() {
             <Route path="/products/action-tesa" element={<ActionTesa />} />
 
             {/* Responsive */}
-            <Route path="/products/responsive/about-responsive" element={<AboutResponsive />} />
+            <Route path="/products/responsive/project-completed" element={<AboutResponsive />} />
             <Route path="/products/responsive/lvt" element={<Lvt />} />
             <Route path="/products/responsive/flooring-segments" element={<FlooringSegments />} />
             <Route path="/products/responsive/download-center" element={<DownloadCenter />} />
+            <Route path="/products/responsive/vinylflooring" element={<VinylFlooringCollection />} />
+
 
             {/* Others */}
             <Route path="/products/vivre-panels" element={<VivrePanels />} />
@@ -62,6 +64,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/awards" element={<Awards />} />
             <Route path="/contact" element={<Contact />} />
+
           </Routes>
         </main>
 

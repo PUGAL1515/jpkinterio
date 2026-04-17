@@ -15,23 +15,35 @@ const VivrePanels = () => {
     <div>
       {/* Hero Section */}
       
-      <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center">
+     <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
+  <div className="max-w-7xl mx-auto text-center">
 
-          <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
-             Vivre Panels
-          </span>
+    {/* 🔥 Logo */}
+    <div className="flex justify-center mb-5">
+      <img 
+        src="/images/customers/05.png" 
+        alt="Vivre Panels Logo" 
+        className="h-14 md:h-20 object-contain"
+      />
+    </div>
 
-          <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
-            Transform Your Spaces with Vivre Panels
-          </h1>
+    {/* Tag */}
+    <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
+      Vivre Panels
+    </span>
 
-          <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
-           Premium decorative panels that blend artistry with functionality for modern interiors
-          </p>
+    {/* Heading */}
+    <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
+      Transform Your Spaces with Vivre Panels
+    </h1>
 
-        </div>
-     </section>
+    {/* Description */}
+    <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
+      Premium decorative panels that blend artistry with functionality for modern interiors
+    </p>
+
+  </div>
+</section>
 
       {/* About Vivre Panels Section */}
       <section className="bg-white py-16 px-6 md:px-16">

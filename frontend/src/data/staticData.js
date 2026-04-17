@@ -9,7 +9,14 @@ export const staticData = {
     },
     about: {
       title: 'TRANSFORMING SPACES WITH EXCELLENCE',
-      description: 'JPK Interio is the foremost authorized distributor and dealer for FunderMax HPL cladding, VOX Ceiling and Wall panels, Knauf Armstrong Ceiling tiles, TESA laminate flooring, Responsive Vinyl Flooring, Jindal MLC Pipes, Vivre Panels, and Donaire Carpets. Based in Hosur, Tamil Nadu, India, we are dedicated to creating stunning and functional spaces that leave a lasting impression.',
+      description: `JPK Interio is a leading authorized distributor and dealer of premium building and interior 
+solutions, including FunderMax HPL cladding, VOX ceiling and wall panels, Knauf 
+Armstrong ceiling tiles, Action TESA laminate flooring, Responsive vinyl flooring, Jindal 
+MLC pipes, Vivre panels, and Donaire carpets.
+
+Based in Hosur, Tamil Nadu, India, we are committed to delivering aesthetically striking 
+and highly functional spaces that leave a lasting impression, built with enduring quality 
+and excellence.`,
       image: `${publicPath}/images/about-jpkinterio.png`
     },
     why_choose: {
@@ -22,18 +29,18 @@ export const staticData = {
       ],
       image: `${publicPath}/images/why-choose-jpkinterio.png`
     },
-    numbers: [
-      { value: 100, label: 'Objects', image: `${publicPath}/images/image01.png` },
-      { value: 55000, label: 'Projects', image: `${publicPath}/images/image02.png` },
-      { value: 3000, label: 'Completed', image: `${publicPath}/images/image03.png` }
-    ],
+   numbers: [
+  { value: "970+", label: "SKUS", image: `${publicPath}/images/image01.png` },
+  { value: "1000+", label: "Projects", image: `${publicPath}/images/image02.png` },
+  { value: "3000", label: "Completed", image: `${publicPath}/images/image03.png` }
+],
     md_section: {
-      title: 'Our Spends',
+      title: 'Leadership Team',
       subtitle: 'We Design and Build Your Dream Home!',
-      image: `${publicPath}/images/owner-jpkinterio.png`,
+      image: `${publicPath}/images/md.jpg`,
       stats: [
         { value: 97, label: 'Best Performance' },
-        { value: 54, label: 'High Quality' },
+        { value: 78, label: 'High Quality' },
         { value: 68, label: 'Top Team' }
       ]
     },
@@ -56,7 +63,14 @@ export const staticData = {
   about: {
     hero: {
       title: 'About Us',
-      content: 'JPK Interio is the foremost authorized distributor and dealer for FunderMax HPL cladding, VOX Ceiling and Wall panels, Knauf Armstrong Ceiling tiles, TESA laminate flooring, Responsive Vinyl Flooring, Jindal MLC Pipes, Vivre Panels, and Donaire Carpets. Based in Hosur, Tamil Nadu, India, we are dedicated to creating stunning and functional spaces that leave a lasting impression.',
+      content: `JPK Interio is a leading authorized distributor and dealer of premium building and interior 
+solutions, including FunderMax HPL cladding, VOX ceiling and wall panels, Knauf 
+Armstrong ceiling tiles, Action TESA laminate flooring, Responsive vinyl flooring, Jindal 
+MLC pipes, Vivre panels, and Donaire carpets.
+
+Based in Hosur, Tamil Nadu, India, we are committed to delivering aesthetically striking 
+and highly functional spaces that leave a lasting impression, built with enduring quality 
+and excellence.`,
       image: `${publicPath}/images/about-jpkinterio.png`
     },
     // features: [
@@ -65,28 +79,28 @@ export const staticData = {
     //   { title: 'Customized Solutions', description: 'Every space is unique, and our solutions are tailored to your requirements.' }
     // ],
     // In your staticData.js file
-excellence: {
-  title: 'EXCELLENCE IN DESIGN & INSTALLATION',
-  description: 'At JPK Interio, excellence drives every project. We blend aesthetics with functionality, using only premium materials for installations that last. With our expert team and customer-focused approach, your vision comes to life, whether it\'s a home, commercial space, or large-scale development.',
-  features: [
-    { title: 'Premium Materials', description: 'We select only the best for durability and elegance in every space.' },
-    { title: 'Expert Team', description: 'Our experienced professionals ensure precise, attentive project handling.' },
-    { title: 'Tailored Service', description: 'Every project is personalized for your vision, from residential to commercial.' }
-  ],
-  image: '/images/why-choose-jpkinterio.png'  // Direct path, no publicPath needed
-},
+    excellence: {
+      title: 'EXCELLENCE IN DESIGN & INSTALLATION',
+      description: 'At JPK Interio, excellence drives every project. We blend aesthetics with functionality, using only premium materials for installations that last. With our expert team and customer-focused approach, your vision comes to life, whether it\'s a home, commercial space, or large-scale development.',
+      features: [
+        { title: 'Premium Materials', description: 'We select only the best for durability and elegance in every space.' },
+        { title: 'Expert Team', description: 'Our experienced professionals ensure precise, attentive project handling.' },
+        { title: 'Tailored Service', description: 'Every project is personalized for your vision, from residential to commercial.' }
+      ],
+      image: '/images/why-choose-jpkinterio.png'  // Direct path, no publicPath needed
+    },
     numbers: [
-      { value: 100, label: 'Objects', image: `${publicPath}/images/image01.png` },
-      { value: 55000, label: 'Projects', image: `${publicPath}/images/image02.png` },
-      { value: 3000, label: 'Completed', image: `${publicPath}/images/image03.png` }
-    ],
+  { value: "970+", label: "SKUS", image: `${publicPath}/images/image01.png` },
+  { value: "1000+", label: "Projects", image: `${publicPath}/images/image02.png` },
+  { value: "3000", label: "Completed", image: `${publicPath}/images/image03.png` }
+],
     team: {
-      title: 'Our Leadership',
+      title: 'Leadership Team',
       subtitle: 'We Design and Build Your Dream Home!',
-      image: `${publicPath}/images/owner-jpkinterio.png`,
+      image: `${publicPath}/images/md.jpg`,
       stats: [
         { value: 97, label: 'Best Performance' },
-        { value: 54, label: 'High Quality' },
+        { value: 78, label: 'High Quality' },
         { value: 68, label: 'Top Team' }
       ]
     },

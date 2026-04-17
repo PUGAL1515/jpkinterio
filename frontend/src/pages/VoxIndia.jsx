@@ -42,7 +42,6 @@ const VoxIndia = () => {
   useEffect(() => {
     const basePath = '/images/products/interior/';
 
-    // Construct image paths
     setWallImages(wallFileNames.map(name => `${basePath}wall/${name}`));
     setCeilingImages(ceilingFileNames.map(name => `${basePath}celing/${name}`));
     setFlooringImages(flooringFileNames.map(name => `${basePath}flooring/${name}`));
@@ -81,14 +80,11 @@ const VoxIndia = () => {
                   }}
                 />
               </div>
-              <div className="p-5">
+              {/* <div className="p-5">
                 <h3 className="font-semibold text-lg text-gray-900 capitalize">
                   {cleanTitle}
                 </h3>
-                <p className="text-gray-500 text-sm mt-1">
-                  Date: {new Date().toISOString().split('T')[0]}
-                </p>
-              </div>
+              </div> */}
             </div>
           );
         })}
@@ -98,32 +94,30 @@ const VoxIndia = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-     <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
-  <div className="max-w-7xl mx-auto text-center">
-    
-    <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
-      Vox India
-    </span>
+      {/* Hero Section with Vox India Logo */}
+      <section className="relative bg-white py-12 md:py-16 px-6 md:px-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center">
+          
+          {/* Vox India Logo */}
+          <div className="flex justify-center mb-6">
+            <img 
+              src={`${process.env.PUBLIC_URL}/images/customers/02.png`} 
+              alt="Vox India Logo" 
+              className="h-16 md:h-20 object-contain"
+            />
+          </div>
 
-    <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
-      Vox India Projects
-    </h1>
+          <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-sm shadow-md">
+            VOX INDIA
+          </span>
 
-    <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
-      Explore our innovative wall, ceiling, and flooring solutions from Vox India.
-    </p>
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-black leading-tight">
+            Vox India Projects
+          </h1>
 
-  </div>
-</section>
-
-      {/* Wall Designs */}
-      <section className="bg-gray-50 py-16 px-6 md:px-16">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-red-600 mb-8 border-l-4 border-red-600 pl-4">
-            Wall Designs
-          </h2>
-          {renderGallery(wallImages, "Wall Designs")}
+          <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
+            Explore our innovative wall, ceiling, and flooring solutions from Vox India.
+          </p>
         </div>
       </section>
 
@@ -144,6 +138,16 @@ const VoxIndia = () => {
             Flooring Designs
           </h2>
           {renderGallery(flooringImages, "Flooring Designs")}
+        </div>
+      </section>
+
+      {/* Wall Designs */}
+      <section className="bg-gray-50 py-16 px-6 md:px-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-red-600 mb-8 border-l-4 border-red-600 pl-4">
+            Wall Designs
+          </h2>
+          {renderGallery(wallImages, "Wall Designs")}
         </div>
       </section>
 

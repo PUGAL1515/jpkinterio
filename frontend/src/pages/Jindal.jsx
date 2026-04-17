@@ -5,22 +5,34 @@ const Jindal = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center">
+  <div className="max-w-7xl mx-auto text-center">
 
-          <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
-             Jindal
-          </span>
+    {/* 🔥 Logo */}
+    <div className="flex justify-center mb-5">
+      <img 
+        src="/images/customers/08.png" 
+        alt="Jindal Logo" 
+        className="h-14 md:h-20 object-contain"
+      />
+    </div>
 
-          <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
-            Jindal MLC Pipes
-          </h1>
+    {/* Tag */}
+    <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
+      Jindal
+    </span>
 
-          <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
-            Premium Multi-Layer Composite Piping Solutions for Hot & Cold Water, Gas, and Compressed Air Systems
-          </p>
+    {/* Heading */}
+    <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
+      Jindal MLC Pipes
+    </h1>
 
-        </div>
-     </section>
+    {/* Description */}
+    <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
+      Premium Multi-Layer Composite Piping Solutions for Hot & Cold Water, Gas, and Compressed Air Systems
+    </p>
+
+  </div>
+</section>
 
 <section className="bg-gray-50 py-16 px-6 md:px-16">
   <div className="max-w-7xl mx-auto">

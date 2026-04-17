@@ -288,18 +288,34 @@ const KnaufCeilingSolutions = () => {
     <div className="font-sans antialiased">
       {/* Hero Section */}
       <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center">
-          <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
-            Knauf
-          </span>
-          <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
-            Knauf Ceiling Solutions
-          </h1>
-          <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
-            Advanced ceiling systems for commercial and residential applications.
-          </p>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto text-center">
+
+    {/* 🔥 Logo */}
+    <div className="flex justify-center mb-5">
+      <img 
+        src="/images/customers/07.png" 
+        alt="Knauf Logo" 
+        className="h-14 md:h-20 object-contain"
+      />
+    </div>
+
+    {/* Tag */}
+    <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
+      Knauf
+    </span>
+
+    {/* Heading (corrected) */}
+    <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
+      Ceiling & Wall Absorbers
+    </h1>
+
+    {/* Description */}
+    <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
+      Advanced ceiling systems for commercial and residential applications.
+    </p>
+
+  </div>
+</section>
 
       {/* Products Grid Section */}
       <section className="bg-gray-50 py-16 px-6 md:px-16">

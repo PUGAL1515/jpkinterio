@@ -63,13 +63,32 @@ const InteriorExterior = () => {
               </div>
             </div>
 
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">M.look</h2>
-              <div className="prose prose-lg max-w-none leading-relaxed">
-                <p>M.look is an architectural facade panel with heavy-duty, reinforced glass fiber, predominantly mineral, non-combustible core and highly weather-resistant decorative surface.</p>
-                <p>It offers high scratch resistance, light fastness, impact resistance, anti-graffiti properties, and hail resistance. Suitable for A2-s1,d0 fire classification.</p>
-              </div>
-            </div>
+           <div>
+  <h2 className="text-3xl font-bold text-gray-900 mb-6">M.look</h2>
+
+  <div className="prose prose-lg max-w-none leading-relaxed">
+    <p>
+      M.look is an architectural facade panel with heavy-duty, reinforced glass fiber, predominantly mineral, non-combustible core and highly weather-resistant decorative surface.
+    </p>
+    <p>
+      It offers high scratch resistance, light fastness, impact resistance, anti-graffiti properties, and hail resistance. Suitable for A2-s1,d0 fire classification.
+    </p>
+  </div>
+
+  {/* 🔥 Download Brochure Button */}
+ <div className="mt-6">
+  <a
+    href="/brochures/fundermax.pdf"
+    download
+    className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition"
+  >
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-8m0 8l-3-3m3 3l3-3M5 20h14" />
+    </svg>
+    Download Brochure
+  </a>
+</div>
+</div>
 
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Other Exterior Products</h2>
