@@ -243,33 +243,33 @@ const Home = () => {
             {/* MD Photo */}
             <div className="lg:w-2/5 w-full flex flex-col items-center lg:items-start text-center lg:text-left">
               <div className="relative mb-12 flex justify-center">
-  
-  {/* Soft glow background */}
-  <div className="absolute w-72 h-72 md:w-80 md:h-80 bg-red-500/10 rounded-full blur-2xl"></div>
 
-  {/* Main Container */}
-  <div className="relative group">
-    
-    {/* Gradient Border Ring */}
-    <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-red-700 opacity-80 group-hover:opacity-100 blur-[2px] transition duration-500"></div>
+                {/* Soft glow background */}
+                <div className="absolute w-72 h-72 md:w-80 md:h-80 bg-red-500/10 rounded-full blur-2xl"></div>
 
-    {/* Image Circle */}
-    <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-[5px] border-white shadow-2xl">
-      
-      <img
-        src={data.md_section.image}
-        alt="Managing Director of JPK Interio"
-        className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
-      />
+                {/* Main Container */}
+                <div className="relative group">
 
-      {/* Bottom Gradient Overlay (subtle) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                  {/* Gradient Border Ring */}
+                  <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-red-700 opacity-80 group-hover:opacity-100 blur-[2px] transition duration-500"></div>
 
-     
-    </div>
+                  {/* Image Circle */}
+                  <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-[5px] border-white shadow-2xl">
 
-  </div>
-</div>
+                    <img
+                      src={data.md_section.image}
+                      alt="Managing Director of JPK Interio"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                    />
+
+                    {/* Bottom Gradient Overlay (subtle) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+
+
+                  </div>
+
+                </div>
+              </div>
 
               <h3 className="text-3xl font-bold text-gray-900 mb-2">
                 {data.md_section.title}

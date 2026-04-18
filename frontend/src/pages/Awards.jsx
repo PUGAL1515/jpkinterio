@@ -19,19 +19,18 @@ export default function Awards() {
   useEffect(() => {
     const allImages = [
       // Logo and main images
-      '/images/awards/jpk_logo-transformed-removebg-preview-1.png',
-      '/images/awards/New_Project__83_-removebg-preview-225x300.png',
+      // '/images/awards/New_Project__83_-removebg-preview-225x300.png',
       '/images/awards/New_Project__83_-removebg-preview.png',
       '/images/awards/vecteezy_ai-generated-podium-with-golden-light-rays-background_36042916-scaled.jpeg',
-      '/images/awards/WhatsApp_Image_2024-10-28_at_2.38.01_PM__1_-removebg-preview-224x300.png',
-      '/images/awards/WhatsApp_Image_2024-10-28_at_2.38.01_PM__1_-removebg-preview.png',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-300x200.jpeg',
+      // '/images/awards/WhatsApp_Image_2024-10-28_at_2.38.01_PM__1_-removebg-preview-224x300.png',
+      // '/images/awards/WhatsApp_Image_2024-10-28_at_2.38.01_PM__1_-removebg-preview.png',
+      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-300x200.jpeg',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-768x513.jpeg',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-1024x684.jpeg',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-1536x1025.jpeg',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1.jpeg',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1-225x300.jpeg',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1-768x1024.jpeg',
+      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-1024x684.jpeg',
+      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-1536x1025.jpeg',
+      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1.jpeg',
+      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1-225x300.jpeg',
+      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1-768x1024.jpeg',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.jpeg'
     ];
 

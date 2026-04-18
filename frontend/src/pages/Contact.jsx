@@ -4,8 +4,12 @@ import { staticData } from '../data/staticData';
 
 const Contact = () => {
   const data = staticData.contact;
-  const formRef = useRef();
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const formRef = useRef(null);
+
+  const [formData, setFormData] = useState({
+    name: '', email: '', phone: '', subject: '', message: '',
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
@@ -28,26 +32,25 @@ const Contact = () => {
       from_name: formData.name,
       from_email: formData.email,
       from_phone: formData.phone || 'Not provided',
+      subject: formData.subject || 'No subject',
       message: formData.message,
       to_email: 'jpkinterio@gmail.com',
-      reply_to: formData.email
+      reply_to: formData.email,
     };
 
     try {
-      const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      console.log('Email sent successfully:', response);
-
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
       setSubmitStatus({
         type: 'success',
-        message: `Thank you ${formData.name}! We'll respond to you soon at ${formData.email}`
+        message: `Thank you ${formData.name}! We'll reply soon.`,
       });
-
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch (error) {
-      console.error('Email sending failed:', error);
+      console.error('Email failed:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Sorry, something went wrong. Please try again later or call us directly.'
+        message: 'Something went wrong. Please try again.',
       });
     } finally {
       setIsSubmitting(false);
@@ -55,89 +58,77 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen py-12 px-6 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
+    <div className="min-h-screen py-8 px-4 bg-zinc-50">
+      <div className="max-w-4xl mx-auto">
+
+        {/* Hero - Compact */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-3">Get In Touch</h1>
-          <div className="w-20 h-1 bg-red-600 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-sm">
-            We'd love to hear from you. Send us a message or visit our office.
-          </p>
+          <div className="inline-flex items-center gap-2 mb-2">
+            <div className="w-1.5 h-px bg-red-600" />
+            <span className="text-red-600 font-medium tracking-widest text-[10px]">CONNECT WITH US</span>
+            <div className="w-1.5 h-px bg-red-600" />
+          </div>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1 text-zinc-900">Get In Touch</h1>
+          <p className="text-zinc-600 text-xs">We'd love to hear from you</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid lg:grid-cols-5 gap-4">
 
-          {/* LEFT: Contact Us Info - Minimized */}
-          <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl shadow-xl flex flex-col">
-            <div className="p-5 text-white flex-1">
-              <h2 className="text-2xl font-bold mb-3">{data.title}</h2>
-              <p className="text-red-100 mb-5 text-sm leading-tight">{data.description}</p>
+          {/* Contact Info Card - Using Same Red as Button */}
+          <div className="lg:col-span-2">
+            <div className="bg-red-600 text-white rounded-2xl p-4 h-full shadow-xl relative overflow-hidden flex flex-col">
+              <div className="absolute inset-0 bg-black/30"></div>
 
-              <div className="space-y-4">
-                {/* Address */}
-                <div className="flex items-start space-x-3">
-                  <div className="bg-white/20 p-2 rounded-lg flex-shrink-0 mt-0.5">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-red-200 text-xs uppercase tracking-wide">Office Address</p>
-                    <p className="text-white text-sm mt-1">{data.address}</p>
-                  </div>
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-4">
+                  <h2 className="text-lg font-bold">Contact Us</h2>
+                  <p className="text-red-100 text-sm">For More Details Contact Us!</p>
                 </div>
 
-                {/* Phone */}
-                <div className="flex items-start space-x-3">
-                  <div className="bg-white/20 p-2 rounded-lg flex-shrink-0 mt-0.5">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-red-200 text-xs uppercase tracking-wide">Phone Numbers</p>
-                    <div className="mt-1 space-y-0.5">
-                      {data.phone.map((phone, index) => (
-                        <a key={index} href={`tel:${phone}`} className="block text-white hover:text-red-200 text-sm">
-                          {phone}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="flex items-start space-x-3">
-                  <div className="bg-white/20 p-2 rounded-lg flex-shrink-0 mt-0.5">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-red-200 text-xs uppercase tracking-wide">Email Addresses</p>
-                    <div className="mt-1 space-y-0.5">
-                      {data.emails && data.emails.map((email, index) => (
-                        <a key={index} href={`mailto:${email}`} className="block text-white hover:text-red-200 text-sm">
-                          {email}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Business Hours */}
-                <div className="pt-4 border-t border-white/20">
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-white/20 p-1.5 rounded-lg">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
+                <div className="space-y-4 text-xs flex-1">
+                  {/* Address */}
+                  <div className="flex gap-3">
+                    <div className="w-7 h-7 bg-white/20 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">📍</div>
                     <div>
-                      <p className="text-xs text-red-200">Business Hours</p>
-                      <p className="text-white font-semibold text-sm">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                      <p className="uppercase text-[9px] tracking-widest text-red-200 font-medium mb-0.5">VISIT OUR STUDIO</p>
+                      <p className="leading-tight text-white/90 text-[10px]">
+                        47, Taluk Office Road, Next to New Robin Stores, Opp. Balaji Theatre,<br />
+                        Hosur, Tamil Nadu 635109
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex gap-3">
+                    <div className="w-7 h-7 bg-white/20 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">📞</div>
+                    <div>
+                      <p className="uppercase text-[9px] tracking-widest text-red-200 font-medium mb-0.5">CALL US</p>
+                      <div className="space-y-0.5 text-white/90">
+                        <a href="tel:+918015250234" className="block hover:text-white">+91 80152 50234</a>
+                        <a href="tel:+919080659559" className="block hover:text-white">+91 90806 59559</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex gap-3">
+                    <div className="w-7 h-7 bg-white/20 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">✉️</div>
+                    <div>
+                      <p className="uppercase text-[9px] tracking-widest text-red-200 font-medium mb-0.5">EMAIL US</p>
+                      <div className="space-y-0.5 text-white/90 text-[10px]">
+                        <a href="mailto:jpkinterio.hsr@gmail.com" className="block hover:text-white">jpkinterio.hsr@gmail.com</a>
+                        <a href="mailto:info@jpkinterio@gmail.com" className="block hover:text-white">info@jpkinterio@gmail.com</a>
+                        <a href="mailto:contact@jpkinterio@gmail.com" className="block hover:text-white">contact@jpkinterio@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Timing */}
+                  <div className="flex gap-3 pt-3 border-t border-white/30 mt-auto">
+                    <div className="w-7 h-7 bg-white/20 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">🕒</div>
+                    <div>
+                      <p className="uppercase text-[9px] tracking-widest text-red-200 font-medium mb-0.5">WORKING HOURS</p>
+                      <p className="text-white/90 text-xs">Mon – Sat: 9AM – 7PM</p>
                     </div>
                   </div>
                 </div>
@@ -145,140 +136,127 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* RIGHT: Send us a Message - Same Height */}
-          <div className="bg-white rounded-2xl shadow-xl flex flex-col">
-            <div className="p-5 flex-1 flex flex-col">
-              {/* Status Message */}
+          {/* Contact Form Card */}
+          <div className="lg:col-span-3">
+            <div className="bg-white border border-zinc-200 rounded-2xl p-5 shadow-xl">
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold text-zinc-900">Send Message</h3>
+                <p className="text-zinc-500 text-xs">Reply within 24 hours</p>
+              </div>
+
               {submitStatus.message && (
-                <div className={`mb-5 p-3.5 rounded-xl flex items-center gap-3 text-sm ${submitStatus.type === 'success'
-                    ? 'bg-green-50 text-green-700 border border-green-200'
-                    : 'bg-red-50 text-red-700 border border-red-200'
-                  }`}>
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${submitStatus.type === 'success' ? 'bg-green-100' : 'bg-red-100'
-                    }`}>
-                    {submitStatus.type === 'success' ? '✓' : '✕'}
-                  </div>
-                  <p className="flex-1 leading-tight">{submitStatus.message}</p>
+                <div className={`mb-4 p-3 rounded-xl flex items-start gap-2 text-xs border ${
+                  submitStatus.type === 'success' 
+                    ? 'bg-green-50 border-green-200 text-green-700' 
+                    : 'bg-red-50 border-red-200 text-red-700'
+                }`}>
+                  <span className="text-base mt-px">
+                    {submitStatus.type === 'success' ? '🎉' : '⚠️'}
+                  </span>
+                  <p>{submitStatus.message}</p>
                 </div>
               )}
 
-              <div className="mb-5">
-                <h3 className="text-xl font-bold text-gray-800">Send us a Message</h3>
-                <p className="text-gray-500 text-sm mt-1">We'll get back to you within 24 hours</p>
-              </div>
-
-              <form ref={formRef} className="flex-1 flex flex-col space-y-4" onSubmit={handleSubmit}>
-
-                {/* Row 1 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                  {/* Full Name */}
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1">Full Name *</label>
+                    <label className="block text-[10px] text-zinc-500 mb-1 font-medium">FULL NAME *</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-200 text-sm"
-                      placeholder="Your full name"
+                      className="w-full bg-white border border-zinc-300 focus:border-red-600 rounded-xl px-3.5 py-2.5 text-sm placeholder-zinc-400 focus:outline-none"
+                      placeholder="John Doe"
                     />
                   </div>
-
-                  {/* Email */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1">Email Address *</label>
+                    <label className="block text-[10px] text-zinc-500 mb-1 font-medium">EMAIL *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-200 text-sm"
-                      placeholder="your@email.com"
+                      className="w-full bg-white border border-zinc-300 focus:border-red-600 rounded-xl px-3.5 py-2.5 text-sm placeholder-zinc-400 focus:outline-none"
+                      placeholder="you@example.com"
                     />
                   </div>
-
                 </div>
 
-                {/* Row 2 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                  {/* Phone */}
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1">Phone Number</label>
+                    <label className="block text-[10px] text-zinc-500 mb-1 font-medium">PHONE</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full p-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-200 text-sm"
-                      placeholder="Optional"
+                      className="w-full bg-white border border-zinc-300 focus:border-red-600 rounded-xl px-3.5 py-2.5 text-sm placeholder-zinc-400 focus:outline-none"
+                      placeholder="+91 98765 43210"
                     />
                   </div>
-
-                  {/* Subject (Optional New Field) */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1">Subject</label>
+                    <label className="block text-[10px] text-zinc-500 mb-1 font-medium">SUBJECT</label>
                     <input
                       type="text"
                       name="subject"
-                      value={formData.subject || ""}
+                      value={formData.subject}
                       onChange={handleChange}
-                      className="w-full p-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-200 text-sm"
-                      placeholder="Subject"
+                      className="w-full bg-white border border-zinc-300 focus:border-red-600 rounded-xl px-3.5 py-2.5 text-sm placeholder-zinc-400 focus:outline-none"
+                      placeholder="Project Inquiry"
                     />
                   </div>
-
                 </div>
 
-                {/* Message Full Width */}
-                <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Your Message *</label>
+                <div>
+                  <label className="block text-[10px] text-zinc-500 mb-1 font-medium">MESSAGE *</label>
                   <textarea
-                    rows="3"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="p-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-200 resize-none text-sm"
-                    placeholder="Tell us about your project or inquiry..."
-                  ></textarea>
+                    rows={3}
+                    className="w-full bg-white border border-zinc-300 focus:border-red-600 rounded-xl px-3.5 py-2.5 text-sm placeholder-zinc-400 resize-none focus:outline-none"
+                    placeholder="Tell us about your project..."
+                  />
                 </div>
 
-                {/* Button */}
+                {/* Send Message Button - Red Color */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full mt-auto bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl py-3 font-semibold text-sm transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg active:scale-[0.98]'
+                  className={`w-full py-3 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2
+                    ${isSubmitting 
+                      ? 'bg-zinc-300 text-zinc-500 cursor-not-allowed' 
+                      : 'bg-red-600 hover:bg-red-700 text-white active:scale-[0.97]'
                     }`}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? 'Sending...' : 'Send Message →'}
                 </button>
-
               </form>
             </div>
           </div>
         </div>
 
         {/* Map Section */}
-        <div className="mt-12">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="p-4 bg-gradient-to-r from-gray-50 to-white border-b">
-              <h3 className="text-xl font-bold text-gray-800">Find Us Here</h3>
-              <p className="text-gray-500 text-sm mt-0.5">Visit our showroom</p>
+        <div className="mt-8">
+          <div className="bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-xl">
+            <div className="p-4 border-b border-zinc-100">
+              <h3 className="text-base font-semibold">Our Studio Location</h3>
+              <p className="text-zinc-500 text-xs">Hosur, Tamil Nadu</p>
             </div>
-            <div className="h-72">
+            <div className="h-56">
               <iframe
                 src={data.map_url}
                 width="100%"
                 height="100%"
                 className="border-0"
-                title="JPK Interio Location"
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
-              ></iframe>
+                title="JPK Interio Location"
+              />
             </div>
           </div>
         </div>
