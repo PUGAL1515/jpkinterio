@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { productsData } from '../data/productsData';
+import QuoteModal from './QuoteModal';
 
 const KnaufCeilingSolutions = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -64,9 +65,9 @@ const KnaufCeilingSolutions = () => {
 // Product Detail Component
 const ProductDetail = ({ product, onBack }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   
   // Check if product has multiple images
-  const hasMultipleImages = product.image2 || (product.images && product.images.length > 0);
   const images = [];
   
   if (product.image2) {
@@ -106,6 +107,11 @@ const ProductDetail = ({ product, onBack }) => {
       soundAttenuation: "Sound Attenuation (dB)"
     };
     return headers[key] || key.replace(/([A-Z])/g, ' $1').trim();
+  };
+
+  // Handle quote request with product info
+  const handleQuoteRequest = () => {
+    setIsQuoteModalOpen(true);
   };
 
   return (
@@ -354,12 +360,22 @@ const ProductDetail = ({ product, onBack }) => {
             )}
 
             {/* Request Quote Button */}
-            <button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 rounded-xl font-semibold text-base transition-all shadow-lg shadow-red-900/20 hover:shadow-red-900/40 active:scale-[0.98]">
+            <button 
+              onClick={handleQuoteRequest}
+              className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 rounded-xl font-semibold text-base transition-all shadow-lg shadow-red-900/20 hover:shadow-red-900/40 active:scale-[0.98]"
+            >
               Request a Quote
             </button>
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)}
+        productName={product.name}
+      />
     </div>
   );
 };
