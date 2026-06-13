@@ -88,11 +88,11 @@ const Contact = () => {
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-2">
               <div className="w-1.5 h-px bg-red-600" />
-              <span className="text-red-600 font-medium tracking-widest text-[10px] bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">CONNECT WITH US</span>
+              <span className="text-red-600 font-medium tracking-widest text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">CONNECT WITH US</span>
               <div className="w-1.5 h-px bg-red-600" />
             </div>
             <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1 text-white drop-shadow-lg">Get In Touch</h1>
-            <p className="text-white/80 text-xs drop-shadow">We'd love to hear from you</p>
+            <p className="text-white/80 text-sm drop-shadow">We'd love to hear from you</p>
           </div>
 
           <div className="grid lg:grid-cols-5 gap-4">
@@ -105,17 +105,17 @@ const Contact = () => {
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="mb-4">
-                    <h2 className="text-lg font-bold text-white">Contact Us</h2>
-                    <p className="text-white/80 text-sm">For More Details Contact Us!</p>
+                    <h2 className="text-xl font-bold text-white">Contact Us</h2>
+                    <p className="text-white/80 text-base">For More Details Contact Us!</p>
                   </div>
 
-                  <div className="space-y-4 text-xs flex-1">
+                  <div className="space-y-4 text-sm flex-1">
                     {/* Address */}
                     <div className="flex gap-3">
-                      <div className="w-7 h-7 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">📍</div>
+                      <div className="w-8 h-8 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">📍</div>
                       <div>
-                        <p className="uppercase text-[9px] tracking-widest text-white/70 font-medium mb-0.5">VISIT OUR STUDIO</p>
-                        <p className="leading-tight text-white/90 text-[10px]">
+                        <p className="uppercase text-xs tracking-widest text-white/70 font-medium mb-1">EXPERIENCE OUR DESIGNS </p>
+                        <p className="leading-tight text-white/90 text-sm">
                           47, Taluk Office Road, Next to New Robin Stores, Opp. Balaji Theatre,<br />
                           Hosur, Tamil Nadu 635109
                         </p>
@@ -124,35 +124,35 @@ const Contact = () => {
 
                     {/* Phone */}
                     <div className="flex gap-3">
-                      <div className="w-7 h-7 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">📞</div>
+                      <div className="w-8 h-8 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">📞</div>
                       <div>
-                        <p className="uppercase text-[9px] tracking-widest text-white/70 font-medium mb-0.5">CALL US</p>
-                        <div className="space-y-0.5 text-white/90">
-                          <a href="tel:+918015250234" className="block hover:text-white transition-colors">+91 80152 50234</a>
-                          <a href="tel:+919080659559" className="block hover:text-white transition-colors">+91 90806 59559</a>
+                        <p className="uppercase text-xs tracking-widest text-white/70 font-medium mb-1">CALL US</p>
+                        <div className="space-y-1 text-white/90">
+                          <a href="tel:+918015250234" className="block hover:text-white transition-colors text-sm">+91 80152 50234</a>
+                          <a href="tel:+919080659559" className="block hover:text-white transition-colors text-sm">+91 90806 59559</a>
                         </div>
                       </div>
                     </div>
 
                     {/* Email */}
                     <div className="flex gap-3">
-                      <div className="w-7 h-7 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">✉️</div>
+                      <div className="w-8 h-8 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">✉️</div>
                       <div>
-                        <p className="uppercase text-[9px] tracking-widest text-white/70 font-medium mb-0.5">EMAIL US</p>
-                        <div className="space-y-0.5 text-white/90 text-[10px]">
-                          <a href="mailto:jpkinterio.hsr@gmail.com" className="block hover:text-white transition-colors">jpkinterio.hsr@gmail.com</a>
-                          <a href="mailto:info@jpkinterio@gmail.com" className="block hover:text-white transition-colors">info@jpkinterio@gmail.com</a>
-                          <a href="mailto:contact@jpkinterio@gmail.com" className="block hover:text-white transition-colors">contact@jpkinterio@gmail.com</a>
+                        <p className="uppercase text-xs tracking-widest text-white/70 font-medium mb-1">EMAIL US</p>
+                        <div className="space-y-1 text-white/90">
+                          <a href="mailto:jpkinterio.hsr@gmail.com" className="block hover:text-white transition-colors text-sm">jpkinterio.hsr@gmail.com</a>
+                          <a href="mailto:info@jpkinterio@gmail.com" className="block hover:text-white transition-colors text-sm">info@jpkinterio@gmail.com</a>
+                          <a href="mailto:contact@jpkinterio@gmail.com" className="block hover:text-white transition-colors text-sm">contact@jpkinterio@gmail.com</a>
                         </div>
                       </div>
                     </div>
 
                     {/* Timing */}
                     <div className="flex gap-3 pt-3 border-t border-white/30 mt-auto">
-                      <div className="w-7 h-7 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-lg">🕒</div>
+                      <div className="w-8 h-8 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">🕒</div>
                       <div>
-                        <p className="uppercase text-[9px] tracking-widest text-white/70 font-medium mb-0.5">WORKING HOURS</p>
-                        <p className="text-white/90 text-xs">Mon – Sat: 9AM – 7PM</p>
+                        <p className="uppercase text-xs tracking-widest text-white/70 font-medium mb-1">WORKING HOURS</p>
+                        <p className="text-white/90 text-sm">Mon – Sat: 9AM – 7PM</p>
                       </div>
                     </div>
                   </div>
@@ -168,12 +168,12 @@ const Contact = () => {
                 
                 <div className="relative">
                   <div className="mb-4">
-                    <h3 className="text-lg font-semibold text-white">Send Message</h3>
-                    <p className="text-white/70 text-xs">Reply within 24 hours</p>
+                    <h3 className="text-xl font-semibold text-white">Send Message</h3>
+                    <p className="text-white/70 text-sm">Reply within 24 hours</p>
                   </div>
 
                   {submitStatus.message && (
-                    <div className={`mb-4 p-3 rounded-xl flex items-start gap-2 text-xs border backdrop-blur-sm ${
+                    <div className={`mb-4 p-3 rounded-xl flex items-start gap-2 text-sm border backdrop-blur-sm ${
                       submitStatus.type === 'success' 
                         ? 'bg-green-500/20 border-green-400/30 text-green-100' 
                         : 'bg-red-500/20 border-red-400/30 text-red-100'
@@ -188,7 +188,7 @@ const Contact = () => {
                   <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[10px] text-white/70 mb-1 font-medium">FULL NAME *</label>
+                        <label className="block text-xs text-white/70 mb-1 font-medium">FULL NAME *</label>
                         <input
                           type="text"
                           name="name"
@@ -200,7 +200,7 @@ const Contact = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] text-white/70 mb-1 font-medium">EMAIL *</label>
+                        <label className="block text-xs text-white/70 mb-1 font-medium">EMAIL *</label>
                         <input
                           type="email"
                           name="email"
@@ -215,7 +215,7 @@ const Contact = () => {
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[10px] text-white/70 mb-1 font-medium">PHONE</label>
+                        <label className="block text-xs text-white/70 mb-1 font-medium">PHONE</label>
                         <input
                           type="tel"
                           name="phone"
@@ -226,7 +226,7 @@ const Contact = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] text-white/70 mb-1 font-medium">SUBJECT</label>
+                        <label className="block text-xs text-white/70 mb-1 font-medium">SUBJECT</label>
                         <input
                           type="text"
                           name="subject"
@@ -239,7 +239,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] text-white/70 mb-1 font-medium">MESSAGE *</label>
+                      <label className="block text-xs text-white/70 mb-1 font-medium">MESSAGE *</label>
                       <textarea
                         name="message"
                         value={formData.message}
@@ -254,7 +254,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full py-3 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2
+                      className={`w-full py-3 rounded-xl font-semibold text-base transition-all flex items-center justify-center gap-2
                         ${isSubmitting 
                           ? 'bg-white/20 text-white/50 cursor-not-allowed backdrop-blur-sm' 
                           : 'bg-red-600 hover:bg-red-700 text-white active:scale-[0.97] shadow-lg'
@@ -272,8 +272,8 @@ const Contact = () => {
           <div className="mt-8">
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-xl">
               <div className="p-4 border-b border-white/20">
-                <h3 className="text-base font-semibold text-white">Our Studio Location</h3>
-                <p className="text-white/70 text-xs">Hosur, Tamil Nadu</p>
+                <h3 className="text-lg font-semibold text-white">Location</h3>
+                <p className="text-white/70 text-sm">Hosur, Tamil Nadu</p>
               </div>
               <div className="h-56">
                 <iframe

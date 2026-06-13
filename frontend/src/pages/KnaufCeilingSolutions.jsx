@@ -117,14 +117,14 @@ const ProductDetail = ({ product, onBack }) => {
   return (
     <div className="min-h-screen bg-zinc-50">
       {/* Sticky Header */}
-      <div className="sticky top-0 z-50 bg-white border-b shadow-sm py-4 px-6">
-        <button 
-          onClick={onBack} 
-          className="flex items-center gap-2 text-zinc-600 hover:text-red-600 font-medium transition-colors"
-        >
-          <span className="text-xl">←</span> Back to Ceiling Solutions
-        </button>
-      </div>
+      <div className="sticky top-0 z-50 inline-block border-b shadow-sm py-4 px-6">
+  <button 
+    onClick={onBack} 
+    className="flex items-center gap-2 text-zinc-600 hover:text-red-600 font-medium transition-colors"
+  >
+    <span className="text-xl">←</span> Back to Ceiling Solutions
+  </button>
+</div>
 
       <div className="max-w-6xl mx-auto px-5 pt-8 pb-16">
         <div className="grid lg:grid-cols-5 gap-8">

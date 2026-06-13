@@ -149,7 +149,7 @@ const Donaire = () => {
             </div>
 
             {/* Carpet Tiles & Planks Brands */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {/* <div className="flex flex-wrap justify-center gap-4 mb-12">
               {['PP Carpet Tiles', 'Nylon Carpet Tiles', 'Carpet Planks'].map((brand, index) => (
                 <span
                   key={index}
@@ -158,7 +158,7 @@ const Donaire = () => {
                   {brand}
                 </span>
               ))}
-            </div>
+            </div> */}
 
             {/* Carpet Images Grid - 27 images */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
