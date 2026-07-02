@@ -58,8 +58,8 @@ const InteriorExterior = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Max Exterior</h2>
               <div className="prose prose-lg max-w-none leading-relaxed">
-                <p>Max Exterior from Fundermax is a highly durable exterior wall cladding product that is constantly undergoing further development.</p>
-                <p>Now you can even choose your very own individual decor for your rainscreen cladding. It offers consistent protection and uncompromising strength as a contemporary, cost-effective rainscreen facade resistant to all external influences.</p>
+                <p>Max Exterior from Fundermax, is a highly durable exterior wall cladding product that is constantly undergoing further development to ensure both of these aspects can be depended upon. Just as the range of rainscreen applications is becoming increasingly diverse, so the range of decors is also achieving continually new dimensions in terms of nuances and variety.</p>
+                <p>Now you can even choose your very own individual decor for your rainscreen cladding so that you can really express your creativity. FunderMax exterior wall cladding collection remains true to its success factors and, whatever decor is used, will always stand for consistent protection and uncompromising strength. As a contemporary, cost effective rainscreen facade it is resistant in the face of all external influences.</p>
               </div>
             </div>
 
@@ -68,10 +68,10 @@ const InteriorExterior = () => {
 
   <div className="prose prose-lg max-w-none leading-relaxed">
     <p>
-      M.look is an architectural facade panel with heavy-duty, reinforced glass fiber, predominantly mineral, non-combustible core and highly weather-resistant decorative surface.
+     M.look is an architectural facade panel with heavy duty, reinforced glass fiber, predominantly mineral, non-combustible core with a highly weather resistant decorative surface. The decorative surface is characterized above all by high scratch resistance, light fastness, impact resistance, anti-graffiti properties, ease of cleaning and hail resistance. Properties tested in accordance with EN438-2.
     </p>
     <p>
-      It offers high scratch resistance, light fastness, impact resistance, anti-graffiti properties, and hail resistance. Suitable for A2-s1,d0 fire classification.
+     The greatest degree of freedom and creativity in fire-resistant material for architecturally limitless ideas. m.look Exterior stands up to even the most adverse weather and environmental influences and skillfully combines the required safety with style. m.look Exterior decorates buildings like a fine piece of clothing - inside and out. And all the while, it resists exterior influences without complaint. m.look is suitable for all applications that must adhere to the reaction to fire classification of A2-s1,d0 according to EN 13501-1, combining the desired safety with style.
     </p>
   </div>
 
@@ -120,24 +120,11 @@ const InteriorExterior = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Max RE2</h2>
               <p className="text-lg leading-relaxed">
-                Max Resistance is a duromer high-pressure laminate with a double-cured polyurethane acrylic coating. It is highly resistant to solvents, acids, and chemicals while remaining easy to clean and disinfect.
+               Max Resistance is a duromer high pressure laminate (HPL), produced in laminate presses, under high pressure at high temperature, in accordance with EN 438-4, type CGS. Due to its scientifically developed, double-cured polyurethane acrylic coating, Max Resistance stands up to the toughest tests unaffected by solvents, most acids and the harshest chemicals. Easy-to-clean and disinfect and at the same time wear and scratch resistant, this innovative material significantly extends the life cycle of your laboratory work surface.
               </p>
             </div>
 
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Star Favorit</h2>
-              <p className="text-lg leading-relaxed mb-6">
-                Fundermax Star Favorit panels are melamine resin laminated flat-pressed panels suitable for interior applications for all types of carcass furniture in apartment and commercial buildings.
-              </p>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Star Favorit 2 Applications</h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-lg">
-                {['Restroom Cubicles', 'Fumehoods', 'Laboratory Table Tops'].map((app, i) => (
-                  <li key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl">
-                    <span className="text-red-600">•</span> {app}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            
           </div>
         </div>
       </section>

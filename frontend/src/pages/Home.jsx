@@ -98,7 +98,7 @@ const Home = () => {
 
             <div className="max-w-4xl mx-auto space-y-6 text-base sm:text-lg md:text-xl leading-relaxed text-gray-100">
               <p>
-                JPK Interio is a leading authorized distributor of premium interior and exterior
+                JPK Interio is a leading authorized distributors & dealer of premium interior and exterior
                 solutions, including ceiling and flooring systems. We are an authorized license partner
                 for FunderMax HPL cladding and a trusted distributor for renowned brands such as VOX
                 Ceiling & Wall Panels, Knauf Armstrong ceiling tiles, Action TESA laminate flooring,

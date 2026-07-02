@@ -5,8 +5,23 @@ export default function Awards() {
   const [featured, setFeatured] = useState([]);
   const [others, setOthers] = useState([]);
 
-  // Static Achievements
+  // Static Achievements - Updated with new awards
   const achievements = [
+    { 
+      year: 2025, 
+      title: 'Best Business Awards', 
+      description: 'Recognized for outstanding business performance and industry leadership.' 
+    },
+    { 
+      year: 2024, 
+      title: 'National Infrastructure Icon Awards', 
+      description: 'Honored for excellence in infrastructure and interior design projects.' 
+    },
+    { 
+      year: 2024, 
+      title: 'Fundermax Awards', 
+      description: 'Awarded for exceptional partnership and outstanding project execution with Fundermax.' 
+    },
     { year: 2024, title: 'Best Interior Design Award', description: 'Recognized for innovative interior design and customer satisfaction.' },
     { year: 2024, title: 'Excellence in Innovation', description: 'Awarded for implementing cutting-edge design solutions and technology.' },
     { year: 2023, title: 'Customer Choice Award', description: 'Voted best by our customers for outstanding service and quality.' },
@@ -19,18 +34,9 @@ export default function Awards() {
   useEffect(() => {
     const allImages = [
       // Logo and main images
-      // '/images/awards/New_Project__83_-removebg-preview-225x300.png',
       '/images/awards/New_Project__83_-removebg-preview.png',
       '/images/awards/vecteezy_ai-generated-podium-with-golden-light-rays-background_36042916-scaled.jpeg',
-      // '/images/awards/WhatsApp_Image_2024-10-28_at_2.38.01_PM__1_-removebg-preview-224x300.png',
-      // '/images/awards/WhatsApp_Image_2024-10-28_at_2.38.01_PM__1_-removebg-preview.png',
-      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-300x200.jpeg',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-768x513.jpeg',
-      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-1024x684.jpeg',
-      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-1536x1025.jpeg',
-      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1.jpeg',
-      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1-225x300.jpeg',
-      // '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1-768x1024.jpeg',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.jpeg'
     ];
 
@@ -91,7 +97,6 @@ export default function Awards() {
                   className="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 cursor-pointer group relative bg-gray-100"
                   onClick={() => setSelectedImage(img)}
                 >
-                  {/* For transparent PNG images, use contain instead of cover */}
                   <img
                     src={img}
                     alt={`Featured Award ${idx + 1}`}
