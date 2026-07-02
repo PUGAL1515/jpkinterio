@@ -31,7 +31,7 @@ function App() {
       <div className="min-h-screen bg-gray-50 font-sans">
         <Nav />
 
-        <main className="pt-20">
+        <main className="pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
