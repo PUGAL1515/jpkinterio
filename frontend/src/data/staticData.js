@@ -31,8 +31,8 @@ and excellence.`,
     },
    numbers: [
   { value: "970+", label: "SKUS", image: `${publicPath}/images/image01.png` },
-  { value: "860+", label: "Projects", image: `${publicPath}/images/image02.png` },
-  { value: "1000", label: "Completed", image: `${publicPath}/images/image03.png` }
+  { value: "1000+", label: "Projects", image: `${publicPath}/images/image02.png` },
+  { value: "860+", label: "Completed", image: `${publicPath}/images/image03.png` }
 ],
     md_section: {
       title: 'Leadership Team',
@@ -91,8 +91,8 @@ and excellence.`,
     },
     numbers: [
   { value: "970+", label: "SKUS", image: `${publicPath}/images/image01.png` },
-  { value: "860+", label: "Projects", image: `${publicPath}/images/image02.png` },
-  { value: "1000", label: "Completed", image: `${publicPath}/images/image03.png` }
+  { value: "1000+", label: "Projects", image: `${publicPath}/images/image02.png` },
+  { value: "860+", label: "Completed", image: `${publicPath}/images/image03.png` }
 ],
     team: {
       title: 'Leadership Team',
