@@ -4,12 +4,12 @@ export const staticData = {
   home: {
     header: {
       title: 'WELCOME TO JPK INTERIO',
-      description: 'JPK Interio is a trusted distributor for premium interior solutions including FunderMax HPL cladding, VOX panels, Armstrong ceiling tiles, Tesa laminate flooring, vinyl flooring, Jindal MLC pipes, Vivre panels, and Donaire carpets. Based in Hosur, we specialize in turnkey projects across South India, delivering stylish, functional, and customized spaces that inspire.',
+      description: 'JPK Interio is a trusted distributors and dealer for premium interior solutions including FunderMax HPL cladding, VOX panels, Armstrong ceiling tiles, Tesa laminate flooring, vinyl flooring, Jindal MLC pipes, Vivre panels, and Donaire carpets. Based in Hosur, we specialize in turnkey projects across South India, delivering stylish, functional, and customized spaces that inspire.',
       image: `${publicPath}/images/header01.png`
     },
     about: {
       title: 'TRANSFORMING SPACES WITH EXCELLENCE',
-      description: `JPK Interio is a leading authorized distributor and dealer of premium building and interior 
+      description: `JPK Interio is a leading authorized distributors and dealer of premium building and interior 
 solutions, including FunderMax HPL cladding, VOX ceiling and wall panels, Knauf 
 Armstrong ceiling tiles, Action TESA laminate flooring, Responsive vinyl flooring, Jindal 
 MLC pipes, Vivre panels, and Donaire carpets.
@@ -31,8 +31,8 @@ and excellence.`,
     },
    numbers: [
   { value: "970+", label: "SKUS", image: `${publicPath}/images/image01.png` },
-  { value: "1000+", label: "Projects", image: `${publicPath}/images/image02.png` },
-  { value: "3000", label: "Completed", image: `${publicPath}/images/image03.png` }
+  { value: "860+", label: "Projects", image: `${publicPath}/images/image02.png` },
+  { value: "1000", label: "Completed", image: `${publicPath}/images/image03.png` }
 ],
     md_section: {
       title: 'Leadership Team',
@@ -63,7 +63,7 @@ and excellence.`,
   about: {
     hero: {
       title: 'About Us',
-      content: `JPK Interio is a leading authorized distributor and dealer of premium building and interior 
+      content: `JPK Interio is a leading authorized distributors and dealer of premium building and interior 
 solutions, including FunderMax HPL cladding, VOX ceiling and wall panels, Knauf 
 Armstrong ceiling tiles,          Action TESA laminate flooring, Responsive vinyl flooring, Jindal 
 MLC pipes, Vivre panels, and Donaire carpets.
@@ -91,8 +91,8 @@ and excellence.`,
     },
     numbers: [
   { value: "970+", label: "SKUS", image: `${publicPath}/images/image01.png` },
-  { value: "1000+", label: "Projects", image: `${publicPath}/images/image02.png` },
-  { value: "3000", label: "Completed", image: `${publicPath}/images/image03.png` }
+  { value: "860+", label: "Projects", image: `${publicPath}/images/image02.png` },
+  { value: "1000", label: "Completed", image: `${publicPath}/images/image03.png` }
 ],
     team: {
       title: 'Leadership Team',
