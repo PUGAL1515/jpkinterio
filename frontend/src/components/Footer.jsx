@@ -4,75 +4,71 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-white text-black mt-10 border-t border-gray-200">
-      
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 items-start">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 py-8 lg:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
         
-        {/* Logo + About */}
-        <div className="flex flex-col items-start">
-          <Link to="/" className="mb-4">
+        {/* Logo + About Section - Moved Up */}
+        <div className="lg:col-span-5 flex flex-col -mt-2 lg:-mt-1">
+          <Link to="/" className="mb-4 inline-block">
             <img
               src="/images/products/jpk_logo-transformed-removebg-preview-1.png"
               alt="JPK Interio Logo"
-              className="h-12 w-auto animate-bounce"
+              className="h-14 w-auto"
             />
           </Link>
 
-          <h2 className="text-xl font-bold mb-2 text-black">
-            <span className="animate-pulse text-red-600">
-              Welcome to JPK Interio
-            </span>
+          <h2 className="text-2xl font-bold mb-5 text-black">
+            Welcome to <span className="text-red-600">JPK Interio</span>
           </h2>
 
           <p className="text-sm text-gray-700 leading-relaxed">
-            The foremost authorized distributor and dealer for FunderMax HPL
-            cladding, VOX Ceiling and Wall panels, Knauf Armstrong Ceiling
-            tiles, Action TESA laminate flooring, Responsive Vinyl Flooring,
-            Jindal MLC Pipes, Vivre Panels, and Donaire Carpets. Based in
-            Hosur, Tamil Nadu, India.
+            JPK Interio is a leading authorized distributors and dealer of premium
+            interior and exterior solutions, including ceiling and flooring systems.
+            We are an authorized license partner for <strong>FunderMax HPL Cladding</strong> and a trusted
+            distributor for renowned brands such as <strong>VOX Ceiling &amp; Wall Panels</strong>,
+            <strong> Knauf Armstrong Ceiling Tiles</strong>, <strong>Action TESA Laminate Flooring</strong>,
+            <strong> Responsive Vinyl Flooring</strong>, <strong>Jindal MLC Pipes</strong>,
+            <strong> Vivre Interior &amp; Exterior Panels</strong>, <strong>Donaire Carpets</strong>,
+            and <strong>Linearsil Metal Ceilings</strong>. Headquartered in Hosur, Tamil Nadu,
+            India, we specialize in turnkey interior and exterior project execution
+            for commercial, residential, hospitality, healthcare, and industrial
+            sectors, delivering aesthetically appealing and highly functional spaces
+            that create a lasting impact.
           </p>
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h2 className="text-xl font-bold mb-4 text-black">
-            <span className="animate-pulse text-red-600">Quick Links</span>
-          </h2>
-
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="hover:text-red-600 transition">Home</Link></li>
-            <li><Link to="/about" className="hover:text-red-600 transition">About Us</Link></li>
-            <li><Link to="/projects" className="hover:text-red-600 transition">Projects</Link></li>
-            <li><Link to="/gallery" className="hover:text-red-600 transition">Gallery</Link></li>
-            <li><Link to="/contact" className="hover:text-red-600 transition">Contact Us</Link></li>
+        <div className="lg:col-span-2">
+          <h3 className="text-lg font-semibold mb-4 text-red-600">Quick Links</h3>
+          <ul className="space-y-2.5 text-sm">
+            <li><Link to="/" className="hover:text-red-600 transition-colors">Home</Link></li>
+            <li><Link to="/about" className="hover:text-red-600 transition-colors">About Us</Link></li>
+            <li><Link to="/projects" className="hover:text-red-600 transition-colors">Projects</Link></li>
+            <li><Link to="/gallery" className="hover:text-red-600 transition-colors">Gallery</Link></li>
+            <li><Link to="/contact" className="hover:text-red-600 transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
-        {/* Products (FIXED: no more href="#" ) */}
-        <div>
-          <h2 className="text-xl font-bold mb-4 text-black">
-            <span className="animate-pulse text-red-600">Products</span>
-          </h2>
-
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/fundermax" className="hover:text-red-600 transition">Fundermax India</Link></li>
-            <li><Link to="/vox-india" className="hover:text-red-600 transition">Vox India</Link></li>
-            <li><Link to="/action-tesa" className="hover:text-red-600 transition">Action TESA</Link></li>
-            <li><Link to="/responsive-flooring" className="hover:text-red-600 transition">Responsive Flooring</Link></li>
-            <li><Link to="/knauf-ceilings" className="hover:text-red-600 transition">Knauf Ceilings</Link></li>
-            <li><Link to="/jindal-pipes" className="hover:text-red-600 transition">Jindal Pipes</Link></li>
-            <li><Link to="/vivre-panels" className="hover:text-red-600 transition">Vivre Panels</Link></li>
-            <li><Link to="/donaire" className="hover:text-red-600 transition">Donaire</Link></li>
+        {/* Products */}
+        <div className="lg:col-span-3">
+          <h3 className="text-lg font-semibold mb-4 text-red-600">Our Products</h3>
+          <ul className="space-y-2.5 text-sm">
+            <li><Link to="/products/about-fundermax" className="hover:text-red-600 transition-colors">Fundermax-HPL</Link></li>
+            <li><Link to="/products/voxindia" className="hover:text-red-600 transition-colors">Vox India</Link></li>
+            <li><Link to="/products/vivre-panels" className="hover:text-red-600 transition-colors">Vivre Panels</Link></li>
+            <li><Link to="/products/knauf-ceiling-solutions" className="hover:text-red-600 transition-colors">Knauf Ceilings</Link></li>
+            <li><Link to="/products/action-tesa" className="hover:text-red-600 transition-colors">Action TESA Flooring</Link></li>
+            <li><Link to="/products/donaire" className="hover:text-red-600 transition-colors">Donaire Corpets</Link></li>
+            <li><Link to="/products/responsive/lvt" className="hover:text-red-600 transition-colors">Responsive Vinyl Flooring</Link></li>
+            <li><Link to="/products/jindal" className="hover:text-red-600 transition-colors">Jindal MLC Pipes</Link></li>
           </ul>
         </div>
 
-        {/* Contact */}
-        <div>
-          <h2 className="text-xl font-bold mb-4 text-black">
-            <span className="animate-pulse text-red-600">Contact</span>
-          </h2>
-
-          <div className="flex flex-col space-y-2 text-sm text-gray-700">
-            
+        {/* Contact Info */}
+        <div className="lg:col-span-2">
+          <h3 className="text-lg font-semibold mb-4 text-red-600">Contact Us</h3>
+          
+          <div className="space-y-4 text-sm text-gray-700">
             <address className="not-italic leading-relaxed">
               47, Taluk Office Road,<br />
               Next to New Robin Stores,<br />
@@ -80,31 +76,32 @@ const Footer = () => {
               Hosur, Tamil Nadu 635109
             </address>
 
-            <p>
-              <strong className="text-red-600">Phone:</strong>{" "}
-              <a href="tel:+918015250234" className="hover:text-red-600 transition">
+            <div>
+              <p className="font-medium text-red-600 mb-1">Phone:</p>
+              <a href="tel:+918015250234" className="block hover:text-red-600 transition-colors">
                 +91-80152 50234
-              </a>{" "}
-              |{" "}
-              <a href="tel:+919080659559" className="hover:text-red-600 transition">
+              </a>
+              <a href="tel:+919080659559" className="block hover:text-red-600 transition-colors">
                 +91-90806 59559
               </a>
-            </p>
+            </div>
 
-            <p>
-              <strong className="text-red-600">Email:</strong>{" "}
-              <a href="mailto:jpkinterio.hsr@gmail.com" className="hover:text-red-600 transition">
+            <div>
+              <p className="font-medium text-red-600 mb-1">Email:</p>
+              <a 
+                href="mailto:jpkinterio.hsr@gmail.com" 
+                className="hover:text-red-600 transition-colors break-words"
+              >
                 jpkinterio.hsr@gmail.com
               </a>
-            </p>
-
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="bg-red-600 text-center text-sm py-3 mt-6 text-white">
-        © 2026 JPK Interio. All rights reserved.
+      {/* Bottom Bar */}
+      <div className="bg-red-600 py-4 text-center text-white text-sm">
+        © {new Date().getFullYear()} JPK Interio. All rights reserved.
       </div>
     </footer>
   );

@@ -128,7 +128,7 @@ const Nav = () => {
                     className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-3 z-50 border border-gray-100"
                   >
                     <div className="text-sm text-gray-800">
-                      {/* Fundermax */}
+                      {/* Fundermax - First */}
                       <div
                         className="relative"
                         onMouseEnter={handleFundermaxMouseEnter}
@@ -138,7 +138,7 @@ const Nav = () => {
                           onClick={() => setFundermaxOpen(!fundermaxOpen)}
                           className="flex w-full justify-between items-center px-5 py-2.5 hover:bg-red-50 text-left"
                         >
-                          Fundermax
+                          Fundermax-HPL
                           <svg className={`w-3 h-3 transition-transform ${fundermaxOpen ? 'rotate-90' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M6 6l6 4-6 4V6z" clipRule="evenodd" />
                           </svg>
@@ -151,10 +151,14 @@ const Nav = () => {
                         )}
                       </div>
 
+                      {/* Updated Order */}
                       <Link to="/products/voxindia" className="block px-5 py-2.5 hover:bg-red-50">Vox India</Link>
-                      <Link to="/products/action-tesa" className="block px-5 py-2.5 hover:bg-red-50">Action TESA</Link>
+                      <Link to="/products/vivre-panels" className="block px-5 py-2.5 hover:bg-red-50">Vivre Panels</Link>
+                      <Link to="/products/knauf-ceiling-solutions" className="block px-5 py-2.5 hover:bg-red-50">Knauf Ceilings</Link>
+                      <Link to="/products/action-tesa" className="block px-5 py-2.5 hover:bg-red-50">Action TESA Flooring</Link>
+                      <Link to="/products/donaire" className="block px-5 py-2.5 hover:bg-red-50">Donaire Corpets</Link>
 
-                      {/* Responsive */}
+                      {/* Responsive Flooring */}
                       <div
                         className="relative"
                         onMouseEnter={handleResponsiveMouseEnter}
@@ -164,7 +168,7 @@ const Nav = () => {
                           onClick={() => setResponsiveOpen(!responsiveOpen)}
                           className="flex w-full justify-between items-center px-5 py-2.5 hover:bg-red-50 text-left"
                         >
-                          Responsive
+                          Responsive Vinyl Flooring
                           <svg className={`w-3 h-3 transition-transform ${responsiveOpen ? 'rotate-90' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M6 6l6 4-6 4V6z" clipRule="evenodd" />
                           </svg>
@@ -173,17 +177,13 @@ const Nav = () => {
                           <div className="absolute top-0 left-full ml-2 w-52 bg-white rounded-xl shadow-xl py-2 border border-gray-100 z-50">
                             <Link to="/products/responsive/lvt" className="block px-5 py-2 hover:bg-red-50">LVT Overview</Link>
                             <Link to="/products/responsive/flooring-segments" className="block px-5 py-2 hover:bg-red-50">Flooring Segments</Link>
-                            <Link to="/products/responsive/vinylflooring" className="block px-5 py-2 hover:bg-red-50">vinyl Flooring</Link>
+                            <Link to="/products/responsive/vinylflooring" className="block px-5 py-2 hover:bg-red-50">Vinyl Flooring</Link>
                             <Link to="/products/responsive/project-completed" className="block px-5 py-2 hover:bg-red-50">Project Completed</Link>
-
                           </div>
                         )}
                       </div>
 
-                      <Link to="/products/vivre-panels" className="block px-5 py-2.5 hover:bg-red-50">Vivre Panels</Link>
-                      <Link to="/products/donaire" className="block px-5 py-2.5 hover:bg-red-50">Donaire</Link>
-                      <Link to="/products/knauf-ceiling-solutions" className="block px-5 py-2.5 hover:bg-red-50">Knauf Ceiling Solutions</Link>
-                      <Link to="/products/jindal" className="block px-5 py-2.5 hover:bg-red-50">Jindal</Link>
+                      <Link to="/products/jindal" className="block px-5 py-2.5 hover:bg-red-50">Jindal MLC Pipes</Link>
                     </div>
                   </div>
                 )}
@@ -202,7 +202,6 @@ const Nav = () => {
                 Contact Us
               </Link>
 
-              {/* Updated Get a Quote button - opens modal */}
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="bg-red-600 text-white px-5 py-2 rounded-xl font-medium hover:bg-red-700 transition shadow-sm"
@@ -244,12 +243,13 @@ const Nav = () => {
 
                 {mobileProductsOpen && (
                   <div className="pl-6 space-y-1 mt-1">
+                    {/* Fundermax - First */}
                     <div>
                       <button
                         onClick={() => setMobileFundermaxOpen(!mobileFundermaxOpen)}
                         className="w-full flex justify-between py-3 px-4 hover:bg-red-50 rounded-xl"
                       >
-                        Fundermax
+                        Fundermax-HPL
                         <svg className={`w-4 h-4 transition-transform ${mobileFundermaxOpen ? 'rotate-90' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M6 6l6 4-6 4V6z" clipRule="evenodd" />
                         </svg>
@@ -264,15 +264,20 @@ const Nav = () => {
                       )}
                     </div>
 
+                    {/* Updated Order */}
                     <Link to="/products/voxindia" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Vox India</Link>
-                    <Link to="/products/action-tesa" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Action TESA</Link>
+                    <Link to="/products/vivre-panels" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Vivre Panels</Link>
+                    <Link to="/products/knauf-ceiling-solutions" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Knauf Ceilings</Link>
+                    <Link to="/products/action-tesa" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Action TESA Flooring</Link>
+                    <Link to="/products/donaire" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Donaire Corpets</Link>
 
+                    {/* Responsive Flooring */}
                     <div>
                       <button
                         onClick={() => setMobileResponsiveOpen(!mobileResponsiveOpen)}
                         className="w-full flex justify-between py-3 px-4 hover:bg-red-50 rounded-xl"
                       >
-                        Responsive
+                        Responsive Vinyl Flooring
                         <svg className={`w-4 h-4 transition-transform ${mobileResponsiveOpen ? 'rotate-90' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M6 6l6 4-6 4V6z" clipRule="evenodd" />
                         </svg>
@@ -281,17 +286,13 @@ const Nav = () => {
                         <div className="pl-6 space-y-1">
                           <Link to="/products/responsive/lvt" className="block py-2.5 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>LVT Overview</Link>
                           <Link to="/products/responsive/flooring-segments" className="block py-2.5 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Flooring Segments</Link>
-                          <Link to="/products/responsive/vinylflooring" className="block py-2.5 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>vinyl Flooring</Link>
+                          <Link to="/products/responsive/vinylflooring" className="block py-2.5 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Vinyl Flooring</Link>
                           <Link to="/products/responsive/project-completed" className="block py-2.5 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Project Completed</Link>
-
                         </div>
                       )}
                     </div>
 
-                    <Link to="/products/vivre-panels" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Vivre Panels</Link>
-                    <Link to="/products/donaire" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Donaire</Link>
-                    <Link to="/products/knauf-ceiling-solutions" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Knauf Ceiling Solutions</Link>
-                    <Link to="/products/jindal" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Jindal</Link>
+                    <Link to="/products/jindal" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Jindal MLC Pipes</Link>
                   </div>
                 )}
               </div>
@@ -301,7 +302,6 @@ const Nav = () => {
               <Link to="/awards" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Awards</Link>
               <Link to="/contact" className="block py-3 px-4 hover:bg-red-50 rounded-xl" onClick={() => setMobileOpen(false)}>Contact Us</Link>
 
-              {/* Updated mobile Get a Quote button - opens modal */}
               <button
                 onClick={() => {
                   setMobileOpen(false);
