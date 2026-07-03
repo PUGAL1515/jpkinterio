@@ -80,16 +80,16 @@ const Home = () => {
           </div>
         ))}
         
-        {/* Hero Content - Fixed overlapping issues */}
+        {/* Hero Content - Decreased size for desktop */}
         <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-6 z-10">
-          <div className="text-center max-w-5xl text-white w-full">
-            {/* Title - Increased size for mobile and tablet */}
-            <h1 className="text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-3 sm:mb-6 leading-tight tracking-tight">
+          <div className="text-center max-w-4xl text-white w-full">
+            {/* Title - Smaller on desktop */}
+            <h1 className="text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold mb-3 sm:mb-6 leading-tight tracking-tight">
               WELCOME TO JPK INTERIO
             </h1>
             
-            {/* Description - Increased size for mobile and tablet */}
-            <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 md:space-y-6 text-base xs:text-lg sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-gray-100 px-1 sm:px-4">
+            {/* Description - Smaller on desktop */}
+            <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 md:space-y-6 text-base xs:text-lg sm:text-lg md:text-base lg:text-base xl:text-lg leading-relaxed text-gray-100 px-1 sm:px-4">
               <p>
                 JPK Interio is a leading authorized distributors & dealer of premium interior and exterior
                 solutions, including ceiling and flooring systems. We are an authorized license partner
@@ -107,11 +107,11 @@ const Home = () => {
               </p>
             </div>
             
-            {/* CTA Button - Increased size for mobile and tablet */}
-            <div className="mt-4 sm:mt-8 md:mt-10">
+            {/* CTA Button - Smaller on desktop */}
+            <div className="mt-4 sm:mt-8 md:mt-8">
               <a
                 href="/about"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl font-semibold text-base xs:text-lg sm:text-lg md:text-xl shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 sm:px-8 md:px-8 lg:px-8 py-3 sm:py-4 md:py-4 lg:py-4 rounded-xl font-semibold text-base xs:text-lg sm:text-lg md:text-base lg:text-base shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 Discover More
               </a>
