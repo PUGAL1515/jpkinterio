@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import VivreCatalogueSection from './VivreCatalogueSection';
+import VivreProductModal from './VivreProductModal';
 
 const VivrePanels = () => {
-  // Generate Vivre images from 1 to 9 (JPG format)
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // Generate Vivre images from 1 to 9 (for existing gallery)
   const vivreImages = Array.from({ length: 9 }, (_, i) => {
     const id = i + 1;
     return {
@@ -11,39 +15,40 @@ const VivrePanels = () => {
     };
   });
 
+  const handleViewDetails = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+
   return (
     <div>
       {/* Hero Section */}
-      
-     <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
-  <div className="max-w-7xl mx-auto text-center">
+      <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex justify-center mb-5">
+            <img 
+              src="/images/customers/05.png" 
+              alt="Vivre Panels Logo" 
+              className="h-14 md:h-20 object-contain"
+            />
+          </div>
 
-    {/* 🔥 Logo */}
-    <div className="flex justify-center mb-5">
-      <img 
-        src="/images/customers/05.png" 
-        alt="Vivre Panels Logo" 
-        className="h-14 md:h-20 object-contain"
-      />
-    </div>
+          <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
+            Vivre Panels
+          </span>
 
-    {/* Tag */}
-    <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
-      Vivre Panels
-    </span>
+          <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
+            Transform Your Spaces with Vivre Panels
+          </h1>
 
-    {/* Heading */}
-    <h1 className="text-2xl md:text-4xl font-extrabold mb-3 text-black leading-tight">
-      Transform Your Spaces with Vivre Panels
-    </h1>
-
-    {/* Description */}
-    <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
-      Premium decorative panels that blend artistry with functionality for modern interiors
-    </p>
-
-  </div>
-</section>
+          <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
+            Premium decorative panels that blend artistry with functionality for modern interiors
+          </p>
+        </div>
+      </section>
 
       {/* About Vivre Panels Section */}
       <section className="bg-white py-16 px-6 md:px-16">
@@ -153,7 +158,7 @@ const VivrePanels = () => {
         </div>
       </section>
 
-      {/* Product Gallery Section */}
+      {/* Product Gallery Section (1-9) */}
       <section className="bg-white py-16 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -164,7 +169,6 @@ const VivrePanels = () => {
             </p>
           </div>
 
-          {/* Image Grid - 9 images */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {vivreImages.map((image) => (
               <div 
@@ -191,6 +195,9 @@ const VivrePanels = () => {
           </div>
         </div>
       </section>
+
+      {/* ==================== NEW CATALOGUE SECTION ==================== */}
+      <VivreCatalogueSection onViewDetails={handleViewDetails} />
 
       {/* Applications Section */}
       <section className="bg-gray-50 py-16 px-6 md:px-16">
@@ -227,6 +234,13 @@ const VivrePanels = () => {
           </div>
         </div>
       </section>
+
+      {/* Product Detail Modal */}
+      <VivreProductModal 
+        product={selectedProduct} 
+        isOpen={!!selectedProduct} 
+        onClose={closeModal} 
+      />
     </div>
   );
 };
