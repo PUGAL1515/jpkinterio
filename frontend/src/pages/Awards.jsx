@@ -34,10 +34,10 @@ export default function Awards() {
   useEffect(() => {
     const allImages = [
       // Logo and main images
-      '/images/awards/New_Project__83_-removebg-preview.png',
-      '/images/awards/vecteezy_ai-generated-podium-with-golden-light-rays-background_36042916-scaled.jpeg',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-768x513.jpeg',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.jpeg'
+      '/images/awards/New_Project__83_-removebg-preview.webp',
+      '/images/awards/vecteezy_ai-generated-podium-with-golden-light-rays-background_36042916-scaled.webp',
+      '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-768x513.webp',
+      '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.webp'
     ];
 
     // First 5 as Featured Awards, rest as Additional Recognition
@@ -105,7 +105,9 @@ export default function Awards() {
                         ? 'object-contain p-4' 
                         : 'object-cover'
                     }`}
-                    onError={(e) => { e.target.src = '/images/header02.png'; }}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => { e.target.src = '/images/header02.webp'; }}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
                     <span className="text-white opacity-0 group-hover:opacity-100 font-semibold">
@@ -137,7 +139,9 @@ export default function Awards() {
                         ? 'object-contain p-2'
                         : 'object-cover'
                     }`}
-                    onError={(e) => { e.target.src = '/images/header02.png'; }}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => { e.target.src = '/images/header02.webp'; }}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white text-sm font-semibold">View</span>
@@ -168,7 +172,7 @@ export default function Awards() {
               alt="Award Preview"
               className="w-full h-auto max-h-[85vh] object-contain rounded-lg bg-gray-900"
               onError={(e) => {
-                e.target.src = '/images/header02.png';
+                e.target.src = '/images/header02.webp';
               }}
             />
           </div>

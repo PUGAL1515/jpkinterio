@@ -19,7 +19,7 @@ const Donaire = () => {
     const id = i + 1;
     return {
       id: id,
-      src: `/images/products/donaire/carpet/Carpet${id}.png`,
+      src: `/images/products/donaire/carpet/Carpet${id}.webp`,
       alt: `Carpet Design ${id}`
     };
   });
@@ -33,10 +33,10 @@ const Donaire = () => {
           {/* 🔥 Logo */}
           <div className="flex justify-center mb-5">
             <img
-              src="/images/customers/06.png"
+              src="/images/customers/06.webp"
               alt="Donaire Carpets Logo"
               className="h-14 md:h-20 object-contain"
-            />
+             loading="lazy" decoding="async" />
           </div>
 
           {/* Tag */}
@@ -122,8 +122,10 @@ const Donaire = () => {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
-                        e.target.src = '/images/placeholder.png';
+                        e.target.src = '/images/placeholder.webp';
                         e.target.onerror = null;
                       }}
                     />
@@ -172,8 +174,10 @@ const Donaire = () => {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
-                        e.target.src = '/images/placeholder.png';
+                        e.target.src = '/images/placeholder.webp';
                         e.target.onerror = null;
                       }}
                     />

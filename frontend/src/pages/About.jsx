@@ -26,7 +26,7 @@ const About = () => {
               src={data.hero.image}
               alt="JPK Interio team and showroom"
               className="w-full h-full object-cover object-center rounded-lg"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <div className="md:w-1/2 w-full">
             {/* <span className="inline-block bg-red-600 text-white px-4 py-1 rounded-full font-medium mb-3 text-xs shadow-lg">About Us</span> */}
@@ -48,7 +48,7 @@ const About = () => {
       alt=""
       className="w-full h-full object-cover object-center brightness-75"
       onError={(e) => {
-        e.target.src = '/images/why-choose-jpkinterio.png';
+        e.target.src = '/images/why-choose-jpkinterio.webp';
       }}
     />
 
@@ -101,7 +101,7 @@ const About = () => {
                 src={item.image}
                 alt=""                    // Empty alt - decorative background image
                 className="absolute inset-0 w-full h-full object-cover opacity-20 rounded-3xl"
-              />
+               loading="lazy" decoding="async" />
               <div className="relative text-6xl sm:text-7xl font-extrabold text-red-600">{item.value}</div>
               <div className="relative mt-4 text-xl font-semibold text-gray-800">{item.label}</div>
             </div>
@@ -118,7 +118,7 @@ const About = () => {
     src={data.team.image}
     alt="Leadership team at JPK Interio"
     className="w-full h-full object-cover object-top"
-  />
+   loading="lazy" decoding="async" />
 </div>
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{data.team.title}</h3>
             <p className="text-gray-700 text-base md:text-lg">{data.team.subtitle}</p>
@@ -144,7 +144,7 @@ const About = () => {
       alt=""
       className="w-full h-full object-cover object-center brightness-75"
       onError={(e) => {
-        e.target.src = '/images/cta-bg-inspire-interior.png';
+        e.target.src = '/images/cta-bg-inspire-interior.webp';
       }}
     />
 

@@ -41,7 +41,7 @@ const VivreProductModal = ({ product, isOpen, onClose }) => {
                       src={product.src}
                       alt={product.name}
                       className="w-full max-h-[420px] object-contain rounded-2xl"
-                    />
+                     loading="lazy" decoding="async" />
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ const VivreProductModal = ({ product, isOpen, onClose }) => {
                         src={img}
                         alt={`Gallery ${idx + 1}`}
                         className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
+                       loading="lazy" decoding="async" />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                         <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
                           View
@@ -166,7 +166,7 @@ const VivreProductModal = ({ product, isOpen, onClose }) => {
                           src={imgSrc}
                           alt={`Design ${designCode}`}
                           className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
+                         loading="lazy" decoding="async" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-white text-xs font-mono px-3 py-1.5 rounded-lg border border-white/10">
                           #{designCode}

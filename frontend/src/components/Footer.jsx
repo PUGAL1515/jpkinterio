@@ -11,9 +11,11 @@ const Footer = () => {
         <div className="lg:col-span-5 flex flex-col -mt-2 lg:-mt-1">
           <Link to="/" className="mb-4 inline-block">
             <img
-              src="/images/products/jpk_logo-transformed-removebg-preview-1.png"
+              src="/images/products/jpk_logo-transformed-removebg-preview-1.webp"
               alt="JPK Interio Logo"
               className="h-14 w-auto"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
 

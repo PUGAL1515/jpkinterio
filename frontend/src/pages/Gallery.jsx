@@ -73,8 +73,10 @@ export default function Gallery() {
                   src={img.image}
                   alt={img.title}
                   className="w-full h-56 md:h-64 lg:h-72 object-cover group-hover:brightness-75 transition-all duration-300"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
-                    e.target.src = `${process.env.PUBLIC_URL}/images/header02.png`;
+                    e.target.src = `${process.env.PUBLIC_URL}/images/header02.webp`;
                   }}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
@@ -101,8 +103,10 @@ export default function Gallery() {
                   src={img}
                   alt={`Gallery ${idx + 1}`}
                   className="w-full h-40 md:h-48 lg:h-56 object-cover group-hover:brightness-75 transition-all duration-300"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
-                    e.target.src = `${process.env.PUBLIC_URL}/images/header02.png`;
+                    e.target.src = `${process.env.PUBLIC_URL}/images/header02.webp`;
                   }}
                 />
               </div>
@@ -128,8 +132,10 @@ export default function Gallery() {
               src={selectedImage}
               alt="Gallery Preview"
               className="w-full h-auto max-h-[85vh] object-contain bg-gray-100"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
-                e.target.src = `${process.env.PUBLIC_URL}/images/header02.png`;
+                e.target.src = `${process.env.PUBLIC_URL}/images/header02.webp`;
               }}
             />
             

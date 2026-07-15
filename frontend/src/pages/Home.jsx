@@ -6,9 +6,9 @@ const Home = () => {
   // Slider State
   const [currentSlide, setCurrentSlide] = useState(0);
   const headerImages = [
-    `${process.env.PUBLIC_URL}/images/header01.png`,
-    `${process.env.PUBLIC_URL}/images/header02.png`,
-    `${process.env.PUBLIC_URL}/images/header03.png`,
+    `${process.env.PUBLIC_URL}/images/header01.webp`,
+    `${process.env.PUBLIC_URL}/images/header02.webp`,
+    `${process.env.PUBLIC_URL}/images/header03.webp`,
   ];
   
   // Auto-rotate slides every 5 seconds
@@ -146,7 +146,7 @@ const Home = () => {
               src={data.about.image}
               alt="JPK Interio showroom and team"
               className="w-full rounded-2xl shadow-2xl"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <div className="md:w-1/2 w-full">
             <span className="inline-block bg-red-600 text-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-full font-medium mb-3 sm:mb-4 text-sm sm:text-base tracking-wider">
@@ -171,7 +171,7 @@ const Home = () => {
             src={data.why_choose.image}
             alt=""
             className="w-full h-full object-cover brightness-75"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/90" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto text-center space-y-5 sm:space-y-10">
@@ -210,7 +210,7 @@ const Home = () => {
                 src={item.image}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all"
-              />
+               loading="lazy" decoding="async" />
               <div className="relative z-10">
                 <div className="text-5xl xs:text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-red-600 mb-2 sm:mb-3">
                   {item.value}
@@ -243,7 +243,7 @@ const Home = () => {
                       src={data.md_section.image}
                       alt="Managing Director of JPK Interio"
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
-                    />
+                     loading="lazy" decoding="async" />
                     {/* Bottom Gradient Overlay (subtle) */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
@@ -294,7 +294,7 @@ const Home = () => {
             src={data.cta.image}
             alt=""
             className="w-full h-full object-cover brightness-75"
-          />
+           loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white space-y-4 sm:space-y-8">
@@ -334,7 +334,7 @@ const Home = () => {
                   src={logo}
                   alt={`Customer logo ${index + 1}`}
                   className="h-12 xs:h-14 sm:h-14 md:h-16 lg:h-20 object-contain opacity-80 hover:opacity-100 transition duration-300 transform hover:scale-110"
-                />
+                 loading="lazy" decoding="async" />
               ))}
               {/* Duplicate Loop for infinite scroll */}
               {data.customers.map((logo, index) => (
@@ -343,7 +343,7 @@ const Home = () => {
                   src={logo}
                   alt={`Customer logo ${index + 1}`}
                   className="h-12 xs:h-14 sm:h-14 md:h-16 lg:h-20 object-contain opacity-80 hover:opacity-100 transition duration-300 transform hover:scale-110"
-                />
+                 loading="lazy" decoding="async" />
               ))}
             </div>
           </div>

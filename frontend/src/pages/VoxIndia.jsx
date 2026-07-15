@@ -11,36 +11,36 @@ const VoxIndia = () => {
 
   // Gallery Filenames
   const wallFileNames = [
-    'imagecopy2.png', 'imagecopy3.png', 'imagecopy4.png',
-    'imagecopy5.png', 'imagecopy6.png', 'imagecopy7.png',
-    'imagecopy8.png', 'imagecopy9.png', 'imagecopy10.png',
-    'imagecopy11.png', 'imagecopy12.png', 'imagecopy13.png',
-    'imagecopy14.png', 'imagecopy15.png', 'imagecopy16.png',
-    'imagecopy17.png', 'imagecopy18.png', 'imagecopy19.png',
-    'imagecopy20.png', 'imagecopy21.png', 'imagecopy22.png',
-    'imagecopy23.png', 'imagecopy24.png', 'imagecopy25.png',
-    'imagecopy26.png', 'imagecopy27.png', 'imagecopy.png',
-    'image.png'
+    'imagecopy2.webp', 'imagecopy3.webp', 'imagecopy4.webp',
+    'imagecopy5.webp', 'imagecopy6.webp', 'imagecopy7.webp',
+    'imagecopy8.webp', 'imagecopy9.webp', 'imagecopy10.webp',
+    'imagecopy11.webp', 'imagecopy12.webp', 'imagecopy13.webp',
+    'imagecopy14.webp', 'imagecopy15.webp', 'imagecopy16.webp',
+    'imagecopy17.webp', 'imagecopy18.webp', 'imagecopy19.webp',
+    'imagecopy20.webp', 'imagecopy21.webp', 'imagecopy22.webp',
+    'imagecopy23.webp', 'imagecopy24.webp', 'imagecopy25.webp',
+    'imagecopy26.webp', 'imagecopy27.webp', 'imagecopy.webp',
+    'image.webp'
   ];
 
   const ceilingFileNames = [
-    'imagecopy2.png', 'imagecopy3.png', 'imagecopy4.png',
-    'imagecopy5.png', 'imagecopy6.png', 'imagecopy7.png',
-    'imagecopy8.png', 'imagecopy9.png', 'imagecopy10.png',
-    'imagecopy11.png', 'imagecopy12.png', 'imagecopy13.png',
-    'imagecopy14.png', 'imagecopy15.png', 'imagecopy.png',
-    'image.png'
+    'imagecopy2.webp', 'imagecopy3.webp', 'imagecopy4.webp',
+    'imagecopy5.webp', 'imagecopy6.webp', 'imagecopy7.webp',
+    'imagecopy8.webp', 'imagecopy9.webp', 'imagecopy10.webp',
+    'imagecopy11.webp', 'imagecopy12.webp', 'imagecopy13.webp',
+    'imagecopy14.webp', 'imagecopy15.webp', 'imagecopy.webp',
+    'image.webp'
   ];
 
   const flooringFileNames = [
-    'imagecopy2.png', 'imagecopy3.png', 'imagecopy4.png',
-    'imagecopy5.png', 'imagecopy6.png', 'imagecopy7.png',
-    'imagecopy8.png', 'imagecopy9.png', 'imagecopy10.png',
-    'imagecopy11.png', 'imagecopy12.png', 'imagecopy13.png',
-    'imagecopy14.png', 'imagecopy15.png', 'imagecopy16.png',
-    'imagecopy17.png', 'imagecopy18.png', 'imagecopy19.png',
-    'imagecopy20.png', 'imagecopy21.png', 'imagecopy.png',
-    'image.png'
+    'imagecopy2.webp', 'imagecopy3.webp', 'imagecopy4.webp',
+    'imagecopy5.webp', 'imagecopy6.webp', 'imagecopy7.webp',
+    'imagecopy8.webp', 'imagecopy9.webp', 'imagecopy10.webp',
+    'imagecopy11.webp', 'imagecopy12.webp', 'imagecopy13.webp',
+    'imagecopy14.webp', 'imagecopy15.webp', 'imagecopy16.webp',
+    'imagecopy17.webp', 'imagecopy18.webp', 'imagecopy19.webp',
+    'imagecopy20.webp', 'imagecopy21.webp', 'imagecopy.webp',
+    'image.webp'
   ];
 
   // Updated Products with exact content
@@ -148,7 +148,7 @@ const VoxIndia = () => {
                   src={img} 
                   alt={cleanTitle}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                  onError={(e) => { e.target.src = '/images/header02.png'; }}
+                  onError={(e) => { e.target.src = '/images/header02.webp'; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
@@ -204,7 +204,7 @@ const VoxIndia = () => {
                 src={image} 
                 alt={name}
                 className="relative w-full h-auto max-h-[400px] object-contain rounded-lg shadow-2xl"
-              />
+               loading="lazy" decoding="async" />
               <div className="absolute top-4 left-4 flex gap-2">
                 {tags.map((tag, i) => (
                   <span key={i} className="bg-red-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
@@ -300,10 +300,10 @@ const VoxIndia = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <img 
-              src={`${process.env.PUBLIC_URL}/images/customers/02.png`} 
+              src={`${process.env.PUBLIC_URL}/images/customers/02.webp`} 
               alt="Vox India Logo" 
               className="h-16 md:h-20 object-contain"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-sm shadow-md">
             VOX INDIA
@@ -378,7 +378,7 @@ const VoxIndia = () => {
                       src={product.image} 
                       alt={product.name} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
+                     loading="lazy" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                       <button className="bg-white text-red-600 px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all">

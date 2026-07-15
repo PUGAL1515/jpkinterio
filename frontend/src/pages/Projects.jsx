@@ -70,7 +70,7 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   onError={(e) => {
-                    e.target.src = `${process.env.PUBLIC_URL}/images/header02.png`;
+                    e.target.src = `${process.env.PUBLIC_URL}/images/header02.webp`;
                   }}
                 />
                 {/* Status Badge */}

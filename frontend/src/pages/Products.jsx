@@ -13,7 +13,7 @@ const Products = () => {
       <section className="relative bg-white py-24 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 w-full">
-            <img src={`${data.hero.image}`} alt="Products" className="w-full h-full object-cover object-center rounded-lg" />
+            <img src={`${data.hero.image}`} alt="Products" className="w-full h-full object-cover object-center rounded-lg"  loading="lazy" decoding="async" />
           </div>
           <div className="md:w-1/2 w-full">
             <span className="inline-block bg-red-600 text-white px-4 py-1 rounded-full font-medium mb-3 text-xs shadow-lg">Products</span>
@@ -40,7 +40,7 @@ const Products = () => {
                 onClick={() => setSelectedProduct(product)}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer transform hover:scale-105 duration-300"
               >
-                <img src={`${product.image}`} alt={product.name} className="w-full h-48 object-cover object-center" />
+                <img src={`${product.image}`} alt={product.name} className="w-full h-48 object-cover object-center"  loading="lazy" decoding="async" />
                 <div className="p-6">
                   <span className="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold mb-2">{product.category}</span>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
@@ -75,7 +75,7 @@ const Products = () => {
                   src={`${selectedProduct.image}`}
                   alt={selectedProduct.name}
                   className="w-full h-96 object-cover rounded-lg"
-                />
+                 loading="lazy" decoding="async" />
 
                 <div>
                   <span className="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold mb-3">{selectedProduct.category}</span>
@@ -200,7 +200,7 @@ const Products = () => {
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Interior Gallery</h4>
                           <div className="grid grid-cols-4 gap-2 max-h-64 overflow-y-auto">
                             {selectedProduct.interior.images.map((img, idx) => (
-                              <img key={idx} src={img} alt={`Interior ${idx + 1}`} className="w-full h-24 object-cover rounded hover:opacity-75 cursor-pointer transition" onError={(e) => e.target.style.display = 'none'} />
+                              <img key={idx} src={img} alt={`Interior ${idx + 1}`} className="w-full h-24 object-cover rounded hover:opacity-75 cursor-pointer transition" loading="lazy" decoding="async" onError={(e) => e.target.style.display = 'none'} />
                             ))}
                           </div>
                         </div>
@@ -255,7 +255,7 @@ const Products = () => {
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Exterior Gallery</h4>
                           <div className="grid grid-cols-4 gap-2 max-h-64 overflow-y-auto">
                             {selectedProduct.exterior.images.map((img, idx) => (
-                              <img key={idx} src={img} alt={`Exterior ${idx + 1}`} className="w-full h-24 object-cover rounded hover:opacity-75 cursor-pointer transition" onError={(e) => e.target.style.display = 'none'} />
+                              <img key={idx} src={img} alt={`Exterior ${idx + 1}`} className="w-full h-24 object-cover rounded hover:opacity-75 cursor-pointer transition" loading="lazy" decoding="async" onError={(e) => e.target.style.display = 'none'} />
                             ))}
                           </div>
                         </div>

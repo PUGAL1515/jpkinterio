@@ -4,7 +4,7 @@ const FlooringSegments = () => {
   const segments = [
     {
       title: "Healthcare",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/healthcare.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/healthcare.webp`,
       areas: [
         "Wards And Rooms",
         "Corridors",
@@ -16,7 +16,7 @@ const FlooringSegments = () => {
     },
     {
       title: "Education",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/education.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/education.webp`,
       areas: [
         "Classrooms",
         "Play areas",
@@ -28,7 +28,7 @@ const FlooringSegments = () => {
     },
     {
       title: "Sports",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/sports.png`, // Note: You may need to rename or add this
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/sports.webp`, // Note: You may need to rename or add this
       areas: [
         "Basket Ball courts",
         "Badminton courts",
@@ -40,7 +40,7 @@ const FlooringSegments = () => {
     },
     {
       title: "Safety & Transport",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/safety-transport.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/safety-transport.webp`,
       areas: [
         "Buses",
         "Trains",
@@ -52,7 +52,7 @@ const FlooringSegments = () => {
     },
     {
       title: "Hospitality",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/hospitality.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/hospitality.webp`,
       areas: [
         "Hotels",
         "Restaurants",
@@ -64,7 +64,7 @@ const FlooringSegments = () => {
     },
     {
       title: "Commercial",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/commercial.jpg`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/commercial.webp`,
       areas: [
         "Airports",
         "Aerobridges",
@@ -76,7 +76,7 @@ const FlooringSegments = () => {
     },
     {
       title: "Retail & Offices",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/reatil-commercial.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/reatil-commercial.webp`,
       areas: [
         "Offices",
         "Shops",
@@ -88,7 +88,7 @@ const FlooringSegments = () => {
     },
     {
       title: "Industrial",
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/industry.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/industry.webp`,
       areas: [
         "Government buildings",
         "Automotive",
@@ -132,7 +132,7 @@ const FlooringSegments = () => {
                     src={segment.image}
                     alt={segment.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                   loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-2xl font-bold tracking-tight">{segment.title}</h3>

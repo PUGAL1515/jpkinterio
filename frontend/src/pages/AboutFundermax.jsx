@@ -12,10 +12,10 @@ const AboutFundermax = () => {
           {/* Fundermax Logo */}
           <div className="flex justify-center mb-6">
             <img 
-              src={`${publicPath}/images/customers/01.png`} 
+              src={`${publicPath}/images/customers/01.webp`} 
               alt="Fundermax Logo" 
               className="h-16 md:h-20 object-contain"
-            />
+             loading="lazy" decoding="async" />
           </div>
 
           <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-sm shadow-md">
@@ -37,10 +37,10 @@ const AboutFundermax = () => {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 w-full">
             <img
-              src={`${publicPath}/images/products/about.png`}
+              src={`${publicPath}/images/products/about.webp`}
               alt="About Fundermax"
               className="w-full h-full object-contain rounded-3xl shadow-2xl"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <div className="lg:w-1/2 w-full">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black">Innovation Through Sustainability</h2>

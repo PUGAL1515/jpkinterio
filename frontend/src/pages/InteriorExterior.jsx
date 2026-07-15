@@ -5,19 +5,19 @@ const InteriorExterior = () => {
 
   // All your gal_ images from the folder
   const imageFileNames = [
-    'gal_1661842105-2.jpg.jpeg',
-    'gal_1661842110-2.jpg.jpeg',
-    'gal_1661842132-1.jpg.jpeg',
-    'gal_1661846409-1.jpg.jpeg',
-    'gal_1661846425-3.jpg.jpeg',
-    'gal_1661846437-1.jpg.jpeg',
-    'gal_1661846452-1.jpg.jpeg',
-    'gal_1681890466-300x227.jpg.jpeg',
-    'gal_1662138721.jpg'
+    'gal_1661842105-2.webp',
+    'gal_1661842110-2.webp',
+    'gal_1661842132-1.webp',
+    'gal_1661846409-1.webp',
+    'gal_1661846425-3.webp',
+    'gal_1661846437-1.webp',
+    'gal_1661846452-1.webp',
+    'gal_1681890466-300x227.webp',
+    'gal_1662138721.webp'
   ];
 
   // Fundermax Logo
-  const fundermaxLogo = '/images/products/logo-1-1-1-768x176.png';
+  const fundermaxLogo = '/images/products/logo-1-1-1-768x176.webp';
 
   // Create gallery images when component mounts
   useEffect(() => {
@@ -149,7 +149,7 @@ const InteriorExterior = () => {
                     alt={`Fundermax Product ${idx + 1}`}
                     className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
-                      e.target.src = '/images/header02.png';
+                      e.target.src = '/images/header02.webp';
                     }}
                   />
                   <div className="p-4 bg-white text-center">

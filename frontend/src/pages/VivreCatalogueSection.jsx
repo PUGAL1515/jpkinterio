@@ -111,9 +111,9 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
       pdfUrl: "/catalogues/vivre-quarry.pdf",
       
       galleryImages: [
-        "/images/products/vivre/quarry/Quarrygallery1.jpg",
-        "/images/products/vivre/quarry/Quarrygallery2.jpg",
-        "/images/products/vivre/quarry/Quarrygallery3.jpg"
+        "/images/products/vivre/quarry/Quarrygallery1.webp",
+        "/images/products/vivre/quarry/Quarrygallery2.webp",
+        "/images/products/vivre/quarry/Quarrygallery3.webp"
       ],
       designImages: [
         { src: "/images/products/vivre/quarry/VQ-701.webp", code: "VQ-701" },
@@ -1361,7 +1361,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
                 src={product.src}
                 alt={product.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+               loading="lazy" decoding="async" />
               <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-medium px-3 py-1 rounded-full">
                 Design {product.id}
               </div>

@@ -85,10 +85,10 @@ const Nav = () => {
             {/* Logo */}
             <Link to="/" className="flex-shrink-0">
               <img
-                src={`${process.env.PUBLIC_URL}/images/logo.png`}
+                src="/images/products/jpk_logo-transformed-removebg-preview-1.webp"
                 alt="JPK Interio Logo"
                 className="h-10 w-auto transition-transform duration-300 hover:scale-105"
-              />
+               loading="lazy" decoding="async" />
             </Link>
 
             {/* Desktop Menu */}

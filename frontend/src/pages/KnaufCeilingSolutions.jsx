@@ -38,7 +38,7 @@ const KnaufCeilingSolutions = () => {
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute top-3 left-3 bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-medium">
                   {product.category}
                 </div>
@@ -138,7 +138,7 @@ const ProductDetail = ({ product, onBack }) => {
                 src={images[currentImageIndex]}
                 alt={product.name}
                 className="w-full h-auto object-cover aspect-square max-h-[400px]"
-              />
+               loading="lazy" decoding="async" />
               
               {/* Image Navigation for multiple images */}
               {images.length > 1 && (

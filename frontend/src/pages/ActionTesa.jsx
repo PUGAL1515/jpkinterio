@@ -87,9 +87,9 @@ Upgrade your furniture, choose ABRAZE, and let your style bloom.`,
   thickness: ['6mm', '9mm', '12mm', '15mm', '18mm'],
   sizes: ['8x4 ft', '8x6 ft'],
   images: [
-    '/images/products/actiontesa/Abraze.png',
-    '/images/products/actiontesa/Abraze1.png',
-    '/images/products/actiontesa/Abraze2.png'
+    '/images/products/actiontesa/Abraze.webp',
+    '/images/products/actiontesa/Abraze1.webp',
+    '/images/products/actiontesa/Abraze2.webp'
   ],
   bgColor: 'from-gray-700 to-gray-900',
   icon: '🛡️'
@@ -140,8 +140,8 @@ Highlights
   thickness: ['6mm', '9mm', '12mm', '15mm', '18mm', '25mm'],
   sizes: ['6x3 ft', '7x4 ft', '8x4 ft', '8x6 ft', '9x6 ft'],
   images: [
-    '/images/products/actiontesa/particle1.jpg',
-    '/images/products/actiontesa/particle2.jpg'
+    '/images/products/actiontesa/particle1.webp',
+    '/images/products/actiontesa/particle2.webp'
   ],
   bgColor: 'from-orange-600 to-orange-800',
   icon: '🔲'
@@ -208,9 +208,9 @@ Take your woodworking game to the next level with Moist Master – a blend of st
   thickness: ['6mm', '9mm', '12mm', '15mm', '18mm'],
   sizes: ['8x4 ft', '8x6 ft'],
   images: [
-    '/images/products/actiontesa/moist1.png',
-    '/images/products/actiontesa/moist2.png',
-    '/images/products/actiontesa/moist3.png'
+    '/images/products/actiontesa/moist1.webp',
+    '/images/products/actiontesa/moist2.webp',
+    '/images/products/actiontesa/moist3.webp'
   ],
   bgColor: 'from-blue-600 to-blue-800',
   icon: '💧'
@@ -254,8 +254,8 @@ Action TESA actually revolutionized the interior infrastructure industry by exte
   sizes: ['8x4 ft', '8x6 ft'],
   images: [
     '/images/products/actiontesa/HDHMR.webp',
-    '/images/products/actiontesa/HDHMR1.jpg',
-    '/images/products/actiontesa/HDHMR2.jpg'
+    '/images/products/actiontesa/HDHMR1.webp',
+    '/images/products/actiontesa/HDHMR2.webp'
   ],
   bgColor: 'from-green-600 to-green-800',
   icon: '💪'
@@ -318,9 +318,9 @@ Choose from the wide range of available shades and even new colors can be made, 
   thickness: ['6mm', '9mm', '12mm', '15mm', '18mm'],
   sizes: ['8x4 ft', '8x6 ft'],
   images: [
-    '/images/products/actiontesa/Boilo1.jpg',
-    '/images/products/actiontesa/Boilo2.jpg',
-    '/images/products/actiontesa/Boilo3.jpg'
+    '/images/products/actiontesa/Boilo1.webp',
+    '/images/products/actiontesa/Boilo2.webp',
+    '/images/products/actiontesa/Boilo3.webp'
   ],
   bgColor: 'from-teal-600 to-teal-800',
   icon: '💦'
@@ -380,8 +380,8 @@ Action TESA is one of India's largest manufacturers of engineered wood panel pro
   ],
   images: [
     '/images/products/actiontesa/door1.webp',
-    '/images/products/actiontesa/door2.png',
-    '/images/products/actiontesa/door3.png'
+    '/images/products/actiontesa/door2.webp',
+    '/images/products/actiontesa/door3.webp'
   ],
   bgColor: 'from-indigo-600 to-indigo-800',
   icon: '🚪'
@@ -459,7 +459,7 @@ What makes Action TESA Wooden Flooring the preferred choice?
   grades: ['AC3', 'AC4', 'AC5'],
   sizes: ['8mm thickness', '12mm thickness'],
   images: [
-    '/images/products/actiontesa/laminated.jpg'
+    '/images/products/actiontesa/laminated.webp'
   ],
   bgColor: 'from-amber-600 to-amber-800',
   icon: '🪵'
@@ -511,7 +511,7 @@ All TESA Acrylic Surface Boards have a near mirror quality surface (just like a 
   thickness: ['12mm', '15mm', '18mm'],
   sizes: ['8x4 ft', '8x6 ft'],
   images: [
-    '/images/products/actiontesa/high1.jpg'
+    '/images/products/actiontesa/high1.webp'
   ],
   bgColor: 'from-purple-600 to-purple-800',
   icon: '✨'
@@ -609,8 +609,8 @@ Action Tesa has the widest range of more than 36 Designs.`,
   thickness: ['2.3mm'],
   sizes: ['8x4 ft'],
   images: [
-    '/images/products/actiontesa/Embossed1.jpg',
-    '/images/products/actiontesa/Embossed2.png'
+    '/images/products/actiontesa/Embossed1.webp',
+    '/images/products/actiontesa/Embossed2.webp'
   ],
   bgColor: 'from-stone-600 to-stone-800',
   icon: '🔨'
@@ -676,6 +676,8 @@ const ProductDetailPage = ({ product }) => {
                 src={product.images[activeImageIndex]} 
                 alt={product.name}
                 className="w-full h-96 object-contain bg-gray-100 p-4"
+                loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   e.target.src = 'https://via.placeholder.com/600x400?text=Image+Coming+Soon';
                 }}
@@ -694,6 +696,8 @@ const ProductDetailPage = ({ product }) => {
                     src={img} 
                     alt={`${product.name} ${idx + 1}`}
                     className="w-full h-24 object-cover"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       e.target.src = 'https://via.placeholder.com/100x80?text=Image';
                     }}
@@ -847,10 +851,10 @@ const ProductDetailPage = ({ product }) => {
     {/* Action TESA Logo */}
     <div className="flex justify-center mb-6">
       <img 
-        src="/images/customers/03.png" 
+        src="/images/customers/03.webp" 
         alt="Action TESA Logo" 
         className="h-16 md:h-20 object-contain"
-      />
+       loading="lazy" decoding="async" />
     </div>
 
     {/* Tag */}
