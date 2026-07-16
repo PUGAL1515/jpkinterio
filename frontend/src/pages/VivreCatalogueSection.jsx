@@ -24,7 +24,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
         "Total Designs": "20",
         "Panels per package": "As per requirement"
       },
-      pdfUrl: "/catalogues/vivre-axis.pdf",
+      pdfUrl: "/pdf/Vivre APEX - 9.5 ft PS Louvers for New Heights (High) 26-9-24 (1) (1) (1).pdf",
       galleryImages: [
         "/images/products/vivre/axis/axisgallery1.webp",
         "/images/products/vivre/axis/axisgallery2.webp",
@@ -55,7 +55,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
         "Coverage per panel": "16 sq ft, 4.5 sq ft, 3.8 sq ft",
         "Total Designs": "23"
       },
-      pdfUrl: "/catalogues/vivre-forte.pdf",
+      // pdfUrl: "/catalogues/vivre-forte.pdf",
       galleryImages: [
         "/images/products/vivre/forte/fortegallery1.webp",
         "/images/products/vivre/forte/fortegallery2.webp",
@@ -108,7 +108,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
         "Total Designs": "28+",
         "Panels per package": "10 pcs"
       },
-      pdfUrl: "/catalogues/vivre-quarry.pdf",
+      // pdfUrl: "/catalogues/vivre-quarry.pdf",
       
       galleryImages: [
         "/images/products/vivre/quarry/Quarrygallery1.webp",
@@ -166,7 +166,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Total Designs": "36",
     "Panels per package": "5"
   },
-  pdfUrl: "/catalogues/vivre-adonis.pdf",
+  // pdfUrl: "/catalogues/vivre-adonis.pdf",
   
   galleryImages: [
     "/images/products/vivre/adonis/Adonisgallery1.webp",
@@ -240,7 +240,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "10 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-sculpt.pdf",
+  // pdfUrl: "/catalogues/vivre-sculpt.pdf",
 
   galleryImages: [
     "/images/products/vivre/sculpt/Sculptgallery1.webp",
@@ -306,7 +306,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Packaging": "Single Sheet"
   },
 
-  pdfUrl: "/catalogues/vivre-acrypedia.pdf",
+ pdfUrl: "/pdf/Vivre AcryVibe 6H Acrylic Laminates Anti Scratch.pdf",
 
   galleryImages: [
     "/images/products/vivre/acrypedia/acrypediagallery1.webp",
@@ -344,7 +344,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "6 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-elewood.pdf",
+  // pdfUrl: "/catalogues/vivre-elewood.pdf",
 
   galleryImages: [
     "/images/products/vivre/Elewood/Elewoodgallery1.webp",
@@ -457,7 +457,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "Single Sheet"
   },
 
-  pdfUrl: "/catalogues/vivre-vivasaa.pdf",
+pdfUrl: "/pdf/Vivre VIVASAA ASA Deco Sheets E-Catalogue March 2024 (1).pdf",
 
   galleryImages: [
     "/images/products/vivre/Vivasaa/Vivasaagallery1.webp",
@@ -496,7 +496,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "10"
   },
 
-  pdfUrl: "/catalogues/vivre-ceil-up.pdf",
+  // pdfUrl: "/catalogues/vivre-ceil-up.pdf",
 
   galleryImages: [
     "/images/products/vivre/Ceilup/Ceilgallery1.webp",
@@ -575,7 +575,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "10 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-woodness.pdf",
+  // pdfUrl: "/catalogues/vivre-woodness.pdf",
 
   galleryImages: [
     "/images/products/vivre/woodness/woodnessgallery1.webp",
@@ -644,7 +644,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "10 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-splash.pdf",
+  // pdfUrl: "/catalogues/vivre-splash.pdf",
 
   galleryImages: [
     "/images/products/vivre/Splash/splashgallery1.webp",
@@ -727,7 +727,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "10 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-edgex.pdf",
+  // pdfUrl: "/catalogues/vivre-edgex.pdf",
 
   galleryImages: [
     "/images/products/vivre/edgex/edgex-app-2.webp",
@@ -786,7 +786,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "6 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-flow.pdf",
+  // pdfUrl: "/catalogues/vivre-flow.pdf",
 
   galleryImages: [
     "/images/products/vivre/flow/flow-app-3.webp",
@@ -846,7 +846,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "10 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-finesse.pdf",
+ pdfUrl: "/pdf/Vivre Finesse - 9ft x 6 inch Chiselled Sleek Panels (1).pdf",
 
   galleryImages: [
     "/images/products/vivre/Finesse/Finesse-Shot-2.webp",
@@ -930,7 +930,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "4 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-profiles.pdf",
+  pdfUrl: "/pdf/Vivre Profiles II 2022 (1).pdf",
 
   galleryImages: [
     "/images/products/vivre/Profiles/profiles-app-2.webp",
@@ -1102,7 +1102,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
       "9 ft × 8.62 inches (219 mm) | Upto 26 mm | 6.46 sq.ft | 3 Designs | 4 Panels"
   },
 
-  pdfUrl: "/catalogues/vivre-aluclad.pdf",
+  // pdfUrl: "/catalogues/vivre-aluclad.pdf",
 
   galleryImages: [
     "/images/products/vivre/AluClad/Aluclad-app-2.webp",
@@ -1211,7 +1211,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "10 pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-louvers-og.pdf",
+  pdfUrl: "/pdf/Vivre Louvers by Vivre Panels.pdf",
 
   galleryImages: [
     "/images/products/vivre/LouversOG/louversOG-2.webp",
@@ -1290,7 +1290,7 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
     "Panels per package": "VST - 10 Pcs, VSF - 10 Pcs"
   },
 
-  pdfUrl: "/catalogues/vivre-apex.pdf",
+  pdfUrl: "/pdf/Vivre APEX - 9.5 ft PS Louvers for New Heights (High) 26-9-24 (1) (1) (1).pdf",
 
   galleryImages: [
     "/images/products/vivre/apex/apex-app-2.webp",
@@ -1378,24 +1378,29 @@ const VivreCatalogueSection = ({ onViewDetails }) => {
               </p>
 
               {/* FIXED BUTTONS SECTION - Always at bottom */}
-              <div className="mt-auto pt-6 border-t border-gray-100">
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => onViewDetails(product)}
-                    className="flex-1 bg-gray-900 hover:bg-black text-white py-3.5 rounded-2xl text-sm font-medium transition-all active:scale-95"
-                  >
-                    View Details
-                  </button>
-                  
-                  <a
-                    href={product.pdfUrl}
-                    download
-                    className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3.5 rounded-2xl text-sm font-medium flex items-center justify-center gap-2 transition-all active:scale-95"
-                  >
-                    PDF
-                  </a>
-                </div>
-              </div>
+              {/* FIXED BUTTONS SECTION - Always at bottom */}
+<div className="mt-auto pt-6 border-t border-gray-100">
+  <div className="flex gap-3">
+    <button
+      onClick={() => onViewDetails(product)}
+      className={`bg-gray-900 hover:bg-black text-white py-3.5 rounded-2xl text-sm font-medium transition-all active:scale-95 ${
+        product.pdfUrl ? "flex-1" : "w-full"
+      }`}
+    >
+      View Details
+    </button>
+
+    {product.pdfUrl && (
+      <a
+        href={product.pdfUrl}
+        download
+        className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3.5 rounded-2xl text-sm font-medium flex items-center justify-center gap-2 transition-all active:scale-95"
+      >
+        PDF
+      </a>
+    )}
+  </div>
+</div>
             </div>
           </div>
         ))}
