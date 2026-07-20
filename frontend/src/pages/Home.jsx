@@ -3,6 +3,7 @@ import { staticData } from '../data/staticData';
 
 const Home = () => {
   const data = staticData.home;
+
   // Slider State
   const [currentSlide, setCurrentSlide] = useState(0);
   const headerImages = [
@@ -10,7 +11,7 @@ const Home = () => {
     `${process.env.PUBLIC_URL}/images/header02.webp`,
     `${process.env.PUBLIC_URL}/images/header03.webp`,
   ];
-  
+
   // Auto-rotate slides every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,6 +43,7 @@ const Home = () => {
               }
             };
             animateCounter();
+
             // Animate Progress Bar
             const progressBar = counterEl.parentElement.querySelector(".progress-bar");
             if (progressBar) {
@@ -56,9 +58,11 @@ const Home = () => {
       },
       { threshold: 0.6 }
     );
+
     countersRef.current.forEach((counter) => {
       if (counter) observer.observe(counter);
     });
+
     return () => observer.disconnect();
   }, []);
 
@@ -66,29 +70,59 @@ const Home = () => {
     <div className="overflow-hidden">
       {/* ====================== HERO SECTION ====================== */}
       <section className="relative w-full h-screen overflow-hidden">
-        {headerImages.map((img, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+        {/* Primary Slide (Slide 1) - Strong Overlay */}
+        <img
+          src={headerImages[0]}
+          alt="JPK Interio - Premium Interior & Exterior Solutions"
+          className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-out"
+          style={{
+            opacity: currentSlide === 0 ? 1 : 0,
+            transform: currentSlide === 0 ? "scale(1.08)" : "scale(1)",
+          }}
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width="1920"
+          height="1080"
+        />
+        {/* Strong overlay for Slide 1 */}
+        <div 
+          className={`absolute inset-0 bg-black/55 transition-all duration-700 ${
+            currentSlide === 0 ? "opacity-100" : "opacity-0"
+          }`} 
+        />
+
+        {/* Slide 2 & 3 - Brighter (Lighter Overlay) */}
+        {headerImages.slice(1).map((img, idx) => {
+          const slideIndex = idx + 1;
+          const isActive = slideIndex === currentSlide;
+          return (
+            <div
+              key={slideIndex}
+              className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${
+                isActive ? "opacity-100" : "opacity-0"
               }`}
-            style={{
-              backgroundImage: `url(${img})`,
-              transform: index === currentSlide ? "scale(1.08)" : "scale(1)",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/55" />
-          </div>
-        ))}
-        
-        {/* Hero Content - Decreased size for desktop */}
-        <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-6 z-10">
+              style={{
+                backgroundImage: `url(${img})`,
+                transform: isActive ? "scale(1.08)" : "scale(1)",
+              }}
+            >
+              <div 
+                className={`absolute inset-0 transition-all duration-700 ${
+                  isActive ? "bg-black/35" : "bg-black/55"
+                }`} 
+              />
+            </div>
+          );
+        })}
+
+        {/* Hero Content */}
+        <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-6 z-20">
           <div className="text-center max-w-4xl text-white w-full">
-            {/* Title - Smaller on desktop */}
             <h1 className="text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold mb-3 sm:mb-6 leading-tight tracking-tight">
               WELCOME TO JPK INTERIO
             </h1>
-            
-            {/* Description - Smaller on desktop */}
+
             <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 md:space-y-6 text-base xs:text-lg sm:text-lg md:text-base lg:text-base xl:text-lg leading-relaxed text-gray-100 px-1 sm:px-4">
               <p>
                 JPK Interio is a leading authorized distributors & dealer of premium interior and exterior
@@ -106,9 +140,8 @@ const Home = () => {
                 projects.
               </p>
             </div>
-            
-            {/* CTA Button - Smaller on desktop */}
-            <div className="mt-4 sm:mt-8 md:mt-8">
+
+            <div className="mt-6 sm:mt-10">
               <a
                 href="/about"
                 className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 sm:px-8 md:px-8 lg:px-8 py-3 sm:py-4 md:py-4 lg:py-4 rounded-xl font-semibold text-base xs:text-lg sm:text-lg md:text-base lg:text-base shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
@@ -118,21 +151,22 @@ const Home = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Slide Indicators */}
-        <div className="absolute bottom-3 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-3 z-20">
+        <div className="absolute bottom-4 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-3 z-30">
           {headerImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-red-600 w-5 sm:w-10" : "bg-white/60 hover:bg-white w-2 sm:w-3"
-                }`}
+              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide ? "bg-red-600 w-5 sm:w-10" : "bg-white/60 hover:bg-white w-2 sm:w-3"
+              }`}
             />
           ))}
         </div>
-        
-        {/* Scroll Indicator - Hidden on mobile */}
-        <div className="hidden sm:flex absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-white/70 text-sm flex-col items-center">
+
+        {/* Scroll to Explore - As per your request */}
+       <div className="hidden sm:flex absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-white/70 text-sm flex-col items-center">
           Scroll to explore
           <div className="w-px h-8 sm:h-10 bg-gradient-to-b from-transparent via-white/60 to-transparent mt-2" />
         </div>
@@ -146,7 +180,11 @@ const Home = () => {
               src={data.about.image}
               alt="JPK Interio showroom and team"
               className="w-full rounded-2xl shadow-2xl"
-             loading="lazy" decoding="async" />
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="md:w-1/2 w-full">
             <span className="inline-block bg-red-600 text-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-full font-medium mb-3 sm:mb-4 text-sm sm:text-base tracking-wider">
@@ -171,7 +209,11 @@ const Home = () => {
             src={data.why_choose.image}
             alt=""
             className="w-full h-full object-cover brightness-75"
-           loading="lazy" decoding="async" />
+            width="1920"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/90" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto text-center space-y-5 sm:space-y-10">
@@ -210,7 +252,11 @@ const Home = () => {
                 src={item.image}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all"
-               loading="lazy" decoding="async" />
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="relative z-10">
                 <div className="text-5xl xs:text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-red-600 mb-2 sm:mb-3">
                   {item.value}
@@ -228,23 +274,21 @@ const Home = () => {
       <section className="bg-white py-10 sm:py-16 md:py-20 px-3 sm:px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
-            {/* MD Photo */}
             <div className="lg:w-2/5 w-full flex flex-col items-center lg:items-start text-center lg:text-left">
               <div className="relative mb-8 sm:mb-12 flex justify-center">
-                {/* Soft glow background */}
                 <div className="absolute w-48 xs:w-56 sm:w-72 md:w-80 h-48 xs:h-56 sm:h-72 md:h-80 bg-red-500/10 rounded-full blur-2xl"></div>
-                {/* Main Container */}
                 <div className="relative group">
-                  {/* Gradient Border Ring */}
                   <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-red-700 opacity-80 group-hover:opacity-100 blur-[2px] transition duration-500"></div>
-                  {/* Image Circle */}
                   <div className="relative w-36 h-36 xs:w-44 xs:h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-[5px] border-white shadow-2xl">
                     <img
                       src={data.md_section.image}
                       alt="Managing Director of JPK Interio"
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
-                     loading="lazy" decoding="async" />
-                    {/* Bottom Gradient Overlay (subtle) */}
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
                 </div>
@@ -256,7 +300,7 @@ const Home = () => {
                 {data.md_section.subtitle}
               </p>
             </div>
-            {/* Animated Stats */}
+
             <div className="lg:w-3/5 w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               {data.md_section.stats.map((stat, index) => (
                 <div
@@ -294,7 +338,11 @@ const Home = () => {
             src={data.cta.image}
             alt=""
             className="w-full h-full object-cover brightness-75"
-           loading="lazy" decoding="async" />
+            width="1920"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white space-y-4 sm:space-y-8">
@@ -327,23 +375,29 @@ const Home = () => {
           </h2>
           <div className="overflow-hidden">
             <div className="flex w-max animate-marquee gap-8 sm:gap-12 md:gap-16 items-center">
-              {/* First Loop */}
               {data.customers.map((logo, index) => (
                 <img
                   key={`logo-${index}`}
                   src={logo}
                   alt={`Customer logo ${index + 1}`}
                   className="h-12 xs:h-14 sm:h-14 md:h-16 lg:h-20 object-contain opacity-80 hover:opacity-100 transition duration-300 transform hover:scale-110"
-                 loading="lazy" decoding="async" />
+                  width="200"
+                  height="100"
+                  loading="lazy"
+                  decoding="async"
+                />
               ))}
-              {/* Duplicate Loop for infinite scroll */}
               {data.customers.map((logo, index) => (
                 <img
                   key={`logo2-${index}`}
                   src={logo}
                   alt={`Customer logo ${index + 1}`}
                   className="h-12 xs:h-14 sm:h-14 md:h-16 lg:h-20 object-contain opacity-80 hover:opacity-100 transition duration-300 transform hover:scale-110"
-                 loading="lazy" decoding="async" />
+                  width="200"
+                  height="100"
+                  loading="lazy"
+                  decoding="async"
+                />
               ))}
             </div>
           </div>
