@@ -12,7 +12,7 @@ const Home = () => {
     `${process.env.PUBLIC_URL}/images/header03.webp`,
   ];
 
-  // Auto-rotate slides every 5 seconds
+  // Auto-rotate slides
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % headerImages.length);
@@ -33,6 +33,7 @@ const Home = () => {
             const target = parseInt(counterEl.getAttribute("data-target"));
             let count = 0;
             const increment = Math.ceil(target / 50);
+
             const animateCounter = () => {
               count += increment;
               if (count < target) {
@@ -44,12 +45,10 @@ const Home = () => {
             };
             animateCounter();
 
-            // Animate Progress Bar
-            const progressBar = counterEl.parentElement.querySelector(".progress-bar");
+            const progressBar = counterEl.parentElement?.querySelector(".progress-bar");
             if (progressBar) {
-              const width = progressBar.getAttribute("data-width");
               setTimeout(() => {
-                progressBar.style.width = `${width}%`;
+                progressBar.style.width = `${progressBar.getAttribute("data-width")}%`;
               }, 400);
             }
             observer.unobserve(entry.target);
@@ -59,10 +58,7 @@ const Home = () => {
       { threshold: 0.6 }
     );
 
-    countersRef.current.forEach((counter) => {
-      if (counter) observer.observe(counter);
-    });
-
+    countersRef.current.forEach((counter) => counter && observer.observe(counter));
     return () => observer.disconnect();
   }, []);
 
@@ -70,7 +66,7 @@ const Home = () => {
     <div className="overflow-hidden">
       {/* ====================== HERO SECTION ====================== */}
       <section className="relative w-full h-screen overflow-hidden">
-        {/* Primary Slide (Slide 1) - Strong Overlay */}
+        {/* Slide 1 - Strong Dark Overlay (as requested) */}
         <img
           src={headerImages[0]}
           alt="JPK Interio - Premium Interior & Exterior Solutions"
@@ -84,34 +80,24 @@ const Home = () => {
           decoding="async"
           width="1920"
           height="1080"
+          sizes="100vw"
         />
-        {/* Strong overlay for Slide 1 */}
-        <div 
-          className={`absolute inset-0 bg-black/55 transition-all duration-700 ${
-            currentSlide === 0 ? "opacity-100" : "opacity-0"
-          }`} 
-        />
+        <div className={`absolute inset-0 bg-black/55 transition-all duration-700 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`} />
 
-        {/* Slide 2 & 3 - Brighter (Lighter Overlay) */}
+        {/* Slide 2 & 3 - Brighter */}
         {headerImages.slice(1).map((img, idx) => {
           const slideIndex = idx + 1;
           const isActive = slideIndex === currentSlide;
           return (
             <div
               key={slideIndex}
-              className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${
-                isActive ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${isActive ? "opacity-100" : "opacity-0"}`}
               style={{
                 backgroundImage: `url(${img})`,
                 transform: isActive ? "scale(1.08)" : "scale(1)",
               }}
             >
-              <div 
-                className={`absolute inset-0 transition-all duration-700 ${
-                  isActive ? "bg-black/35" : "bg-black/55"
-                }`} 
-              />
+              <div className={`absolute inset-0 transition-all duration-700 ${isActive ? "bg-black/35" : "bg-black/55"}`} />
             </div>
           );
         })}
@@ -165,8 +151,8 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Scroll to Explore - As per your request */}
-       <div className="hidden sm:flex absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-white/70 text-sm flex-col items-center">
+        {/* Scroll to Explore */}
+        <div className="hidden sm:flex absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-white/70 text-sm flex-col items-center z-30">
           Scroll to explore
           <div className="w-px h-8 sm:h-10 bg-gradient-to-b from-transparent via-white/60 to-transparent mt-2" />
         </div>
@@ -184,6 +170,7 @@ const Home = () => {
               height="600"
               loading="lazy"
               decoding="async"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
           <div className="md:w-1/2 w-full">
@@ -213,6 +200,7 @@ const Home = () => {
             height="1080"
             loading="lazy"
             decoding="async"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/90" />
         </div>
@@ -256,6 +244,7 @@ const Home = () => {
                 height="400"
                 loading="lazy"
                 decoding="async"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="relative z-10">
                 <div className="text-5xl xs:text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-red-600 mb-2 sm:mb-3">
@@ -342,6 +331,7 @@ const Home = () => {
             height="1080"
             loading="lazy"
             decoding="async"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
         </div>
