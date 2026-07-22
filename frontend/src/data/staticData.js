@@ -453,7 +453,7 @@ and excellence.`,
         id: 1,
         title: 'Residential Complex Development',
         description: 'Modern residential complex with premium interiors featuring FunderMax HPL cladding, VOX ceiling panels, and elegant flooring solutions. Currently in construction phase with an estimated completion in Q3 2026.',
-        image: '/images/gallery/New-Project-21.webp.webp',
+        image: '/images/gallery/New-Project-21.webp',
         date: '2026-01-15',
         status: 'Ongoing'
       },
@@ -461,7 +461,7 @@ and excellence.`,
         id: 2,
         title: 'Commercial Office Space Renovation',
         description: 'Complete office space renovation with cutting-edge interior design, including Armstrong ceiling tiles, vinyl flooring, and modern wall coverings. Project scope includes workspace optimization and sustainable materials.',
-        image: '/images/gallery/New-Project-22.webp.webp',
+        image: '/images/gallery/New-Project-22.webp',
         date: '2026-02-10',
         status: 'Ongoing'
       },
@@ -469,7 +469,7 @@ and excellence.`,
         id: 3,
         title: 'Luxury Hotel Interior Upgrade',
         description: 'Five-star hotel interior enhancement project featuring premium VOX panels, Donaire carpets, and custom architectural elements. Aims to elevate guest experience with sophisticated design and premium materials.',
-        image: '/images/gallery/New-Project-23.webp.webp',
+        image: '/images/gallery/New-Project-23.webp',
         date: '2025-12-20',
         status: 'Ongoing'
       },
@@ -477,7 +477,7 @@ and excellence.`,
         id: 4,
         title: 'Healthcare Facility Modernization',
         description: 'State-of-the-art healthcare facility interior setup with hygienic materials, easy-clean surfaces, and accessible design. Features Knauf ceiling solutions and specialized antimicrobial flooring.',
-        image: '/images/gallery/New-Project-24.webp.webp',
+        image: '/images/gallery/New-Project-24.webp',
         date: '2026-01-25',
         status: 'Ongoing'
       },
@@ -485,7 +485,7 @@ and excellence.`,
         id: 5,
         title: 'Retail Shopping Mall Expansion',
         description: 'Shop mall expansion project with modern storefronts, premium finishes, and attractive display areas. Incorporates latest interior trends with FunderMax HPL and responsive vinyl flooring.',
-        image: '/images/gallery/New-Project-25.webp.webp',
+        image: '/images/gallery/New-Project-25.webp',
         date: '2025-11-30',
         status: 'Ongoing'
       },
@@ -493,77 +493,73 @@ and excellence.`,
         id: 6,
         title: 'Educational Institute Campus Upgrade',
         description: 'College campus interior renovation including classrooms, labs, and common areas. Strategic use of acoustic panels and sustainable materials for optimal learning environment.',
-        image: '/images/gallery/New-Project-26.webp.webp',
+        image: '/images/gallery/New-Project-26.webp',
         date: '2026-02-05',
         status: 'Ongoing'
       }
     ],
-    finished: [
-      {
-        id: 101,
-        title: 'Premium Residential Villa',
-        description: 'Beautifully designed residential villa featuring FunderMax HPL cladding, TESA laminate flooring, and elegant wall panels. Project successfully completed with client satisfaction exceeding expectations.',
-        image: '/images/gallery/New-Project-1.webp.webp',
-        date: '2025-08-30',
-        status: 'Finished'
-      },
-      {
-        id: 102,
-        title: 'Corporate Headquarters Office',
-        description: 'State-of-the-art corporate office with modern design, efficient workspace utilization, and premium interior materials. Successfully completed with all specifications met and on-time delivery.',
-        image: '/images/gallery/New-Project-30.webp.webp',
-        date: '2025-09-15',
-        status: 'Finished'
-      },
-      {
-        id: 103,
-        title: 'Boutique Restaurant Interior',
-        description: 'Sophisticated restaurant interior design featuring ambient lighting, premium finishes, and comfortable seating arrangements. Project delivered ahead of schedule with outstanding aesthetic appeal.',
-        image: '/images/gallery/New-Project-31.webp.webp',
-        date: '2025-07-20',
-        status: 'Finished'
-      },
-      {
-        id: 104,
-        title: 'Luxury Apartment Complex',
-        description: 'High-end apartment complex with premium interiors, modern amenities, and sophisticated design elements. Successfully completed with all 50 units featuring premium materials and finishes.',
-        image: '/images/gallery/New-Project-32.webp.webp',
-        date: '2025-06-10',
-        status: 'Finished'
-      },
-      {
-        id: 105,
-        title: 'Modern Showroom Design',
-        description: 'Innovative showroom design for product display with optimal lighting, showcase areas, and customer-friendly layout. Project completed with excellent design execution and client satisfaction.',
-        image: '/images/gallery/New-Project-33.webp.webp',
-        date: '2025-05-25',
-        status: 'Finished'
-      },
-      {
-        id: 106,
-        title: 'Residential Townhouses Project',
-        description: 'Set of modern townhouses with duplex design, premium interiors, and contemporary finishes. All 20 units completed successfully with premium materials and timely delivery.',
-        image: '/images/gallery/New-Project-34.webp.webp',
-        date: '2025-04-18',
-        status: 'Finished'
-      },
-      {
-        id: 107,
-        title: 'Hospitality Resort Interior',
-        description: 'Complete interior design for luxury resort featuring guest rooms, dining areas, and recreation spaces. Successfully delivered with premium finishes and resort-quality experience.',
-        image: '/images/gallery/New-Project-35.webp.webp',
-        date: '2025-03-12',
-        status: 'Finished'
-      },
-      {
-        id: 108,
-        title: 'Industrial Facility Upgrade',
-        description: 'Industrial facility interior upgrade focusing on functionality, durability, and worker comfort. Project completed with specialized flooring and efficient space utilization.',
-        image: '/images/gallery/New-Project-36.webp.webp',
-        date: '2025-02-28',
-        status: 'Finished'
-      }
-    ]
+   finished: [
+  {
+    id: 101,
+    title: "Tata Electronics Jasmine project - Fundermax HPL ceiling with FS02 clip system",
+    images: [
+      '/images/projects/finishedprojects/project012.webp',
+      '/images/projects/finishedprojects/project013.webp',
+      '/images/projects/finishedprojects/project011.webp'
+    ],
+    status: 'Finished'
+  },
+  {
+    id: 102,
+    title: "Private Residence - VOX Soffit ceiling",
+    images: [
+      '/images/projects/finishedprojects/projectp21.webp',
+      '/images/projects/finishedprojects/project022.webp',
+      '/images/projects/finishedprojects/project023.webp'
+    ],
+    status: 'Finished'
+  },
+  {
+    id: 103,
+    title: "Commercial project -with Fundermax HPL CNC design",
+    images: [
+      '/images/projects/finishedprojects/project031.webp',
+      '/images/projects/finishedprojects/project032.webp',
+      '/images/projects/finishedprojects/projects033.webp'
+    ],
+    status: 'Finished'
+  },
+  {
+    id: 104,
+    title: "Private Residence - Action tesa laminate flooring",
+    images: [
+      '/images/projects/finishedprojects/project042.webp',
+      '/images/projects/finishedprojects/project041.webp',
+      '/images/projects/finishedprojects/project043.webp'
+    ],
+    status: 'Finished'
+  },
+  {
+    id: 105,
+    title: "Residential project - Vivre Aluclad louvers",
+    images: [
+      '/images/projects/finishedprojects/project053.webp',
+      '/images/projects/finishedprojects/project051.webp',
+      '/images/projects/finishedprojects/project052.webp'
+    ],
+    status: 'Finished'
+  },
+  {
+  id: 106,
+  title: "Private Residence - VOX Soffit ceiling",
+  images: [
+    '/images/projects/finishedprojects/project061.webp',
+    '/images/projects/finishedprojects/project062.webp',
+    '/images/projects/finishedprojects/project063.webp'
+  ],
+  status: 'Finished'
+},
+]
   },
   gallery: {
     featured: [
