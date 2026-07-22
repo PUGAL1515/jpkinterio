@@ -134,15 +134,14 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    {/* Email */}
+                    {/* Email - UPDATED */}
                     <div className="flex gap-3">
                       <div className="w-8 h-8 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">✉️</div>
                       <div>
                         <p className="uppercase text-xs tracking-widest text-white/70 font-medium mb-1">EMAIL US</p>
                         <div className="space-y-1 text-white/90">
-                          <a href="mailto:jpkinterio.hsr@gmail.com" className="block hover:text-white transition-colors text-sm">jpkinterio.hsr@gmail.com</a>
-                          <a href="mailto:info@jpkinterio@gmail.com" className="block hover:text-white transition-colors text-sm">info@jpkinterio@gmail.com</a>
-                          <a href="mailto:contact@jpkinterio@gmail.com" className="block hover:text-white transition-colors text-sm">contact@jpkinterio@gmail.com</a>
+                          <a href="mailto:Info@jpkinterio.com" className="block hover:text-white transition-colors text-sm">Info@jpkinterio.com</a>
+                          <a href="mailto:Contact@jpkinterio.com" className="block hover:text-white transition-colors text-sm">Contact@jpkinterio.com</a>
                         </div>
                       </div>
                     </div>

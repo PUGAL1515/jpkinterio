@@ -5,17 +5,16 @@ const AboutFundermax = () => {
 
   return (
     <div>
-      {/* Header Section with Fundermax Logo */}
+      {/* Header Section - Same as before */}
       <section className="relative bg-white py-12 md:py-16 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
-          
-          {/* Fundermax Logo */}
           <div className="flex justify-center mb-6">
             <img 
               src={`${publicPath}/images/customers/01.webp`} 
               alt="Fundermax Logo" 
               className="h-16 md:h-20 object-contain"
-             loading="lazy" decoding="async" />
+              loading="lazy" decoding="async" 
+            />
           </div>
 
           <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-sm shadow-md">
@@ -23,7 +22,7 @@ const AboutFundermax = () => {
           </span>
 
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-black leading-tight">
-            Fundermax: Sustainable Materials and Innovative Design
+            Fundermax - Top Quality, Made in Austria
           </h1>
           
           <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
@@ -32,170 +31,127 @@ const AboutFundermax = () => {
         </div>
       </section>
 
-      {/* Hero Image & Intro Section */}
-      <section className="relative bg-white py-12 px-6 md:px-16 overflow-hidden">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2 w-full">
-            <img
-              src={`${publicPath}/images/products/about.webp`}
-              alt="About Fundermax"
-              className="w-full h-full object-contain rounded-3xl shadow-2xl"
-             loading="lazy" decoding="async" />
-          </div>
-          <div className="lg:w-1/2 w-full">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black">Innovation Through Sustainability</h2>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              Fundermax values and processes natural raw materials. Through sustainable production, they create 
-              high-quality wood-based materials and compact laminates that combine premium performance with 
-              inspiring design. Backed by the guarantee of "Made in Austria", Fundermax products are trusted by 
-              architects, designers, and customers worldwide.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Portfolio Section */}
-      <section className="bg-gray-50 py-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Complete Product Portfolio</h2>
-            <div className="w-20 h-1 bg-red-600 mx-auto"></div>
+      {/* About Us */}
+      <section className="bg-white py-16 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-1 w-16 bg-red-600"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black">About us</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              'Raw chipboard panels',
-              'Coated chipboard panels (Star Favorit)',
-              'Laminate panels (HPL)',
-              'Compact panels (Max Compact Exterior & Interior)',
-              'Biofaser panels (raw and decorative)',
-              'm.look Interior and Exterior',
-              'Premium Star'
-            ].map((product, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-red-600 rounded-full"></div>
-                  <span className="text-gray-700">{product}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Inside & Outside Section */}
-      <section className="bg-white py-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Fundermax: Inside and Outside</h2>
-            <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
-            <p className="text-gray-700 text-lg max-w-4xl mx-auto">
-              Versatile solutions for diverse applications across interior and exterior spaces
+          <div className="text-gray-700 text-base md:text-lg leading-relaxed space-y-6">
+            <p>
+              Fundermax values and processes natural raw materials. In the course of our sustainable production processes, we create high-quality wood-based materials and compact laminates. The result: a comprehensive portfolio that combines top quality and innovative design to impress. Fundermax offers the following products:
             </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-black mb-4 flex items-center gap-2">
-                <span>🏠</span> Interior Applications
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>• Kitchens and sanitary facilities</li>
-                <li>• Furniture manufacturing</li>
-                <li>• Wall claddings</li>
-                <li>• Interior design elements</li>
-              </ul>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-black mb-4 flex items-center gap-2">
-                <span>🌳</span> Exterior Applications
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>• Facade systems</li>
-                <li>• Balcony flooring</li>
-                <li>• Exterior design applications</li>
-                <li>• Outdoor furniture</li>
-              </ul>
-            </div>
+            <ul className="list-disc pl-6 space-y-3 text-lg">
+              <li>Raw chipboard panels</li>
+              <li>Coated chipboard panels (Star Favorit)</li>
+              <li>Laminate panels (HPL)</li>
+              <li>Compact panels (Max Compact Exterior and Max Compact Interior)</li>
+              <li>Biofaser panels (raw and decorative)</li>
+              <li>m.look Interior and Exterior</li>
+              <li>Premium Star</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* What Sets Fundermax Apart */}
+      {/* Inside and Outside */}
       <section className="bg-gray-50 py-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">What Sets Fundermax Apart</h2>
-            <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-1 w-16 bg-red-600"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black">Fundermax: inside and outside</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-bold text-black mb-3">Innovation & Creativity</h3>
-              <p className="text-gray-700">
-                Thinking outside the box, creativity and innovation drive daily decisions. Fundermax combines 
-                smart wood-based materials and compact laminates with a strong commitment to sustainability.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-bold text-black mb-3">Service Partnership</h3>
-              <p className="text-gray-700">
-                More than a sustainable production company: a service partner and design laboratory that supports 
-                customers throughout the decision-making process.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-bold text-black mb-3">Green Energy Production</h3>
-              <p className="text-gray-700">
-                Proudly generating green electricity and district heating that significantly exceeds their own 
-                energy requirements.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-bold text-black mb-3">Sustainable Materials</h3>
-              <p className="text-gray-700">
-                Committed to developing innovative solutions and materials made from renewable raw resources.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Focus on People Section */}
-      <section className="bg-white py-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Focus on People</h2>
-          <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
           
-          <div className="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg">
+          <div className="text-gray-700 text-base md:text-lg leading-relaxed space-y-6 bg-white p-8 rounded-2xl shadow-sm">
             <p>
-              At Fundermax, people work together on an equal footing. Trust, honesty and transparency are core 
-              values, and long-term employee retention is supported through a safe workplace and continuous 
-              development opportunities.
+              The Fundermax products are used indoors for kitchens, sanitary facilities, furniture, wall claddings and interior design as well as outdoors for facades, balcony flooring and exterior design applications. Architects, designers, processors, specialists from the furniture industry and end customers all trust in the “Made in Austria” quality from Fundermax.
             </p>
             <p>
-              Feedback is treated as feedforward, and employee suggestions are actively welcomed as part of a 
-              collaborative effort to improve the company and prepare for future success.
+              Let yourself be inspired: Here you will be given an impression of the Fundermax product portfolio and all the applications for which we offer the perfect solution.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-red-600 to-red-700 py-16 px-6 md:px-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Elevate Your Project?</h2>
-          <p className="text-white text-lg mb-8 opacity-95">
-            Discover the complete range of Fundermax premium solutions for your interior and exterior needs
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-white text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg"
-          >
-            Contact Us for Fundermax Solutions
-          </a>
+      {/* What sets Fundermax apart */}
+      <section className="bg-white py-16 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-1 w-16 bg-red-600"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black">What sets Fundermax apart</h2>
+          </div>
+          
+          <div className="text-gray-700 text-base md:text-lg leading-relaxed space-y-8">
+            <p>
+              Our innovative spirit, creativity and willingness to think outside the box motivate everything we do. Sophisticated wood materials and compact laminates are our strength. Fundermax is much more than a sustainable production company:
+            </p>
+            
+            <ul className="list-disc pl-6 space-y-4 text-lg">
+              <li>We see ourselves as a service partner who supports all our customers throughout the entire decision-making process and beyond.</li>
+              <li>We also see ourselves as a design laboratory in which developments are driven forward and innovations are created.</li>
+            </ul>
+
+            <div className="bg-red-50 border-l-4 border-red-600 p-8 rounded-r-xl">
+              <p>
+                Proud of our team: We are particularly proud of our employees, who are already actively shaping the design and product trends of tomorrow, right down to the materials made from renewable raw materials. After all, Fundermax stands for sustainability! When it comes to energy generation, we also think outside the company and generate green electricity and district heating to an extent that significantly exceeds our own needs.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Focus on the people */}
+      <section className="bg-gray-50 py-16 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-1 w-16 bg-red-600"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black">Focus on the people</h2>
+          </div>
+          
+          <div className="text-gray-700 text-base md:text-lg leading-relaxed space-y-8 bg-white p-10 rounded-3xl shadow-sm">
+            <p>
+              We at Fundermax work together on an equal footing, because we know: together we are strong and can develop optimal solutions for the future! We are all united by our common values, above all trust, honesty and transparency. Another important factor for maintaining a good working atmosphere is laughing together and celebrating our success.
+            </p>
+            <p>
+              At Fundermax, we also place great importance to retaining our employees in the long term. That is why we not only offer a safe working environment, but also numerous learning and development opportunities.
+            </p>
+            <p>
+              Feedforward instead of feedback: This is ensured on the one hand with regular internal company surveys, and the other hand with an open ear. At Fundermax, we welcome and act on the suggestions and ideas from our employees. The feedback serves as an impetus for future measures. The result: The entire team is motivated to work proactively on the further development of Fundermax and is happy about the success we achieve together.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* That's what makes Fundermax so special */}
+      <section className="bg-white py-16 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-1 w-16 bg-red-600"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black">That's what makes Fundermax so special</h2>
+          </div>
+          
+          <div className="text-gray-700 text-base md:text-lg leading-relaxed space-y-8">
+            <p>
+              Thinking outside the box as well as creativity and innovative spirit determine our daily actions. Well thought-out wood-based materials and compact laminates are our strength. Fundermax is much more than a sustainable production company:
+            </p>
+            
+            <ul className="list-disc pl-6 space-y-4 text-lg">
+              <li>We see ourselves as a service partner who supports customers throughout the entire decision-making process and beyond.</li>
+              <li>We also see ourselves as a design laboratory where developments are driven forward and innovations are created.</li>
+            </ul>
+
+            <div className="bg-red-50 border-l-4 border-red-600 p-8 rounded-r-xl text-lg">
+              <p>
+                We are proud of this: From our employees, who are already actively shaping the design and product trends of tomorrow, to materials made from renewable raw materials: Fundermax stands for sustainability! When it comes to energy generation, we also think beyond the company's boundaries and generate green electricity and district heating to an extent that significantly exceeds our own needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };
