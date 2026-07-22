@@ -88,15 +88,23 @@ const Footer = () => {
               </a>
             </div>
 
-            <div>
-              <p className="font-medium text-red-600 mb-1">Email:</p>
-              <a 
-                href="mailto:jpkinterio.hsr@gmail.com" 
-                className="hover:text-red-600 transition-colors break-words"
-              >
-                jpkinterio.hsr@gmail.com
-              </a>
-            </div>
+           <div>
+  <p className="font-medium text-red-600 mb-1">Email:</p>
+  <div className="space-y-2">
+    <a 
+      href="mailto:Info@jpkinterio.com" 
+      className="hover:text-red-600 transition-colors break-words block"
+    >
+      Info@jpkinterio.com
+    </a>
+    <a 
+      href="mailto:Contact@jpkinterio.com" 
+      className="hover:text-red-600 transition-colors break-words block"
+    >
+      Contact@jpkinterio.com
+    </a>
+  </div>
+</div>
           </div>
         </div>
       </div>
