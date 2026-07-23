@@ -3,25 +3,12 @@ import { useState, useEffect } from 'react';
 export default function Awards() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [featured, setFeatured] = useState([]);
-  const [others, setOthers] = useState([]);
 
-  // Static Achievements - Updated with new awards
+  // Static Achievements
   const achievements = [
-    { 
-      year: 2025, 
-      title: 'Best Business Awards', 
-      description: 'Recognized for outstanding business performance and industry leadership.' 
-    },
-    { 
-      year: 2024, 
-      title: 'National Infrastructure Icon Awards', 
-      description: 'Honored for excellence in infrastructure and interior design projects.' 
-    },
-    { 
-      year: 2024, 
-      title: 'Fundermax Awards', 
-      description: 'Awarded for exceptional partnership and outstanding project execution with Fundermax.' 
-    },
+    { year: 2025, title: 'Best Business Awards', description: 'Recognized for outstanding business performance and industry leadership.' },
+    { year: 2024, title: 'National Infrastructure Icon Awards', description: 'Honored for excellence in infrastructure and interior design projects.' },
+    { year: 2024, title: 'Fundermax Awards', description: 'Awarded for exceptional partnership and outstanding project execution with Fundermax.' },
     { year: 2024, title: 'Best Interior Design Award', description: 'Recognized for innovative interior design and customer satisfaction.' },
     { year: 2024, title: 'Excellence in Innovation', description: 'Awarded for implementing cutting-edge design solutions and technology.' },
     { year: 2023, title: 'Customer Choice Award', description: 'Voted best by our customers for outstanding service and quality.' },
@@ -30,22 +17,25 @@ export default function Awards() {
     { year: 2022, title: 'Industry Excellence', description: 'Awarded for contributions to interior design industry advancement.' }
   ];
 
-  // Load award images from your actual files
+  // Load ALL award images into Featured Awards
   useEffect(() => {
     const allImages = [
-      // Logo and main images
+      // Old / Existing Award Images
       '/images/awards/New_Project__83_-removebg-preview.webp',
       '/images/awards/vecteezy_ai-generated-podium-with-golden-light-rays-background_36042916-scaled.webp',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-768x513.webp',
-      '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.webp'
+      '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.webp',
+
+      // New Award Images (1 to 7)
+      '/images/awards/award1.jpeg',
+      '/images/awards/award2.jpeg',
+      '/images/awards/award3.jpeg',
+      '/images/awards/award4.jpeg',
+      '/images/awards/award6.jpeg',
+      '/images/awards/award7.jpeg',
     ];
 
-    // First 5 as Featured Awards, rest as Additional Recognition
-    const featuredImages = allImages.slice(0, 5);
-    const otherImages = allImages.slice(5);
-
-    setFeatured(featuredImages);
-    setOthers(otherImages);
+    setFeatured(allImages);
   }, []);
 
   return (
@@ -60,7 +50,7 @@ export default function Awards() {
             Our Awards & Recognition
           </h1>
           <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
-            Celebrating our achievements and industry recognition for excellence in interior design and customer service.
+            Celebrating our achievements and industry recognition for excellence in interior design.
           </p>
         </div>
       </section>
@@ -86,11 +76,11 @@ export default function Awards() {
           </div>
         </div>
 
-        {/* Featured Awards */}
+        {/* Featured Awards - NOW SHOWING ALL IMAGES */}
         {featured.length > 0 && (
           <div className="mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Featured Awards</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
               {featured.map((img, idx) => (
                 <div
                   key={idx}
@@ -99,9 +89,9 @@ export default function Awards() {
                 >
                   <img
                     src={img}
-                    alt={`Featured Award ${idx + 1}`}
+                    alt={`Award ${idx + 1}`}
                     className={`w-full h-56 md:h-64 lg:h-72 transition-all duration-300 group-hover:brightness-75 ${
-                      img.includes('removebg') || img.includes('jpk_logo') 
+                      img.includes('removebg') || img.includes('podium') 
                         ? 'object-contain p-4' 
                         : 'object-cover'
                     }`}
@@ -110,41 +100,9 @@ export default function Awards() {
                     onError={(e) => { e.target.src = '/images/header02.webp'; }}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                    <span className="text-white opacity-0 group-hover:opacity-100 font-semibold">
+                    <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-center px-4">
                       View Award
                     </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Additional Recognition */}
-        {others.length > 0 && (
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Additional Recognition</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {others.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="overflow-hidden rounded-md shadow-md hover:shadow-xl hover:scale-105 transform transition-all duration-300 cursor-pointer group relative bg-gray-100"
-                  onClick={() => setSelectedImage(img)}
-                >
-                  <img
-                    src={img}
-                    alt={`Award ${idx + 1}`}
-                    className={`w-full h-40 md:h-48 lg:h-56 transition-all duration-300 group-hover:brightness-75 ${
-                      img.includes('removebg') || img.includes('jpk_logo')
-                        ? 'object-contain p-2'
-                        : 'object-cover'
-                    }`}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => { e.target.src = '/images/header02.webp'; }}
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span className="text-white text-sm font-semibold">View</span>
                   </div>
                 </div>
               ))}
@@ -171,9 +129,7 @@ export default function Awards() {
               src={selectedImage}
               alt="Award Preview"
               className="w-full h-auto max-h-[85vh] object-contain rounded-lg bg-gray-900"
-              onError={(e) => {
-                e.target.src = '/images/header02.webp';
-              }}
+              onError={(e) => { e.target.src = '/images/header02.webp'; }}
             />
           </div>
         </div>
@@ -184,7 +140,7 @@ export default function Awards() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Experience Excellence with JPK Interio</h2>
           <p className="text-xl opacity-90 mb-8">
-            Benefit from our award-winning expertise and commitment to quality. Contact us for your next project.
+            Benefit from our award-winning expertise and commitment to quality.
           </p>
           <a 
             href="/contact"
