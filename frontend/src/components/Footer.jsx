@@ -60,7 +60,7 @@ const Footer = () => {
             <li><Link to="/products/vivre-panels" className="hover:text-red-600 transition-colors">Vivre Panels</Link></li>
             <li><Link to="/products/knauf-ceiling-solutions" className="hover:text-red-600 transition-colors">Knauf Ceilings</Link></li>
             <li><Link to="/products/action-tesa" className="hover:text-red-600 transition-colors">Action TESA Flooring</Link></li>
-            <li><Link to="/products/donaire" className="hover:text-red-600 transition-colors">Donaire Corpets</Link></li>
+            <li><Link to="/products/donaire" className="hover:text-red-600 transition-colors">Donaire Carpets</Link></li>
             <li><Link to="/products/responsive/lvt" className="hover:text-red-600 transition-colors">Responsive Vinyl Flooring</Link></li>
             <li><Link to="/products/jindal" className="hover:text-red-600 transition-colors">Jindal MLC Pipes</Link></li>
           </ul>
