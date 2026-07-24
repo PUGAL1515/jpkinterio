@@ -43,13 +43,13 @@ const Contact = () => {
 
     try {
       emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-      
+
       await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         templateParams
       );
-      
+
       setSubmitStatus({
         type: 'success',
         message: `Thank you ${formData.name}! We'll reply soon.`,
@@ -71,7 +71,7 @@ const Contact = () => {
       {/* Contact Section with Background and Glass Effect */}
       <div className="relative py-8 px-4">
         {/* Background Image with Overlay - Only for this section */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
@@ -102,7 +102,7 @@ const Contact = () => {
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 h-full shadow-xl relative overflow-hidden flex flex-col">
                 {/* Glass shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none"></div>
-                
+
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="mb-4">
                     <h2 className="text-xl font-bold text-white">Contact Us</h2>
@@ -142,6 +142,12 @@ const Contact = () => {
                         <div className="space-y-1 text-white/90">
                           <a href="mailto:Info@jpkinterio.com" className="block hover:text-white transition-colors text-sm">Info@jpkinterio.com</a>
                           <a href="mailto:Contact@jpkinterio.com" className="block hover:text-white transition-colors text-sm">Contact@jpkinterio.com</a>
+                          <a
+                            href="mailto:jpkinterio.hsr@gmail.com"
+                            className="block hover:text-white transition-colors text-sm"
+                          >
+                            jpkinterio.hsr@gmail.com
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -164,7 +170,7 @@ const Contact = () => {
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-xl relative">
                 {/* Glass shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none rounded-2xl"></div>
-                
+
                 <div className="relative">
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-white">Send Message</h3>
@@ -172,11 +178,10 @@ const Contact = () => {
                   </div>
 
                   {submitStatus.message && (
-                    <div className={`mb-4 p-3 rounded-xl flex items-start gap-2 text-sm border backdrop-blur-sm ${
-                      submitStatus.type === 'success' 
-                        ? 'bg-green-500/20 border-green-400/30 text-green-100' 
+                    <div className={`mb-4 p-3 rounded-xl flex items-start gap-2 text-sm border backdrop-blur-sm ${submitStatus.type === 'success'
+                        ? 'bg-green-500/20 border-green-400/30 text-green-100'
                         : 'bg-red-500/20 border-red-400/30 text-red-100'
-                    }`}>
+                      }`}>
                       <span className="text-base mt-px">
                         {submitStatus.type === 'success' ? '🎉' : '⚠️'}
                       </span>
@@ -254,8 +259,8 @@ const Contact = () => {
                       type="submit"
                       disabled={isSubmitting}
                       className={`w-full py-3 rounded-xl font-semibold text-base transition-all flex items-center justify-center gap-2
-                        ${isSubmitting 
-                          ? 'bg-white/20 text-white/50 cursor-not-allowed backdrop-blur-sm' 
+                        ${isSubmitting
+                          ? 'bg-white/20 text-white/50 cursor-not-allowed backdrop-blur-sm'
                           : 'bg-red-600 hover:bg-red-700 text-white active:scale-[0.97] shadow-lg'
                         }`}
                     >
