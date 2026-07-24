@@ -154,7 +154,7 @@ focus:ring-offset-2"
                           aria-expanded={fundermaxOpen}
                           className="flex w-full justify-between items-center px-5 py-2.5 hover:bg-red-50 text-left"
                         >
-                          Fundermax-HPL
+                          Fundermax-HPL shades
                           <svg
                           aria-hidden="true"
                             className={`w-3 h-3 transition-transform ${fundermaxOpen ? "rotate-90" : ""}`}
@@ -404,7 +404,7 @@ focus:ring-offset-2"
                         aria-haspopup="menu"
                         aria-expanded={mobileFundermaxOpen}
                       >
-                        Fundermax-HPL
+                        Fundermax-HPL shades
                         <svg
                         aria-hidden="true"
                           className={`w-4 h-4 transition-transform ${mobileFundermaxOpen ? "rotate-90" : ""}`}

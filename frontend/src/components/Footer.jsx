@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="lg:col-span-3">
           <h3 className="text-lg font-semibold mb-4 text-red-600">Our Products</h3>
           <ul className="space-y-2.5 text-sm">
-            <li><Link to="/products/about-fundermax" className="hover:text-red-600 transition-colors">Fundermax-HPL</Link></li>
+            <li><Link to="/products/about-fundermax" className="hover:text-red-600 transition-colors">Fundermax-HPL shades</Link></li>
             <li><Link to="/products/voxindia" className="hover:text-red-600 transition-colors">Vox India</Link></li>
             <li><Link to="/products/vivre-panels" className="hover:text-red-600 transition-colors">Vivre Panels</Link></li>
             <li><Link to="/products/knauf-ceiling-solutions" className="hover:text-red-600 transition-colors">Knauf Ceilings</Link></li>
