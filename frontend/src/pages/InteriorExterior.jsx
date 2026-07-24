@@ -3,8 +3,18 @@ import React, { useState, useEffect } from 'react';
 const InteriorExterior = () => {
   const [galleryImages, setGalleryImages] = useState([]);
 
-  // All your gal_ images from the folder
+  // All your gal_ images from the folder + new max1.webp
   const imageFileNames = [
+    'max1.webp'   ,
+    'max2.webp'   ,
+    'max3.webp'   ,
+    'max4.webp'   ,
+    'max5.webp'   ,
+    'max6.webp'   ,
+    'max7.webp'   ,
+    'max8.webp'   ,
+    'max9.webp'   ,
+    'max10.webp'   ,
     'gal_1661842105-2.webp',
     'gal_1661842110-2.webp',
     'gal_1661842132-1.webp',
@@ -13,7 +23,8 @@ const InteriorExterior = () => {
     'gal_1661846437-1.webp',
     'gal_1661846452-1.webp',
     'gal_1681890466-300x227.webp',
-    'gal_1662138721.webp'
+    'gal_1662138721.webp',
+                     // ← Added
   ];
 
   // Fundermax Logo
@@ -26,7 +37,7 @@ const InteriorExterior = () => {
     );
     setGalleryImages(images);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);   // ← We intentionally keep empty array because imageFileNames is static
+  }, []);   
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -63,32 +74,31 @@ const InteriorExterior = () => {
               </div>
             </div>
 
-           <div>
-  <h2 className="text-3xl font-bold text-gray-900 mb-6">M.look</h2>
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">M.look</h2>
+              <div className="prose prose-lg max-w-none leading-relaxed">
+                <p>
+                  M.look is an architectural facade panel with heavy duty, reinforced glass fiber, predominantly mineral, non-combustible core with a highly weather resistant decorative surface. The decorative surface is characterized above all by high scratch resistance, light fastness, impact resistance, anti-graffiti properties, ease of cleaning and hail resistance. Properties tested in accordance with EN438-2.
+                </p>
+                <p>
+                  The greatest degree of freedom and creativity in fire-resistant material for architecturally limitless ideas. m.look Exterior stands up to even the most adverse weather and environmental influences and skillfully combines the required safety with style. m.look Exterior decorates buildings like a fine piece of clothing - inside and out. And all the while, it resists exterior influences without complaint. m.look is suitable for all applications that must adhere to the reaction to fire classification of A2-s1,d0 according to EN 13501-1, combining the desired safety with style.
+                </p>
+              </div>
 
-  <div className="prose prose-lg max-w-none leading-relaxed">
-    <p>
-     M.look is an architectural facade panel with heavy duty, reinforced glass fiber, predominantly mineral, non-combustible core with a highly weather resistant decorative surface. The decorative surface is characterized above all by high scratch resistance, light fastness, impact resistance, anti-graffiti properties, ease of cleaning and hail resistance. Properties tested in accordance with EN438-2.
-    </p>
-    <p>
-     The greatest degree of freedom and creativity in fire-resistant material for architecturally limitless ideas. m.look Exterior stands up to even the most adverse weather and environmental influences and skillfully combines the required safety with style. m.look Exterior decorates buildings like a fine piece of clothing - inside and out. And all the while, it resists exterior influences without complaint. m.look is suitable for all applications that must adhere to the reaction to fire classification of A2-s1,d0 according to EN 13501-1, combining the desired safety with style.
-    </p>
-  </div>
-
-  {/* 🔥 Download Brochure Button */}
- <div className="mt-6">
-  <a
-    href="/brochures/fundermax.pdf"
-    download
-    className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition"
-  >
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-8m0 8l-3-3m3 3l3-3M5 20h14" />
-    </svg>
-    Download Brochure
-  </a>
-</div>
-</div>
+              {/* 🔥 Download Brochure Button */}
+              <div className="mt-6">
+                <a
+                  href="/brochures/fundermax.pdf"
+                  download
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-8m0 8l-3-3m3 3l3-3M5 20h14" />
+                  </svg>
+                  Download Brochure
+                </a>
+              </div>
+            </div>
 
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Other Exterior Products</h2>
@@ -120,11 +130,9 @@ const InteriorExterior = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Max RE2</h2>
               <p className="text-lg leading-relaxed">
-               Max Resistance is a duromer high pressure laminate (HPL), produced in laminate presses, under high pressure at high temperature, in accordance with EN 438-4, type CGS. Due to its scientifically developed, double-cured polyurethane acrylic coating, Max Resistance stands up to the toughest tests unaffected by solvents, most acids and the harshest chemicals. Easy-to-clean and disinfect and at the same time wear and scratch resistant, this innovative material significantly extends the life cycle of your laboratory work surface.
+                Max Resistance is a duromer high pressure laminate (HPL), produced in laminate presses, under high pressure at high temperature, in accordance with EN 438-4, type CGS. Due to its scientifically developed, double-cured polyurethane acrylic coating, Max Resistance stands up to the toughest tests unaffected by solvents, most acids and the harshest chemicals. Easy-to-clean and disinfect and at the same time wear and scratch resistant, this innovative material significantly extends the life cycle of your laboratory work surface.
               </p>
             </div>
-
-            
           </div>
         </div>
       </section>
