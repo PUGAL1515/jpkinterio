@@ -17,16 +17,15 @@ export default function Awards() {
     { year: 2022, title: 'Industry Excellence', description: 'Awarded for contributions to interior design industry advancement.' }
   ];
 
-  // Load ALL award images into Featured Awards
+  // Load ALL award images
   useEffect(() => {
     const allImages = [
-      // Old / Existing Award Images
       '/images/awards/New_Project__83_-removebg-preview.webp',
       '/images/awards/vecteezy_ai-generated-podium-with-golden-light-rays-background_36042916-scaled.webp',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-768x513.webp',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.webp',
 
-      // New Award Images (1 to 7)
+      // New Award Images
       '/images/awards/award1.jpeg',
       '/images/awards/award2.jpeg',
       '/images/awards/award3.jpeg',
@@ -76,36 +75,47 @@ export default function Awards() {
           </div>
         </div>
 
-        {/* Featured Awards - NOW SHOWING ALL IMAGES */}
+        {/* Featured Awards */}
         {featured.length > 0 && (
           <div className="mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Featured Awards</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {featured.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 cursor-pointer group relative bg-gray-100"
-                  onClick={() => setSelectedImage(img)}
-                >
-                  <img
-                    src={img}
-                    alt={`Award ${idx + 1}`}
-                    className={`w-full h-56 md:h-64 lg:h-72 transition-all duration-300 group-hover:brightness-75 ${
-                      img.includes('removebg') || img.includes('podium') 
-                        ? 'object-contain p-4' 
-                        : 'object-cover'
-                    }`}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => { e.target.src = '/images/header02.webp'; }}
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                    <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-center px-4">
-                      View Award
-                    </span>
+              {featured.map((img, idx) => {
+                const isAward7 = img.includes('award7');
+                const isSpecialImage = 
+                  img.includes('removebg') || 
+                  img.includes('podium') || 
+                  isAward7;
+
+                return (
+                  <div
+                    key={idx}
+                    className={`overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 cursor-pointer group relative bg-gray-100
+                      ${isAward7 ? 'md:col-span-2 lg:col-span-2' : ''}`}   // ← Makes award7 wider
+                    onClick={() => setSelectedImage(img)}
+                  >
+                    <img
+                      src={img}
+                      alt={`Award ${idx + 1}`}
+                      className={`w-full transition-all duration-300 group-hover:brightness-75 ${
+                        isAward7 
+                          ? 'h-80 md:h-96 lg:h-[420px] object-contain p-6'     // ← Larger size only for award7
+                          : 'h-60 md:h-72 lg:h-80 object-cover'
+                      }`}
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => { 
+                        e.target.src = '/images/header02.webp'; 
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                      <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-center px-4">
+                        View Award
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
