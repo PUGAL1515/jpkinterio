@@ -103,6 +103,12 @@ const Footer = () => {
     >
       Contact@jpkinterio.com
     </a>
+    <a
+  href="mailto:jpkinterio.hsr@gmail.com"
+  className="hover:text-red-600 transition-colors break-words block"
+>
+  jpkinterio.hsr@gmail.com
+</a>
   </div>
 </div>
           </div>

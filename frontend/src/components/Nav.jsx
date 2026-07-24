@@ -421,13 +421,6 @@ focus:ring-offset-2"
                       {mobileFundermaxOpen && (
                         <div className="pl-6 space-y-1">
                           <Link
-                            to="/products/fundermax"
-                            className="block py-2.5 px-4 hover:bg-red-50 rounded-xl"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            Fundermax India
-                          </Link>
-                          <Link
                             to="/products/about-fundermax"
                             className="block py-2.5 px-4 hover:bg-red-50 rounded-xl"
                             onClick={() => setMobileOpen(false)}
@@ -440,13 +433,6 @@ focus:ring-offset-2"
                             onClick={() => setMobileOpen(false)}
                           >
                             Interior / Exterior
-                          </Link>
-                          <Link
-                            to="/products/reference"
-                            className="block py-2.5 px-4 hover:bg-red-50 rounded-xl"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            Reference
                           </Link>
                         </div>
                       )}
