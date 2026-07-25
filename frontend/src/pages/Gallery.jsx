@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { staticData } from '../data/staticData';
+import { Link } from 'react-router-dom';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -18,7 +19,7 @@ export default function Gallery() {
 
   const shareImage = async () => {
     if (!selectedImage) return;
-    
+
     if (navigator.share) {
       try {
         await navigator.share({
@@ -37,25 +38,25 @@ export default function Gallery() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section className="bg-white py-12 md:py-16 px-6 md:px-16">
-  <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
 
-    {/* Tag */}
-    <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-xs shadow-sm">
-      Gallery
-    </span>
+          {/* Tag */}
+          <span className="inline-block bg-red-600 text-white px-4 py-1.5 rounded-full font-semibold mb-4 text-xs shadow-sm">
+            Gallery
+          </span>
 
-    {/* Title */}
-    <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 leading-tight">
-      Our Gallery
-    </h1>
+          {/* Title */}
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 leading-tight">
+            Our Gallery
+          </h1>
 
-    {/* Description */}
-    <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-      Explore our latest interior design projects, installations, and beautifully crafted spaces across South India.
-    </p>
+          {/* Description */}
+          <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            Explore our latest interior design projects, installations, and beautifully crafted spaces across South India.
+          </p>
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -138,7 +139,7 @@ export default function Gallery() {
                 e.target.src = `${process.env.PUBLIC_URL}/images/header02.webp`;
               }}
             />
-            
+
             {/* Action Buttons */}
             <div className="flex justify-between items-center px-4 py-3 border-t border-gray-200 bg-gray-50">
               <button
@@ -177,9 +178,13 @@ export default function Gallery() {
           <p className="text-xl opacity-90 mb-8">
             Contact us to discuss your interior design and installation project.
           </p>
-          <button className="bg-white text-red-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
+
+          <Link
+            to="/contact"
+            className="inline-block bg-white text-red-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
             Get in Touch
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Awards() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -20,7 +21,6 @@ export default function Awards() {
   // Load ALL award images
   useEffect(() => {
     const allImages = [
-      '/images/awards/New_Project__83_-removebg-preview.webp',
       '/images/awards/vecteezy_ai-generated-podium-with-golden-light-rays-background_36042916-scaled.webp',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.25.37-PM-1-768x513.webp',
       '/images/awards/WhatsApp-Image-2024-10-28-at-2.37.04-PM-1-1.webp',
@@ -29,7 +29,6 @@ export default function Awards() {
       '/images/awards/award1.jpeg',
       '/images/awards/award2.jpeg',
       '/images/awards/award3.jpeg',
-      '/images/awards/award4.jpeg',
       '/images/awards/award6.jpeg',
       '/images/awards/award7.jpeg',
     ];
@@ -82,9 +81,9 @@ export default function Awards() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
               {featured.map((img, idx) => {
                 const isAward7 = img.includes('award7');
-                const isSpecialImage = 
-                  img.includes('removebg') || 
-                  img.includes('podium') || 
+                const isSpecialImage =
+                  img.includes('removebg') ||
+                  img.includes('podium') ||
                   isAward7;
 
                 return (
@@ -97,15 +96,14 @@ export default function Awards() {
                     <img
                       src={img}
                       alt={`Award ${idx + 1}`}
-                      className={`w-full transition-all duration-300 group-hover:brightness-75 ${
-                        isAward7 
+                      className={`w-full transition-all duration-300 group-hover:brightness-75 ${isAward7
                           ? 'h-80 md:h-96 lg:h-[420px] object-contain p-6'     // ← Larger size only for award7
                           : 'h-60 md:h-72 lg:h-80 object-cover'
-                      }`}
+                        }`}
                       loading="lazy"
                       decoding="async"
-                      onError={(e) => { 
-                        e.target.src = '/images/header02.webp'; 
+                      onError={(e) => {
+                        e.target.src = '/images/header02.webp';
                       }}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
@@ -146,18 +144,23 @@ export default function Awards() {
       )}
 
       {/* CTA Section */}
+      {/* CTA Section */}
       <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-16 px-4 mt-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">Experience Excellence with JPK Interio</h2>
+          <h2 className="text-4xl font-bold mb-4">
+            Experience Excellence with JPK Interio
+          </h2>
+
           <p className="text-xl opacity-90 mb-8">
             Benefit from our award-winning expertise and commitment to quality.
           </p>
-          <a 
-            href="/contact"
+
+          <Link
+            to="/contact"
             className="inline-block bg-white text-red-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </div>

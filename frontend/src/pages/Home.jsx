@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { staticData } from '../data/staticData';
-
+import { Link } from "react-router-dom";
 const Home = () => {
   const data = staticData.home;
 
@@ -144,9 +144,8 @@ const Home = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-red-600 w-5 sm:w-10" : "bg-white/60 hover:bg-white w-2 sm:w-3"
-              }`}
+              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-red-600 w-5 sm:w-10" : "bg-white/60 hover:bg-white w-2 sm:w-3"
+                }`}
             />
           ))}
         </div>
@@ -345,12 +344,12 @@ const Home = () => {
           <p className="text-base xs:text-lg sm:text-lg md:text-2xl max-w-2xl mx-auto opacity-90 px-2">
             {data.cta.description}
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block bg-white text-red-600 hover:bg-gray-100 px-8 sm:px-12 py-3 sm:py-4 md:py-5 rounded-2xl font-semibold text-base xs:text-lg sm:text-lg md:text-xl shadow-2xl transition-all hover:scale-105"
           >
             Get In Touch
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -360,7 +359,7 @@ const Home = () => {
           <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-8 sm:mb-10 px-2">
             WE ARE{" "}
             <span className="text-red-600 underline underline-offset-4 sm:underline-offset-8 decoration-4 decoration-red-600">
-              AUTHORISED DISTRIBUTOR & DEALER!
+              AUTHORISED DISTRIBUTOR & DEALER for
             </span>
           </h2>
           <div className="overflow-hidden">
