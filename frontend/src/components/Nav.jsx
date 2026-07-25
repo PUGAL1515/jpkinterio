@@ -203,7 +203,7 @@ focus:ring-offset-2"
                         to="/products/knauf-ceiling-solutions"
                         className="block px-5 py-2.5 hover:bg-red-50"
                       >
-                        Knauf Ceilings
+                        Knauf Armstrong Ceilings
                       </Link>
                       <Link
                         to="/products/action-tesa"
@@ -458,7 +458,7 @@ focus:ring-offset-2"
                       className="block py-3 px-4 hover:bg-red-50 rounded-xl"
                       onClick={() => setMobileOpen(false)}
                     >
-                      Knauf Ceilings
+                      Knauf ArmstrongCeilings
                     </Link>
                     <Link
                       to="/products/action-tesa"
