@@ -359,7 +359,7 @@ const Home = () => {
           <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-8 sm:mb-10 px-2">
             WE ARE{" "}
             <span className="text-red-600 underline underline-offset-4 sm:underline-offset-8 decoration-4 decoration-red-600">
-              AUTHORISED DISTRIBUTOR & DEALER for
+              AUTHORISED DISTRIBUTOR & DEALER FOR
             </span>
           </h2>
           <div className="overflow-hidden">
