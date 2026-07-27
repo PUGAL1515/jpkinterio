@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { staticData } from '../data/staticData';
+import { Link } from "react-router-dom";
 
 const About = () => {
   const data = staticData.about;
