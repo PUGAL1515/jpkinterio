@@ -168,12 +168,12 @@ const About = () => {
       {data.cta.description}
     </p>
 
-    <a
-      href={data.cta.link}
-      className="inline-block bg-red-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-red-700 transition"
-    >
-      {data.cta.buttonText}
-    </a>
+   <Link
+  to={data.cta.link}
+  className="inline-block bg-red-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-red-700 transition"
+>
+  {data.cta.buttonText}
+</Link>
 
   </div>
 </section>
