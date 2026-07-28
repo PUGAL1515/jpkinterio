@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { staticData } from '../data/staticData';
 import { Link } from "react-router-dom";
+
 const Home = () => {
   const data = staticData.home;
 
@@ -20,53 +21,11 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [headerImages.length]);
 
-  // Counter Animation Ref
-  const countersRef = useRef([]);
-
-  // Counter & Progress Bar Animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const counterEl = entry.target;
-            const target = parseInt(counterEl.getAttribute("data-target"));
-            let count = 0;
-            const increment = Math.ceil(target / 50);
-
-            const animateCounter = () => {
-              count += increment;
-              if (count < target) {
-                counterEl.textContent = count + "%";
-                requestAnimationFrame(animateCounter);
-              } else {
-                counterEl.textContent = target + "%";
-              }
-            };
-            animateCounter();
-
-            const progressBar = counterEl.parentElement?.querySelector(".progress-bar");
-            if (progressBar) {
-              setTimeout(() => {
-                progressBar.style.width = `${progressBar.getAttribute("data-width")}%`;
-              }, 400);
-            }
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    countersRef.current.forEach((counter) => counter && observer.observe(counter));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="overflow-hidden">
       {/* ====================== HERO SECTION ====================== */}
       <section className="relative w-full h-screen overflow-hidden">
-        {/* Slide 1 - Strong Dark Overlay (as requested) */}
+        {/* Slide 1 - Strong Dark Overlay */}
         <img
           src={headerImages[0]}
           alt="JPK Interio - Premium Interior & Exterior Solutions"
@@ -84,7 +43,7 @@ const Home = () => {
         />
         <div className={`absolute inset-0 bg-black/55 transition-all duration-700 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`} />
 
-        {/* Slide 2 & 3 - Brighter */}
+        {/* Slide 2 & 3 */}
         {headerImages.slice(1).map((img, idx) => {
           const slideIndex = idx + 1;
           const isActive = slideIndex === currentSlide;
@@ -104,33 +63,28 @@ const Home = () => {
 
         {/* Hero Content */}
         <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-6 z-20">
-          <div className="text-center max-w-4xl text-white w-full">
-            <h1 className="text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold mb-3 sm:mb-6 leading-tight tracking-tight">
-              WELCOME TO JPK INTERIO
+          <div className="text-center max-w-5xl text-white w-full">
+            <h1 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold mb-4 sm:mb-6 leading-tight tracking-tight">
+              Premium Interior, Exterior, Ceiling & Flooring Solutions in Hosur
             </h1>
 
-            <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 md:space-y-6 text-base xs:text-lg sm:text-lg md:text-base lg:text-base xl:text-lg leading-relaxed text-gray-100 px-1 sm:px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl font-medium text-gray-100 mb-5 sm:mb-7 max-w-4xl mx-auto leading-relaxed px-2">
+              Authorised distributors and project specialists for FunderMax, VOX, Action TESA, 
+              Responsive Flooring, Knauf Ceiling Solutions, Vivre Panels, Donaire Carpets and Jindal MLC Pipes.
+            </p>
+
+            <div className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed text-gray-200 px-2 space-y-3">
               <p>
-                JPK Interio is a leading authorized distributors & dealer of premium interior and exterior
-                solutions, including ceiling and flooring systems. We are an authorized license partner
-                for FunderMax HPL cladding and a trusted distributor for renowned brands such as VOX
-                Ceiling & Wall Panels, Knauf Armstrong ceiling tiles, Action TESA laminate flooring,
-                Responsive vinyl flooring, Jindal MLC Pipes, Vivre interior and exterior panels, Donaire
-                carpets, and Linearsil metal ceilings.
-              </p>
-              <p>
-                Headquartered in Hosur, Tamil Nadu, India, JPK Interio is committed to delivering
-                aesthetically appealing and highly functional spaces that create a lasting impact.
-                We specialize in turnkey project execution for both interior and exterior works across
-                diverse sectors, including commercial, residential, hospitality, healthcare, and industrial
-                projects.
+                JPK Interio is a leading authorised distributor & dealer of premium interior and exterior solutions. 
+                Headquartered in Hosur, Tamil Nadu, we specialise in turnkey project execution for commercial, 
+                residential, hospitality, healthcare and industrial spaces across South India.
               </p>
             </div>
 
             <div className="mt-6 sm:mt-10">
               <a
                 href="/about"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 sm:px-8 md:px-8 lg:px-8 py-3 sm:py-4 md:py-4 lg:py-4 rounded-xl font-semibold text-base xs:text-lg sm:text-lg md:text-base lg:text-base shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 Discover More
               </a>
@@ -144,8 +98,11 @@ const Home = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-red-600 w-5 sm:w-10" : "bg-white/60 hover:bg-white w-2 sm:w-3"
-                }`}
+              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "bg-red-600 w-5 sm:w-10"
+                  : "bg-white/60 hover:bg-white w-2 sm:w-3"
+              }`}
             />
           ))}
         </div>
@@ -180,7 +137,7 @@ const Home = () => {
               {data.about.title}
             </h2>
             <div className="text-gray-700 text-base xs:text-lg sm:text-lg md:text-xl leading-relaxed space-y-4 sm:space-y-6">
-              {data.about.description.split('\n\n').map((paragraph, index) => (
+              {data.about.description.split("\n\n").map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
@@ -205,7 +162,7 @@ const Home = () => {
         </div>
         <div className="relative z-10 max-w-6xl mx-auto text-center space-y-5 sm:space-y-10">
           <span className="inline-block bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-sm sm:text-base font-semibold tracking-wider">
-            WHY CHOOSE US?
+            WHY CHOOSE JPK INTERIO?
           </span>
           <h2 className="text-4xl xs:text-5xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
             {data.why_choose.title}
@@ -219,101 +176,272 @@ const Home = () => {
                 key={index}
                 className="bg-white shadow-xl rounded-2xl p-5 sm:p-8 text-left border-l-8 border-red-600 hover:-translate-y-2 transition-all duration-300 w-full md:w-auto md:min-w-[280px]"
               >
-                <h3 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">{feature.title}</h3>
-                <p className="text-gray-600 text-base xs:text-lg sm:text-lg md:text-xl leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-base xs:text-lg sm:text-lg md:text-xl leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ====================== NUMBERS SECTION ====================== */}
-      <section className="bg-gradient-to-br from-gray-50 to-white py-10 sm:py-16 md:py-20 px-3 sm:px-6 md:px-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8">
-          {data.numbers.map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-white rounded-3xl shadow-xl p-6 sm:p-10 text-center overflow-hidden group"
-            >
-              <img
-                src={item.image}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-all"
-                width="600"
-                height="400"
-                loading="lazy"
-                decoding="async"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className="relative z-10">
-                <div className="text-5xl xs:text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-red-600 mb-2 sm:mb-3">
-                  {item.value}
-                </div>
-                <div className="text-lg xs:text-xl sm:text-xl md:text-2xl font-semibold text-gray-800 tracking-wide">
-                  {item.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* ====================== STRENGTH + MD SECTION ====================== */}
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-red-50/30"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-red-200/25 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
-      {/* ====================== MD SECTION ====================== */}
-      <section className="bg-white py-10 sm:py-16 md:py-20 px-3 sm:px-6 md:px-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
-            <div className="lg:w-2/5 w-full flex flex-col items-center lg:items-start text-center lg:text-left">
-              <div className="relative mb-8 sm:mb-12 flex justify-center">
-                <div className="absolute w-48 xs:w-56 sm:w-72 md:w-80 h-48 xs:h-56 sm:h-72 md:h-80 bg-red-500/10 rounded-full blur-2xl"></div>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-flex items-center bg-gradient-to-r from-red-600 via-red-500 to-red-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base md:text-lg font-extrabold tracking-[0.15em] uppercase shadow-lg border border-red-300/30 mb-4">
+              OUR STRENGTH
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
+              Numbers That Speak & Leadership
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-start">
+            {/* Left Column – MD Profile */}
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="relative mb-6 sm:mb-8">
+                <div className="absolute inset-0 w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64 bg-red-500/20 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"></div>
+
                 <div className="relative group">
-                  <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-red-700 opacity-80 group-hover:opacity-100 blur-[2px] transition duration-500"></div>
-                  <div className="relative w-36 h-36 xs:w-44 xs:h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-[5px] border-white shadow-2xl">
+                  <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-red-700 opacity-90 group-hover:opacity-100 blur-[2px] transition duration-500 group-hover:scale-105"></div>
+                  
+                  <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                     <img
                       src={data.md_section.image}
                       alt="Managing Director of JPK Interio"
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition duration-700"
                       width="600"
                       height="600"
                       loading="lazy"
                       decoding="async"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
                   </div>
                 </div>
               </div>
-              <h3 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3">
+
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1.5">
                 {data.md_section.title}
               </h3>
-              <p className="text-red-600 font-medium text-lg xs:text-xl sm:text-xl md:text-2xl">
+              <p className="text-red-600 font-semibold text-base sm:text-lg md:text-xl mb-4">
                 {data.md_section.subtitle}
               </p>
+              <div className="w-14 h-1 bg-gradient-to-r from-red-600 to-orange-500 rounded-full mb-6"></div>
+
+              <div className="space-y-3 text-left w-full max-w-sm">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1.5 w-2 h-2 rounded-full bg-red-600 flex-shrink-0"></div>
+                  <p className="text-gray-700 text-sm sm:text-base">
+                    South India projects delivered across Hosur, Bengaluru, Krishnagiri & more
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1.5 w-2 h-2 rounded-full bg-red-600 flex-shrink-0"></div>
+                  <p className="text-gray-700 text-sm sm:text-base">
+                    Turnkey expertise for residential & commercial spaces
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="lg:w-3/5 w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-              {data.md_section.stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-2xl p-4 sm:p-8 text-center hover:border-red-300 transition-all group hover:-translate-y-2"
-                >
-                  <div
-                    ref={(el) => (countersRef.current[index] = el)}
-                    data-target={stat.value}
-                    className="text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-red-600 mb-3 sm:mb-4 group-hover:scale-110 transition-transform"
-                  >
-                    0%
-                  </div>
-                  <div className="font-semibold text-gray-800 text-base xs:text-lg sm:text-lg md:text-xl leading-tight">
-                    {stat.label}
-                  </div>
-                  <div className="w-full h-2 sm:h-2.5 bg-gray-200 rounded-full mt-4 sm:mt-6">
-                    <div
-                      className="progress-bar h-2 sm:h-2.5 bg-red-600 rounded-full transition-all duration-[2000ms]"
-                      style={{ width: "0%" }}
-                      data-width={stat.value}
-                    />
+            {/* Right Column – Numbers + Brand Card */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+                <div className="group relative bg-white rounded-2xl p-6 sm:p-7 text-center shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 border border-gray-100 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-red-600 mb-2 leading-none group-hover:scale-110 transition-transform duration-500">
+                      6+
+                    </div>
+                    <div className="text-sm sm:text-base font-semibold text-gray-800 leading-snug">
+                      Years of Industry Experience
+                    </div>
+                    <div className="mt-3 w-10 h-1 bg-red-500 mx-auto rounded-full group-hover:w-16 transition-all duration-500"></div>
                   </div>
                 </div>
-              ))}
+
+                <div className="group relative bg-white rounded-2xl p-6 sm:p-7 text-center shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 border border-gray-100 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-red-600 mb-2 leading-none group-hover:scale-110 transition-transform duration-500">
+                      500+
+                    </div>
+                    <div className="text-sm sm:text-base font-semibold text-gray-800 leading-snug">
+                      Completed Installations
+                    </div>
+                    <div className="mt-3 w-10 h-1 bg-red-500 mx-auto rounded-full group-hover:w-16 transition-all duration-500"></div>
+                  </div>
+                </div>
+
+                <div className="group relative bg-white rounded-2xl p-6 sm:p-7 text-center shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 border border-gray-100 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-red-600 mb-2 leading-none group-hover:scale-110 transition-transform duration-500">
+                      8+
+                    </div>
+                    <div className="text-sm sm:text-base font-semibold text-gray-800 leading-snug">
+                      Premium Authorised Brands
+                    </div>
+                    <div className="mt-3 w-10 h-1 bg-red-500 mx-auto rounded-full group-hover:w-16 transition-all duration-500"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group relative bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-6 sm:p-8 text-white text-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+                    Authorized Partner for Premium Brands
+                  </div>
+                  <p className="text-red-100 text-sm sm:text-base leading-relaxed">
+                    FunderMax • VOX • Knauf Armstrong • Action TESA • Responsive • Jindal MLC • Vivre • Donaire & more
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================== TRUST & CREDENTIALS SECTION ====================== */}
+      <section className="py-16 sm:py-20 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block bg-red-600 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wider mb-4">
+              TRUSTED BY CLIENTS & BRANDS
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+              Authorised Partner You Can Rely On
+            </h2>
+            <p className="max-w-3xl mx-auto text-gray-600 text-lg">
+              We are official authorised distributors and dealers for leading international and Indian brands, 
+              backed by real projects, showroom experience and transparent business credentials.
+            </p>
+          </div>
+
+          {/* Brand Partnership Grid with Caption */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-16">
+  {[
+    { name: "Fundermax-HPL shades", status: "Authorised License Partner – HPL Cladding" },
+    { name: "Vox India", status: "Authorised Distributor – Ceiling & Wall Panels" },
+    { name: "Vivre Panels", status: "Authorised Distributor – Interior & Exterior Panels" },
+    { name: "Knauf Armstrong Ceilings", status: "Authorised Dealer – Ceiling Solutions" },
+    { name: "Action TESA Flooring", status: "Authorised Distributor – Laminate Flooring" },
+    { name: "Donaire Carpets", status: "Authorised Dealer – Carpets" },
+    { name: "Responsive Vinyl Flooring", status: "Authorised Dealer – Vinyl Flooring" },
+    { name: "Jindal MLC Pipes", status: "Authorised Distributor – MLC Pipes" },
+  ].map((brand, index) => (
+    <div 
+      key={index}
+      className="bg-white rounded-2xl p-5 text-center shadow-md hover:shadow-xl transition-all border border-gray-100"
+    >
+      <div className="h-16 flex items-center justify-center mb-3">
+        <span className="text-lg sm:text-xl font-bold text-gray-800 leading-tight">
+          {brand.name}
+        </span>
+      </div>
+      <p className="text-xs sm:text-sm text-red-600 font-medium leading-tight">
+        {brand.status}
+      </p>
+    </div>
+  ))}
+</div>
+          {/* Trust Stats */}
+<div className="grid md:grid-cols-3 gap-8 mb-16">
+  {/* Completed Installations */}
+  <div className="bg-white rounded-2xl p-8 text-center shadow-lg border-t-4 border-red-600">
+    <div className="text-5xl font-extrabold text-red-600 mb-2">500+</div>
+    <h3 className="text-xl font-bold text-gray-900 mb-2">Completed Installations</h3>
+    <p className="text-gray-600 text-sm">
+      Residential, commercial, hospitality & industrial projects across South India
+    </p>
+  </div>
+
+  {/* Service Locations - Updated */}
+  <div className="bg-white rounded-2xl p-8 text-center shadow-lg border-t-4 border-red-600">
+    <div className="text-5xl font-extrabold text-red-600 mb-2">7+</div>
+    <h3 className="text-xl font-bold text-gray-900 mb-2">Service Locations</h3>
+    <p className="text-gray-600 text-sm leading-relaxed">
+      Hosur • Krishnagiri • Dharmapuri • Sarjapur • Malur • Electronic City • Bengaluru
+    </p>
+  </div>
+
+  {/* Years of Experience */}
+  <div className="bg-white rounded-2xl p-8 text-center shadow-lg border-t-4 border-red-600">
+    <div className="text-5xl font-extrabold text-red-600 mb-2">6+</div>
+    <h3 className="text-xl font-bold text-gray-900 mb-2">Years of Experience</h3>
+    <p className="text-gray-600 text-sm">
+      Delivering premium interior & exterior solutions since 2019
+    </p>
+  </div>
+</div>
+
+          {/* Certificates + Business Details */}
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left - Certificates Preview */}
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Authorisation Certificates</h3>
+              <p className="text-gray-600 mb-6">
+                We proudly display official authorisation certificates from our partner brands. 
+                You can request copies or view them at our Hosur showroom.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gray-100 rounded-xl h-40 flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-gray-500 text-sm text-center px-2">FunderMax Certificate</span>
+                </div>
+                <div className="bg-gray-100 rounded-xl h-40 flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-gray-500 text-sm text-center px-2">VOX / Knauf Certificate</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Business Identity */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Business Credentials</h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 font-bold">•</span>
+                  <div>
+                    <strong>GST Registered Business</strong>
+                    <p className="text-sm text-gray-500">GSTIN: XX XXXX XXXX XXXX (Add your real GSTIN)</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 font-bold">•</span>
+                  <div>
+                    <strong>Registered Office</strong>
+                    <p className="text-sm text-gray-500">47, Taluk Office Road, Hosur, Tamil Nadu – 635109</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 font-bold">•</span>
+                  <div>
+                    <strong>Warranty & Installation Support</strong>
+                    <p className="text-sm text-gray-500">
+                      Manufacturer warranty + professional installation and after-sales support
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 font-bold">•</span>
+                  <div>
+                    <strong>Showroom Experience</strong>
+                    <p className="text-sm text-gray-500">
+                      Visit our Hosur showroom to see real product samples and completed displays
+                    </p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
