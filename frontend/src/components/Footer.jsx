@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-white text-black mt-10 border-t border-gray-200">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-8 lg:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
         
-        {/* Logo + About Section - Moved Up */}
+        {/* Logo + About Section */}
         <div className="lg:col-span-5 flex flex-col -mt-2 lg:-mt-1">
           <Link to="/" className="mb-4 inline-block">
             <img
@@ -24,18 +26,17 @@ const Footer = () => {
           </h2>
 
           <p className="text-sm text-gray-700 leading-relaxed">
-            JPK Interio is a leading authorized distributors and dealer of premium
+            JPK Interio is a leading authorised distributor and dealer of premium
             interior and exterior solutions, including ceiling and flooring systems.
-            We are an authorized license partner for <strong>FunderMax HPL Cladding</strong> and a trusted
+            We are an authorised license partner for <strong>FunderMax HPL Cladding</strong> and a trusted
             distributor for renowned brands such as <strong>VOX Ceiling &amp; Wall Panels</strong>,
             <strong> Knauf Armstrong Ceiling Tiles</strong>, <strong>Action TESA Laminate Flooring</strong>,
             <strong> Responsive Vinyl Flooring</strong>, <strong>Jindal MLC Pipes</strong>,
             <strong> Vivre Interior &amp; Exterior Panels</strong>, <strong>Donaire Carpets</strong>,
             and <strong>Linearsil Metal Ceilings</strong>. Headquartered in Hosur, Tamil Nadu,
-            India, we specialize in turnkey interior and exterior project execution
+            India, we specialise in turnkey interior and exterior project execution
             for commercial, residential, hospitality, healthcare, and industrial
-            sectors, delivering aesthetically appealing and highly functional spaces
-            that create a lasting impact.
+            sectors.
           </p>
         </div>
 
@@ -70,14 +71,21 @@ const Footer = () => {
         <div className="lg:col-span-2">
           <h3 className="text-lg font-semibold mb-4 text-red-600">Contact Us</h3>
           
-          <div className="space-y-4 text-sm text-gray-700">
-            <address className="not-italic leading-relaxed">
+          <div className="space-y-5 text-sm text-gray-700">
+            {/* Clickable Address (opens Google Maps) */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=47+Taluk+Office+Road,+Next+to+New+Robin+Stores,+Opp.+to+Balaji+Theatre,+Hosur,+Tamil+Nadu+635109"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block not-italic leading-relaxed hover:text-red-600 transition-colors"
+            >
               47, Taluk Office Road,<br />
               Next to New Robin Stores,<br />
               Opp. to Balaji Theatre,<br />
               Hosur, Tamil Nadu 635109
-            </address>
+            </a>
 
+            {/* Phone Numbers (already clickable) */}
             <div>
               <p className="font-medium text-red-600 mb-1">Phone:</p>
               <a href="tel:+918015250234" className="block hover:text-red-600 transition-colors">
@@ -88,36 +96,37 @@ const Footer = () => {
               </a>
             </div>
 
-           <div>
-  <p className="font-medium text-red-600 mb-1">Email:</p>
-  <div className="space-y-2">
-    <a 
-      href="mailto:Info@jpkinterio.com" 
-      className="hover:text-red-600 transition-colors break-words block"
-    >
-      Info@jpkinterio.com
-    </a>
-    <a 
-      href="mailto:Contact@jpkinterio.com" 
-      className="hover:text-red-600 transition-colors break-words block"
-    >
-      Contact@jpkinterio.com
-    </a>
-    <a
-  href="mailto:jpkinterio.hsr@gmail.com"
-  className="hover:text-red-600 transition-colors break-words block"
->
-  jpkinterio.hsr@gmail.com
-</a>
-  </div>
-</div>
+            {/* Professional Domain Emails */}
+            <div>
+              <p className="font-medium text-red-600 mb-1">Email:</p>
+              <div className="space-y-1.5">
+                <a 
+                  href="mailto:info@jpkinterio.com" 
+                  className="block hover:text-red-600 transition-colors break-words"
+                >
+                  info@jpkinterio.com
+                </a>
+                <a 
+                  href="mailto:sales@jpkinterio.com" 
+                  className="block hover:text-red-600 transition-colors break-words"
+                >
+                  sales@jpkinterio.com
+                </a>
+                <a 
+                  href="mailto:projects@jpkinterio.com" 
+                  className="block hover:text-red-600 transition-colors break-words"
+                >
+                  projects@jpkinterio.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Bar – Updated Copyright */}
       <div className="bg-red-600 py-4 text-center text-white text-sm">
-        © {new Date().getFullYear()} JPK Interio. All rights reserved.
+        Copyright © 2019–{currentYear} JPK Interio. All Rights Reserved.
       </div>
     </footer>
   );
