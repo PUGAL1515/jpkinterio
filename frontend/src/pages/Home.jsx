@@ -213,13 +213,13 @@ const Home = () => {
                 <div className="relative group">
                   <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-red-600 via-orange-500 to-red-700 opacity-90 group-hover:opacity-100 blur-[2px] transition duration-500 group-hover:scale-105"></div>
                   
-                  <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                  <div className="relative w-50 h-50 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                     <img
                       src={data.md_section.image}
                       alt="Managing Director of JPK Interio"
                       className="w-full h-full object-cover object-top group-hover:scale-110 transition duration-700"
-                      width="600"
-                      height="600"
+                      width="700"
+                      height="700"
                       loading="lazy"
                       decoding="async"
                     />
@@ -234,22 +234,8 @@ const Home = () => {
               <p className="text-red-600 font-semibold text-base sm:text-lg md:text-xl mb-4">
                 {data.md_section.subtitle}
               </p>
-              <div className="w-14 h-1 bg-gradient-to-r from-red-600 to-orange-500 rounded-full mb-6"></div>
-
-              <div className="space-y-3 text-left w-full max-w-sm">
-                <div className="flex items-start gap-3">
-                  <div className="mt-1.5 w-2 h-2 rounded-full bg-red-600 flex-shrink-0"></div>
-                  <p className="text-gray-700 text-sm sm:text-base">
-                    South India projects delivered across Hosur, Bengaluru, Krishnagiri & more
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1.5 w-2 h-2 rounded-full bg-red-600 flex-shrink-0"></div>
-                  <p className="text-gray-700 text-sm sm:text-base">
-                    Turnkey expertise for residential & commercial spaces
-                  </p>
-                </div>
-              </div>
+              <div className=" bg-gradient-to-r from-red-600 to-orange-500 rounded-full mb-6"></div>                
+                   
             </div>
 
             {/* Right Column – Numbers + Brand Card */}
@@ -309,6 +295,10 @@ const Home = () => {
             </div>
           </div>
         </div>
+         <marquee behavior="slide" direction="left" scrollamount="5"  className=" bottom-0 left-0 w-full bg-red-600 text-black text-sm sm:text-base font-semibold tracking-wide">
+                    South India projects delivered across Hosur, Bengaluru, Krishnagiri & more || 
+                           Turnkey expertise for residential & commercial spaces
+                    </marquee>
       </section>
 
       {/* ====================== TRUST & CREDENTIALS SECTION ====================== */}
@@ -519,6 +509,11 @@ const Home = () => {
             </div>
           </div>
         </div>
+     <img
+  src={`${process.env.PUBLIC_URL}/images/map.png`}
+  alt="JPK Interio Service Locations"
+  className="w-full h-200 rounded-3xl shadow-2xl"
+/>
       </section>
     </div>
   );
