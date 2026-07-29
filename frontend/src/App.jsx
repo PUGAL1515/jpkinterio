@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 import SocialIcons from "./components/SocialIcons.jsx";
+import TermsAndConditions from "./pages/TermsAndConditions.jsx";
 
 // Lazy Loaded Pages
 const Home = lazy(() => import("./pages/Home.jsx"));
@@ -142,6 +143,7 @@ function App() {
                 path="/contact"
                 element={<Contact />}
               />
+              <Route path="/terms" element={<TermsAndConditions/>}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

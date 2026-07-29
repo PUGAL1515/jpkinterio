@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { staticData } from '../data/staticData';
 import { Link } from "react-router-dom";
-
 const About = () => {
   const data = staticData.about;
 
@@ -137,21 +136,7 @@ const About = () => {
                 {data.md_section?.subtitle || 'JPK Interio'}
               </p>
               <div className="w-12 h-1 bg-gradient-to-r from-red-600 to-orange-500 rounded-full mb-4 sm:mb-5"></div>
-
-              <div className="space-y-2 sm:space-y-3 text-left w-full max-w-sm">
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <div className="mt-1.5 w-2 h-2 rounded-full bg-red-600 flex-shrink-0"></div>
-                  <p className="text-gray-700 text-xs sm:text-sm md:text-base">
-                    South India projects delivered across Hosur, Bengaluru, Krishnagiri & more
-                  </p>
-                </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <div className="mt-1.5 w-2 h-2 rounded-full bg-red-600 flex-shrink-0"></div>
-                  <p className="text-gray-700 text-xs sm:text-sm md:text-base">
-                    Turnkey expertise for residential & commercial spaces
-                  </p>
-                </div>
-              </div>
+            
             </div>
 
             {/* Right Column – Numbers + Brand Card */}
@@ -211,6 +196,10 @@ const About = () => {
             </div>
           </div>
         </div>
+          <marquee behavior="slide" direction="left" scrollamount="5"  className=" bottom-0 left-0 w-full bg-red-600 text-black text-sm sm:text-base font-semibold tracking-wide">
+                    South India projects delivered across Hosur, Bengaluru, Krishnagiri & more || 
+                           Turnkey expertise for residential & commercial spaces
+                    </marquee>
       </section>
 
       {/* CTA Section */}
@@ -253,5 +242,4 @@ const About = () => {
     </div>
   );
 };
-
 export default About;
