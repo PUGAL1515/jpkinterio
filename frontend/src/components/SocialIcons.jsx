@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import QuoteModal from "../pages/QuoteModal"; // Adjust the path if needed
 
 const FloatingEnquiry = () => {
@@ -9,7 +10,7 @@ const FloatingEnquiry = () => {
   const phoneNumber = "918015250234";
   const whatsappNumber = "918015250234";
   const showroomMapLink = "https://maps.app.goo.gl/WjJ1vFLeRxBpJudp8";
-  const catalogueLink = "/catalogue.pdf"; // Change to your real catalogue link
+  const catalogueLink = "/products/vivre-panels"; // ← changed
   // ==================================
 
   const buttons = [
@@ -49,7 +50,7 @@ const FloatingEnquiry = () => {
       icon: "fas fa-download",
       href: catalogueLink,
       bg: "bg-gray-800 hover:bg-gray-900",
-      external: true,
+      // no external → same tab navigation
     },
   ];
 
@@ -71,12 +72,12 @@ const FloatingEnquiry = () => {
                 {btn.label}
               </span>
             </button>
-          ) : (
+          ) : btn.external ? (
             <a
               key={btn.id}
               href={btn.href}
-              target={btn.external ? "_blank" : "_self"}
-              rel={btn.external ? "noopener noreferrer" : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`group flex items-center ${btn.bg} text-white rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1 overflow-hidden`}
             >
               <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
@@ -86,6 +87,19 @@ const FloatingEnquiry = () => {
                 {btn.label}
               </span>
             </a>
+          ) : (
+            <Link
+              key={btn.id}
+              to={btn.href}
+              className={`group flex items-center ${btn.bg} text-white rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1 overflow-hidden`}
+            >
+              <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <i className={`${btn.icon} text-xl`} />
+              </div>
+              <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:px-4 whitespace-nowrap font-medium text-sm transition-all duration-300">
+                {btn.label}
+              </span>
+            </Link>
           )
         )}
       </div>
@@ -115,12 +129,12 @@ const FloatingEnquiry = () => {
                   <i className={`${btn.icon} text-lg`} />
                 </div>
               </button>
-            ) : (
+            ) : btn.external ? (
               <a
                 key={btn.id}
                 href={btn.href}
-                target={btn.external ? "_blank" : "_self"}
-                rel={btn.external ? "noopener noreferrer" : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`flex items-center gap-3 ${btn.bg} text-white pl-4 pr-3 py-3 rounded-full shadow-lg`}
                 onClick={() => setIsOpen(false)}
               >
@@ -129,6 +143,18 @@ const FloatingEnquiry = () => {
                   <i className={`${btn.icon} text-lg`} />
                 </div>
               </a>
+            ) : (
+              <Link
+                key={btn.id}
+                to={btn.href}
+                className={`flex items-center gap-3 ${btn.bg} text-white pl-4 pr-3 py-3 rounded-full shadow-lg`}
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="text-sm font-medium whitespace-nowrap">{btn.label}</span>
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                  <i className={`${btn.icon} text-lg`} />
+                </div>
+              </Link>
             )
           )}
         </div>
