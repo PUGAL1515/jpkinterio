@@ -8,7 +8,7 @@ import SocialIcons from "./components/SocialIcons.jsx";
 // Lazy Loaded Pages
 const Home = lazy(() => import("./pages/Home.jsx"));
 const About = lazy(() => import("./pages/About.jsx"));
-
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 const Products = lazy(() => import("./pages/Products.jsx"));
 const FundermaxIndia = lazy(() => import("./pages/FundermaxIndia.jsx"));
 const AboutFundermax = lazy(() => import("./pages/AboutFundermax.jsx"));
@@ -142,6 +142,7 @@ function App() {
                 path="/contact"
                 element={<Contact />}
               />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </main>
