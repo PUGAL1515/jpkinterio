@@ -5,37 +5,37 @@ const VinylFlooringCollection = () => {
   const vinylImages = [
     {
       id: 1,
-      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny1.png`,
+      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny1.webp`,
       alt: "Vinyl Flooring Design 1"
     },
     {
       id: 2,
-      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny2.png`,
+      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny2.webp`,
       alt: "Vinyl Flooring Design 2"
     },
     {
       id: 3,
-      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny3.png`,
+      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny3.webp`,
       alt: "Vinyl Flooring Design 3"
     },
     {
       id: 4,
-      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny4.png`,
+      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny4.webp`,
       alt: "Vinyl Flooring Design 4"
     },
     {
       id: 5,
-      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny5.png`,
+      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny5.webp`,
       alt: "Vinyl Flooring Design 5"
     },
     {
       id: 6,
-      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny6.png`,
+      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny6.webp`,
       alt: "Vinyl Flooring Design 6"
     },
     {
       id: 7,
-      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny7.png`,
+      src: `${process.env.PUBLIC_URL}/images/products/Responsive/Viny7.webp`,
       alt: "Vinyl Flooring Design 7"
     },
   ];
@@ -125,7 +125,7 @@ const VinylFlooringCollection = () => {
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
-                      e.target.src = `${process.env.PUBLIC_URL}/images/placeholder.jpg`;
+                      e.target.src = `${process.env.PUBLIC_URL}/images/placeholder.webp`;
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

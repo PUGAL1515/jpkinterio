@@ -10,10 +10,10 @@ const Jindal = () => {
     {/* 🔥 Logo */}
     <div className="flex justify-center mb-5">
       <img 
-        src="/images/customers/08.png" 
+        src="/images/customers/08.webp" 
         alt="Jindal Logo" 
         className="h-14 md:h-20 object-contain"
-      />
+       loading="lazy" decoding="async" />
     </div>
 
     {/* Tag */}
@@ -65,18 +65,18 @@ const Jindal = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
   <div className="rounded-xl overflow-hidden">
     <img 
-      src="/images/products/jindal/water1.jpg" 
+      src="/images/products/jindal/water1.webp" 
       alt="Jindal MLC Hot & Cold Water Distribution"
       className="w-full h-48 md:h-56 object-contain"
-    />
+     loading="lazy" decoding="async" />
   </div>
 
   <div className="rounded-xl overflow-hidden  ">
     <img 
-      src="/images/products/jindal/water2.jpg" 
+      src="/images/products/jindal/water2.webp" 
       alt="Jindal MLC Pipes Installation"
       className="w-full h-48 md:h-56 object-contain"
-    />
+     loading="lazy" decoding="async" />
   </div>
 </div>
 
@@ -88,14 +88,14 @@ const Jindal = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-        {["water3.png", "water4.png", "water5.png", "water6.png"].map((img, i) => (
+        {["water3.webp", "water4.webp", "water5.webp", "water6.webp"].map((img, i) => (
           <div key={i} className="group">
             <div className="rounded-xl overflow-hidden shadow-md bg-black">
               <img 
                 src={`/images/products/jindal/${img}`} 
                 alt={`Jindal View ${i + 1}`}
                 className="w-full h-40 md:h-44 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
+               loading="lazy" decoding="async" />
             </div>
           </div>
         ))}
@@ -152,26 +152,26 @@ const Jindal = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img 
-              src="/images/products/jindal/gas1.jpg" 
+              src="/images/products/jindal/gas1.webp" 
               alt="Jindal MLC Gas Piping System"
               className="w-full h-full object-cover"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img 
-              src="/images/products/jindal/gas2.jpg" 
+              src="/images/products/jindal/gas2.webp" 
               alt="Jindal MLC Gas Application"
               className="w-full h-full object-cover"
-            />
+             loading="lazy" decoding="async" />
           </div>
         </div>
 
         <div className="rounded-2xl overflow-hidden shadow-lg">
           <img 
-            src="/images/products/jindal/gas3.png" 
+            src="/images/products/jindal/gas3.webp" 
             alt="Jindal MLC Gas Pipe Installation"
             className="w-full h-auto object-cover"
-          />
+           loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -234,10 +234,10 @@ const Jindal = () => {
         <div className="text-center group">
           <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-3 transition-transform group-hover:scale-105">
             <img 
-              src="/images/products/jindal/gasmaleunion.png" 
+              src="/images/products/jindal/gasmaleunion.webp" 
               alt="Male Union"
               className="w-full h-40 object-contain p-4"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <p className="font-medium text-gray-800">Male Union</p>
         </div>
@@ -245,10 +245,10 @@ const Jindal = () => {
         <div className="text-center group">
           <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-3 transition-transform group-hover:scale-105">
             <img 
-              src="/images/products/jindal/gasfemaleelbow.png" 
+              src="/images/products/jindal/gasfemaleelbow.webp" 
               alt="Female Elbow"
               className="w-full h-40 object-contain p-4"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <p className="font-medium text-gray-800">Female Elbow</p>
         </div>
@@ -256,10 +256,10 @@ const Jindal = () => {
         <div className="text-center group">
           <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-3 transition-transform group-hover:scale-105">
             <img 
-              src="/images/products/jindal/gasequaltee.png" 
+              src="/images/products/jindal/gasequaltee.webp" 
               alt="Equal Tee"
               className="w-full h-40 object-contain p-4"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <p className="font-medium text-gray-800">Equal Tee</p>
         </div>
@@ -267,10 +267,10 @@ const Jindal = () => {
         <div className="text-center group">
           <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-3 transition-transform group-hover:scale-105">
             <img 
-              src="/images/products/jindal/gasnipple.png" 
+              src="/images/products/jindal/gasnipple.webp" 
               alt="Gas Nipple"
               className="w-full h-40 object-contain p-4"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <p className="font-medium text-gray-800">Gas Nipple</p>
         </div>
@@ -278,10 +278,10 @@ const Jindal = () => {
         <div className="text-center group">
           <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-3 transition-transform group-hover:scale-105">
             <img 
-              src="/images/products/jindal/gasvalve.png" 
+              src="/images/products/jindal/gasvalve.webp" 
               alt="Gas Valve"
               className="w-full h-40 object-contain p-4"
-            />
+             loading="lazy" decoding="async" />
           </div>
           <p className="font-medium text-gray-800">Gas Valve</p>
         </div>
@@ -312,17 +312,17 @@ const Jindal = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
       <div className="rounded-2xl overflow-hidden shadow-lg">
         <img 
-          src="/images/products/jindal/compressed1.png" 
+          src="/images/products/jindal/compressed1.webp" 
           alt="Compressed Air Piping System"
           className="w-full h-full object-cover"
-        />
+         loading="lazy" decoding="async" />
       </div>
       <div className="rounded-2xl overflow-hidden shadow-lg">
         <img 
-          src="/images/products/jindal/compressed2.png" 
+          src="/images/products/jindal/compressed2.webp" 
           alt="Air Connect Piping"
           className="w-full h-full object-cover"
-        />
+         loading="lazy" decoding="async" />
       </div>
     </div>
 

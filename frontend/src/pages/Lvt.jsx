@@ -3,10 +3,10 @@ import React from 'react';
 const Lvt = () => {
   // Array of image paths for LVT products
   const lvtImages = [
-    { id: 1, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt1.png` },
-    { id: 2, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt2.png` },
-    { id: 3, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt3.jpg` },
-    { id: 4, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt4.png` }
+    { id: 1, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt1.webp` },
+    { id: 2, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt2.webp` },
+    { id: 3, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt3.webp` },
+    { id: 4, src: `${process.env.PUBLIC_URL}/images/products/Responsive/lvt4.webp` }
   ];
 
   // Features data
@@ -78,10 +78,10 @@ const Lvt = () => {
           {/* 🔥 Logo */}
           <div className="flex justify-center mb-5">
             <img
-              src="/images/customers/04.png"
+              src="/images/customers/04.webp"
               alt="LVT Logo"
               className="h-14 md:h-20 object-contain"
-            />
+             loading="lazy" decoding="async" />
           </div>
 
           {/* Tag */}
@@ -147,8 +147,10 @@ const Lvt = () => {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
-                        e.target.src = `${process.env.PUBLIC_URL}/images/placeholder.jpg`;
+                        e.target.src = `${process.env.PUBLIC_URL}/images/placeholder.webp`;
                       }}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>

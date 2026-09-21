@@ -3,23 +3,22 @@ import React, { useState } from 'react';
 const Donaire = () => {
   const [activeTab, setActiveTab] = useState('broadloom'); // 'broadloom' or 'carpet'
 
-  // Generate Broadloom images - 1 to 8 (PNG), 9 to 19 (JPG)
+  // Generate Broadloom images - 1 to 19 (all .webp)
   const broadloomImages = Array.from({ length: 19 }, (_, i) => {
     const id = i + 1;
-    const extension = id <= 8 ? 'png' : 'jpg';
     return {
       id: id,
-      src: `/images/products/donaire/donaire${id}.${extension}`,
+      src: `/images/products/donaire/donaire${id}.webp`,
       alt: `Broadloom Carpet ${id}`
     };
   });
 
-  // Generate Carpet images (Carpet Tiles & Planks) - 1 to 27 (PNG)
+  // Generate Carpet images (Carpet Tiles & Planks) - 1 to 27 (PNG/WebP as per your folder)
   const carpetImages = Array.from({ length: 27 }, (_, i) => {
     const id = i + 1;
     return {
       id: id,
-      src: `/images/products/donaire/carpet/Carpet${id}.png`,
+      src: `/images/products/donaire/carpet/Carpet${id}.webp`,
       alt: `Carpet Design ${id}`
     };
   });
@@ -30,12 +29,14 @@ const Donaire = () => {
       <section className="relative bg-white py-10 md:py-12 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
 
-          {/* 🔥 Logo */}
+          {/* Logo */}
           <div className="flex justify-center mb-5">
             <img
-              src="/images/customers/06.png"
+              src="/images/customers/06.webp"
               alt="Donaire Carpets Logo"
               className="h-14 md:h-20 object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -63,19 +64,21 @@ const Donaire = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={() => setActiveTab('broadloom')}
-              className={`px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 ${activeTab === 'broadloom'
+              className={`px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 ${
+                activeTab === 'broadloom'
                   ? 'bg-red-600 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+              }`}
             >
               Broadloom Carpets
             </button>
             <button
               onClick={() => setActiveTab('carpet')}
-              className={`px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 ${activeTab === 'carpet'
+              className={`px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 ${
+                activeTab === 'carpet'
                   ? 'bg-red-600 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+              }`}
             >
               Carpet Tiles & Planks
             </button>
@@ -96,21 +99,21 @@ const Donaire = () => {
               </p>
             </div>
 
-            {/* 🔥 Download Brochure */}
-<div className="flex justify-center mb-12">
-  <a
-    href="/brochures/Donaire-Carpet-Rolls-Range.pdf"
-    download
-    className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition"
-  >
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-8m0 8l-3-3m3 3l3-3M5 20h14" />
-    </svg>
-    Download Brochure
-  </a>
-</div>
+            {/* Download Brochure */}
+            <div className="flex justify-center mb-12">
+              <a
+                href="/brochures/Donaire-Carpet-Rolls-Range.pdf"
+                download
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-8m0 8l-3-3m3 3l3-3M5 20h14" />
+                </svg>
+                Download Brochure
+              </a>
+            </div>
 
-            {/* Broadloom Image Grid - 19 images (1-8 PNG, 9-19 JPG) */}
+            {/* Broadloom Image Grid - 19 images */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {broadloomImages.map((image) => (
                 <div
@@ -122,8 +125,10 @@ const Donaire = () => {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
-                        e.target.src = '/images/placeholder.png';
+                        e.target.src = '/images/header02.webp'; // safer fallback
                         e.target.onerror = null;
                       }}
                     />
@@ -148,19 +153,7 @@ const Donaire = () => {
               </p>
             </div>
 
-            {/* Carpet Tiles & Planks Brands */}
-            {/* <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {['PP Carpet Tiles', 'Nylon Carpet Tiles', 'Carpet Planks'].map((brand, index) => (
-                <span
-                  key={index}
-                  className="bg-white border border-gray-300 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-red-600 hover:text-white hover:border-red-600 transition cursor-pointer"
-                >
-                  {brand}
-                </span>
-              ))}
-            </div> */}
-
-            {/* Carpet Images Grid - 27 images */}
+            {/* Carpet Images Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {carpetImages.map((image) => (
                 <div
@@ -172,8 +165,10 @@ const Donaire = () => {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
-                        e.target.src = '/images/placeholder.png';
+                        e.target.src = '/images/header02.webp';
                         e.target.onerror = null;
                       }}
                     />

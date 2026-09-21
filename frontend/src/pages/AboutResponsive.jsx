@@ -4,67 +4,67 @@ const ProjectsBySegment = () => {
   const projects = [
     {
       id: 1,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project1.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project1.webp`,
       projectName: "TAJ MAHAL HOTEL, LUCKNOW, INDIA",
       product: "RESONATE® SPC Flooring + IMPACT® SPC Flooring"
     },
     {
       id: 2,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project2.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project2.webp`,
       projectName: "ENSEMBLE ENGINEERING LTD",
       product: "OPULENCE® LVT Flooring + IMPACT® LVT Flooring"
     },
     {
       id: 3,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project3.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project3.webp`,
       projectName: "AEROBRIDGE, MUMBAI AIRPORT, INDIA",
       product: "ENTICE® Safety Flooring"
     },
     {
       id: 4,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project4.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project4.webp`,
       projectName: "COVID-19 FACILITY, WIPRO CAMPUS, INDIA",
       product: "VEGA PLUS® Homogeneous Flooring"
     },
     {
       id: 5,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project5.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project5.webp`,
       projectName: "HILL SPRING CLUB HOUSE, MUMBAI, INDIA",
       product: "ACTIVE® Sports Flooring"
     },
     {
       id: 6,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project6.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project6.webp`,
       projectName: "CAPGEMINI CAMPUS, AIROLI, INDIA",
       product: "ACTIVE® Sports Flooring"
     },
     {
       id: 7,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project7.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project7.webp`,
       projectName: "WSP MIDDLE EAST ARCHITECTS, UAE",
       product: "RESONATE® SPC Flooring"
     },
     {
       id: 8,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project8.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project8.webp`,
       projectName: "HERO RESTAURANT, TRADEMARK HOTEL, NAIROBI",
       product: "RESONATE® SPC Flooring"
     },
     {
       id: 9,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project9.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project9.webp`,
       projectName: "RESIDENCE, FINLAND",
       product: "RESONATE® SPC Flooring"
     },
     {
       id: 10,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project10.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project10.webp`,
       projectName: "SAUDI MUSEUM, SAUDI ARABIA",
       product: "PINNACLE® Homogeneous Flooring"
     },
     {
       id: 11,
-      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project11.png`,
+      image: `${process.env.PUBLIC_URL}/images/products/Responsive/project11.webp`,
       projectName: "SEIMENS FACILITY, GOA, INDIA",
       product: "SPICA® Homogeneous Flooring"
     }
@@ -100,8 +100,10 @@ const ProjectsBySegment = () => {
                   src={project.image}
                   alt={project.projectName}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
-                    e.target.src = `${process.env.PUBLIC_URL}/images/placeholder.jpg`;
+                    e.target.src = `${process.env.PUBLIC_URL}/images/placeholder.webp`;
                   }}
                 />
               </div>

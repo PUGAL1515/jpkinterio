@@ -10,7 +10,7 @@ const VivrePanels = () => {
     const id = i + 1;
     return {
       id: id,
-      src: `/images/products/vivre/vivre${id}.jpg`,
+      src: `/images/products/vivre/vivre${id}.webp`,
       alt: `Vivre Panel Design ${id}`
     };
   });
@@ -30,10 +30,10 @@ const VivrePanels = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex justify-center mb-5">
             <img 
-              src="/images/customers/05.png" 
+              src="/images/customers/05.webp" 
               alt="Vivre Panels Logo" 
               className="h-14 md:h-20 object-contain"
-            />
+             loading="lazy" decoding="async" />
           </div>
 
           <span className="inline-block bg-red-600 text-white px-3 py-1 rounded-full font-semibold mb-3 text-xs shadow-md">
@@ -180,8 +180,10 @@ const VivrePanels = () => {
                     src={image.src} 
                     alt={image.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
-                      e.target.src = '/images/placeholder.png';
+                      e.target.src = '/images/placeholder.webp';
                       e.target.onerror = null;
                     }}
                   />

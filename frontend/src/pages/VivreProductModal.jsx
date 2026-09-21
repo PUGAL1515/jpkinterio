@@ -41,7 +41,7 @@ const VivreProductModal = ({ product, isOpen, onClose }) => {
                       src={product.src}
                       alt={product.name}
                       className="w-full max-h-[420px] object-contain rounded-2xl"
-                    />
+                     loading="lazy" decoding="async" />
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ const VivreProductModal = ({ product, isOpen, onClose }) => {
                         src={img}
                         alt={`Gallery ${idx + 1}`}
                         className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
+                       loading="lazy" decoding="async" />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                         <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
                           View
@@ -166,7 +166,7 @@ const VivreProductModal = ({ product, isOpen, onClose }) => {
                           src={imgSrc}
                           alt={`Design ${designCode}`}
                           className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
+                         loading="lazy" decoding="async" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-white text-xs font-mono px-3 py-1.5 rounded-lg border border-white/10">
                           #{designCode}
@@ -186,25 +186,42 @@ const VivreProductModal = ({ product, isOpen, onClose }) => {
         </div>
 
         {/* ========== FOOTER ACTIONS ========== */}
-        <div className="border-t border-gray-200 bg-gray-50 px-6 md:px-8 py-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button
-            onClick={onClose}
-            className="w-full sm:w-auto px-10 py-3.5 rounded-2xl border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-100 text-gray-700 font-semibold text-base transition-all duration-200"
-          >
-            Close
-          </button>
+        {/* ========== FOOTER ACTIONS ========== */}
+<div className="border-t border-gray-200 bg-gray-50 px-6 md:px-8 py-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+  <button
+  onClick={onClose}
+  className={`px-6 py-3 rounded-2xl font-semibold text-base transition-all duration-200 w-auto min-w-[100px] ${
+    product.pdfUrl
+      ? "border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-100 text-gray-700"
+      : "bg-gray-900 hover:bg-black text-white"
+  }`}
+>
+  Close
+</button>
 
-          <a
-            href={product.pdfUrl}
-            download
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-3.5 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold text-base rounded-2xl transition-all duration-300 shadow-lg shadow-red-600/30 hover:shadow-red-600/50"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Download Technical PDF
-          </a>
-        </div>
+  {product.pdfUrl && (
+    <a
+      href={product.pdfUrl}
+      download
+      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-3.5 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold text-base rounded-2xl transition-all duration-300 shadow-lg shadow-red-600/30 hover:shadow-red-600/50"
+    >
+      <svg
+        className="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        />
+      </svg>
+      Download Technical PDF
+    </a>
+  )}
+</div>
       </div>
     </div>
   );
