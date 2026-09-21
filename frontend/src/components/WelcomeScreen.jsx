@@ -8,7 +8,7 @@ const WelcomeScreen = () => {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <img
-            src="/images/logo.png"
+            src="/images/products/jpk_logo-transformed-removebg-preview-1.webp"
             alt="JPK Interio"
             className="w-48 sm:w-56 md:w-64 h-auto object-contain"
           />
